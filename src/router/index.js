@@ -3,6 +3,9 @@ import Home from '../components/Home.vue';
 import Maintenance from '../views/Maintenance.vue';
 import Autocare from '../views/Autocare.vue';
 import Insurance from '../views/Insurance.vue';
+import Signin from '../views/Signin.vue';
+import Signup from '../views/Signup.vue';
+import Faqs from '../views/Faqs.vue'
 
 
 const routes = [
@@ -10,6 +13,16 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Home
+  },
+  {
+    path:'/signup',
+    name: 'Signup',
+    component: Signup
+  },
+  {
+    path:'/signin',
+    name: 'Signin',
+    component: Signin
   },
   {
     path: '/maintenance',
