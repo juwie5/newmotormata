@@ -501,8 +501,10 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+//@import '../styles/mediaqueries';
 
-.reg-vehicle    {
+
+.reg-vehicle{
     background-color: #fff;
     width: 374px;
     display: block;
@@ -662,25 +664,27 @@ h1.join-us  {
 .periodic-check-icon {
     color: #53FF6E;
     position: absolute;
-    top: 180px;
+    top: 40%;
 }
 
 .ac-check-icon    {
     color: #53FF6E;
     position: absolute;
-    top: 228px;
+   top: 49%; 
 }
 
 .repair-check-icon    {
     color: #53FF6E;
     position: absolute;
-    top: 275px;
+    top: 57%;
+    
 }
 
 .crepair-check-icon    {
     color: #53FF6E;
     position: absolute;
-    top: 322px;
+    top: 66%;
+    
 }
 
 .service-divider    {
@@ -857,12 +861,12 @@ h1.join-us  {
   .icon {
       position: absolute;
       margin-top: 5px;
-      left: 130px;
+      left: 10%;
   }
   .t-icon{
     position: absolute;
     margin-top: 5px;
-    left: 600px;
+    left: 45%;
   }
 
   .convinience, .affordable, .transparent, .quality  {
@@ -1017,6 +1021,236 @@ h1.join-us  {
   }
 
  
+/* 430px display width */
+@media (max-width: 430px) {
+    body {
+        text-align: center;
+    }
+    /* nav */
+    .openNavBtn {
+        left: 22rem;
+        z-index: 3;
+    }
+    #sideNav {
+        width: 80%;
+    }
+    .signin-side-navBtn {
+        left: 5rem;
+    }
+    .signup-side-navBtn {
+        top: 3.5rem;
+        left: -5.2rem;
+    }
+    /* Hero */
+    .drive-green {
+        font-size: 35px;
+    }
+    .hero-title {
+        font-size: 48px;
+    }
+    img.hero-illustration {
+        display: none;
+    }
+    .reg-vehicle {
+        position: unset;
+        margin: 1% auto 15%;
+        width: 320px;
+    }
+    .reg-text {
+        font-size: 20px;
+    }
+    .reg-vehicle input {
+        font-size: 12px;
+        width: 250px;
+        padding: 10px 10px 10px 40px;
+    }
+    .hero-car-icon {
+        top: 348px;
+        left: 95px;
+        font-size: 12px;
+    }
+    .hero-call-icon {
+        top: 405px;
+        left: 95px;
+        font-size: 13px;
+    }
+    .reg-veh-btn {
+        width: 250px;
+        padding: 10px;
+        font-size: 13px;
+    }
+    h1.join-us {
+        font-size: 15px;
+    }
+    /* Services */
+    #services li {
+        text-align: left;
+        padding-left: 4.5rem;
+    }
+    .periodic-check-icon {
+        left: 6rem;
+        top: 10.9rem;
+    }
+    .ac-check-icon {
+        left: 6rem;
+        top: 13.9rem;
+    }
+    .repair-check-icon {
+        left: 6rem;
+        top: 16.9rem;
+    }
+    .crepair-check-icon {
+        left: 6rem;
+        top: 7.9rem;
+    }
+    .service-divider {
+        margin: 5% auto 10%;
+        background-color: #53FF6E;
+        width: 70px;
+    }
+    /* Assurance */
+    .assurance-title {
+        padding-top: 10%;
+        font-size: 30px;
+    }
+    .download-title {
+        font-size: 30px;
+        padding: 5%;
+    }
+    img.googlePlay {
+        max-width: 130px;
+    }
+    img.appStore {
+        max-width: 110px;
+    }
+    /* How we work */
+    .abstract-image {
+        position: unset;
+        margin: auto 0;
+        padding: 5%;
+    }
+    .abstract-image img {
+        max-width: 330px;
+    }
+    /* Reviews */
+    .review-text {
+        text-align: left;
+        width: 220px;
+        top: 10px;
+        left: 120px;
+    }
+    .sec-text {
+        left: 1.8rem;
+    }
+    .reviewer-name {
+        position: relative;
+        top: 20%;
+        left: -0.8rem;
+    }
+    .reviewer-name2 {
+        position: relative;
+        top: 20%;
+        left: -6.2rem;
+    }
+    /* Benefits */
+    #benefits {
+        padding: 3% 10% 4%;
+    }
+    .c-icon {
+        position: absolute;
+        left: 55px;
+        top: 5.6px;
+        font-size: 18px;
+    }
+    .a-icon {
+        position: absolute;
+        left: 58px;
+        top: 5.6px;
+        font-size: 18px;
+    }
+    .t-icon {
+        position: absolute;
+        left: 58px;
+        top: 5.6px;
+        font-size: 18px;
+    }
+    .q-icon {
+        position: absolute;
+        left: 85px;
+        top: 7px;
+        font-size: 18px;
+    }
+    .convinience, .affordable, .transparent, .quality {
+        margin: 2% 5% 0;
+        max-width: 100%;
+        text-align: center;
+    }
+    /* Subscribe */
+    #subscription {
+        padding: 10% 7%;
+        text-align: center;
+    }
+    .subscription-title {
+        font-size: 2rem;
+        text-align: center;
+        padding: 0;
+    }
+    #subscription input {
+        width: 50%;
+        padding: 5px 10px;
+        outline: none;
+    }
+    .subscribe-btn {
+        width: 40%;
+        padding: 5px 10px;
+        font-size: 1.2rem;
+    }
+    /* Technicians */
+    .technician-title {
+        text-align: center;
+    }
+    .first-tech img {
+        max-width: 20%;
+        margin-right: 5%;
+        position: relative;
+        top: -30px;
+    }
+    .staff-name {
+        font-size: 15px;
+        position: relative;
+        top: 0.4rem;
+    }
+    .experience {
+        font-size: 13px;
+    }
+    .staff-content i {
+        font-size: 10px;
+        position: relative;
+        top: -0.2rem;
+    }
+    /* FAQs */
+    #faqs {
+        text-align: left;
+    }
+    .faq-title {
+        font-size: 30px;
+        padding-top: 40px;
+    }
+    .faq-drop-btn1, .faq-drop-btn2, .faq-drop-btn3, .faq-drop-btn4, .faq-drop-btn5 {
+        font-size: 0.7rem;
+        position: relative;
+        top: 0.2rem;
+    }
+    #headingOne, #headingTwo, #headingThree, #headingFour, #headingFive {
+        padding: 0.5rem 0;
+    }
+    h5 span {
+        font-size: 0.7rem;
+    }
+    .answer {
+        font-size: 0.7rem;
+    }
+}
 
 
 

@@ -10,4 +10,5 @@ export default {
 
 <style lang="scss">
  @import "styles/default";
+
 </style>

@@ -4,9 +4,9 @@
 
             <!-- SideNav -->
         <div class="sidenav" id="sideNav">
-            <i onclick="closeNav()" class="closeBtn fas fa-times" onload="closeSideNav()"></i>
-            <a onclick="myFunction()" id="sideNav-link" class="nav-link sideNavLink service-link" type="button">Services <i
-                class="services-drop-down fas fa-chevron-down"></i></a>
+            <font-awesome-icon icon="times" @click="closeNav()" class="closeBtn" onload="closeSideNav()"/>
+            <a @click="myFunction()" id="sideNav-link" class="nav-link sideNavLink service-link" type="button">Services<font-awesome-icon 
+              icon="chevron-down"  class="services-drop-down"/></a>
             <div id="sideNavHomeDropDown" class="drop-down-links2">
                 <a href="maintenance_repair.html">Maintenance Repair</a>
                 <a href="autocare.html">AutoCare Products & Parts</a>
@@ -21,7 +21,7 @@
             <!-- The main nav -->
         <div>
             <nav class="navbar navbar-expand-lg sticky-top">
-                <a href="javascript:void(0)" class="openNavBtn" onclick="openNav()"><i class="fas fa-bars"></i></a>
+                <font-awesome-icon href="javascript:void(0)" icon="bars" @click="openNav()" class="openNavBtn"/>
                 <router-link to="/"><img src="../assets/logo.png" alt="Motormata Logo"></router-link>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -67,11 +67,25 @@ export default {
     methods:{
          myNewFunction() {
           document.getElementById("homeDropDown").classList.toggle("showing");
-        }
+        },
+         myFunction() {
+         document.getElementById("sideNavHomeDropDown").style.display = "block";
+        },
+        
+        //SideNav
+        openNav() {
+         document.getElementById("sideNav").style.display = "block";
+        },
+
+        closeNav() {
+        document.getElementById("sideNav").style.display = "none";
+        },
+
     }
 
 }
 </script>
+
 
 <style scoped lang="scss">
 
@@ -85,7 +99,9 @@ export default {
 }
 
 .sticky-top {
+    position: sticky;
     background-color: #fff;
+    top: 0;
 }
 
 ul.navbar-nav  {
@@ -249,4 +265,6 @@ ul.navbar-nav  {
     display: block;
 }
 
+
 </style>
+
