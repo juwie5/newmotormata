@@ -265,6 +265,29 @@ ul.navbar-nav  {
     display: block;
 }
 
+@media only screen and (min-width: 320px) and (max-width: 475px){
+    nav {
+    position: fixed;
+    background-color: #fff;
+    top: 0;
+}
+.openNavBtn{
+    display: block;
+     left: 20rem;
+     z-index: 99;
+    }  
+    #sideNav {
+        width: 60%;
+    }
+    .signin-side-navBtn {
+        left: 5rem;
+    }
+    .signup-side-navBtn {
+        top: 3.5rem;
+        left: -5.2rem;
+    }
+
+}
 
 </style>
 

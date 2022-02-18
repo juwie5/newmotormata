@@ -142,4 +142,16 @@ export default {
     color: #000000;
 }
 
+@media only screen and (min-width: 320px) and (max-width: 475px){
+  .ft-about-title, .ft-service-title, .ft-legal-title{
+    font-size: 20px;
+  
+  }
+  .footer-about, .footer-services, .footer-legal{
+    ul{
+      font-size: 16px;
+    }
+  }
+}
+
 </style>

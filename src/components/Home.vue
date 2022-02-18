@@ -58,13 +58,13 @@
             <h1 class="autocare-title">Auto Care Products & Parts</h1>
             <hr class="service-divider">
             <ul>
-              <font-awesome-icon class="periodic-check-icon" icon="check"/>
+              <font-awesome-icon class="periodic-check-icon p-icon" icon="check"/>
               <li>Auto care Products</li>
-              <font-awesome-icon class="ac-check-icon" icon="check"/>
+              <font-awesome-icon class="ac-check-icon ac-icon" icon="check"/>
               <li>Battery</li>
-              <font-awesome-icon class="repair-check-icon" icon="check"/>
+              <font-awesome-icon class="repair-check-icon re-icon" icon="check"/>
               <li>Tyres</li>
-              <font-awesome-icon class="crepair-check-icon" icon="check"/>
+              <font-awesome-icon class="crepair-check-icon cr-icon" icon="check"/>
               <li>Replacement Parts</li>
             </ul>
           </div>
@@ -76,13 +76,13 @@
             <h1 class="insurance-title">Insurance & Documents</h1>
             <hr class="service-divider">
             <ul>
-              <font-awesome-icon class="periodic-check-icon" icon="check"/>
+              <font-awesome-icon class="periodic-check-icon e-icon" icon="check"/>
               <li>Insurance</li>
-              <font-awesome-icon class="ac-check-icon" icon="check"/>
+              <font-awesome-icon class="ac-check-icon ca-icon" icon="check"/>
               <li>Registration</li>
-              <font-awesome-icon class="repair-check-icon" icon="check"/>
+              <font-awesome-icon class="repair-check-icon er-icon" icon="check"/>
               <li>Renewal</li>
-              <font-awesome-icon class="crepair-check-icon" icon="check"/>
+              <font-awesome-icon class="crepair-check-icon rc-icon" icon="check"/>
               <li>Ownership Transfer</li>
             </ul>
           </div>
@@ -501,9 +501,6 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-//@import '../styles/mediaqueries';
-
-
 .reg-vehicle{
     background-color: #fff;
     width: 374px;
@@ -1065,12 +1062,12 @@ h1.join-us  {
         padding: 10px 10px 10px 40px;
     }
     .hero-car-icon {
-        top: 348px;
+        top: 384px;
         left: 95px;
-        font-size: 12px;
+        font-size: 14px;
     }
     .hero-call-icon {
-        top: 405px;
+        top: 438px;
         left: 95px;
         font-size: 13px;
     }
@@ -1085,23 +1082,48 @@ h1.join-us  {
     /* Services */
     #services li {
         text-align: left;
-        padding-left: 4.5rem;
+        font-size: 16px;
+        padding-left: 1.5rem;
     }
     .periodic-check-icon {
         left: 6rem;
-        top: 10.9rem;
+        top: 14%;
+    }
+    .p-icon{
+      top: 45.5%;
+    }
+    .e-icon{
+      top: 77%;
     }
     .ac-check-icon {
         left: 6rem;
-        top: 13.9rem;
+        top: 18%;
+    }
+    .ac-icon{
+      top: 50%;
+    }
+    .ca-icon{
+      top: 81%;
     }
     .repair-check-icon {
         left: 6rem;
-        top: 16.9rem;
+        top: 22%;
+    }
+    .re-icon{
+      top: 54%;
+    }
+    .er-icon{
+      top: 85.5%;
     }
     .crepair-check-icon {
         left: 6rem;
-        top: 7.9rem;
+        top: 26%;
+    }
+    .cr-icon{
+      top: 58%;
+    }
+    .rc-icon{
+      top: 89.5%;
     }
     .service-divider {
         margin: 5% auto 10%;
@@ -1123,7 +1145,17 @@ h1.join-us  {
     img.appStore {
         max-width: 110px;
     }
+    .app-download {
+      margin: 0;
+  }
+    .screenshot{
+      display: none;
+    }
     /* How we work */
+     .hw-we-wrk-title{
+      font-size: 30px;
+    }
+
     .abstract-image {
         position: unset;
         margin: auto 0;
@@ -1132,6 +1164,15 @@ h1.join-us  {
     .abstract-image img {
         max-width: 330px;
     }
+   
+    #how-we-work .ordered-list{
+      text-align: center;
+      font-size: 14px;
+    }
+     .ordered-list li{
+        font-size: 12px;
+        margin: 0;
+      }
     /* Reviews */
     .review-text {
         text-align: left;
@@ -1142,10 +1183,19 @@ h1.join-us  {
     .sec-text {
         left: 1.8rem;
     }
+ 
     .reviewer-name {
         position: relative;
         top: 20%;
         left: -0.8rem;
+    }
+    .review-image{
+      left: 20px;
+      top: 10px;
+
+    }
+    .sec-img{
+      left: -17%;
     }
     .reviewer-name2 {
         position: relative;
@@ -1155,6 +1205,12 @@ h1.join-us  {
     /* Benefits */
     #benefits {
         padding: 3% 10% 4%;
+    }
+    .benefit-title{
+      font-size: 30px;
+    }
+    .icon{
+      left: 31%;
     }
     .c-icon {
         position: absolute;
@@ -1170,8 +1226,7 @@ h1.join-us  {
     }
     .t-icon {
         position: absolute;
-        left: 58px;
-        top: 5.6px;
+        left: 30%;
         font-size: 18px;
     }
     .q-icon {
@@ -1208,6 +1263,7 @@ h1.join-us  {
     /* Technicians */
     .technician-title {
         text-align: center;
+        font-size: 30px;
     }
     .first-tech img {
         max-width: 20%;
@@ -1252,6 +1308,85 @@ h1.join-us  {
     }
 }
 
+@media (max-width: 375px){
 
+.hero-car-icon {
+  top: 99%; 
+  left: 4rem;
+}
+
+.hero-call-icon {
+    top: 115%;
+    left: 4rem;
+    font-size: 13px;
+}
+.drive-green{
+  font-size: 24px;
+}
+.review-text{
+  font-size: 12px;
+  width: 205px;
+  left: 108px;
+}
+.hero-title{
+  font-size: 38px;
+}
+.hero-paragraph{
+  font-size: 16px;
+}
+
+.assurance-title, .hw-we-wrk-title{
+    font-size: 28px;
+}
+.sec-img{
+  left: -23%;
+}
+.sec-text{
+  left: 0;
+}
+.motormata-assurance li{
+  font-size: 20px;
+}
+
+}
+
+@media (max-width: 320px){
+  .hero-car-icon {
+  top: 325px; 
+  left: 2.8rem;
+}
+
+.hero-call-icon {
+    top: 378px;
+    left: 2.8rem;
+}
+
+.assurance-title, .hw-we-wrk-title{
+    font-size: 28px;
+}
+
+.motormata-assurance li{
+  font-size: 20px;
+}
+
+.abstract-image img {
+    max-width: 270px;
+    margin: auto;
+    text-align: center;
+}
+
+#how-we-work ol{
+  margin: 0;
+}
+
+}
+
+
+
+@media (max-width: 1024px){
+.maintenance-title, .autocare-title, .insurance-title {
+    font-size: 18px;
+}
+}
 
 </style>
