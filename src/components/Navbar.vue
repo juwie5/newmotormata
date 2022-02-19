@@ -4,10 +4,10 @@
 
             <!-- SideNav -->
         <div class="sidenav" id="sideNav">
-            <font-awesome-icon icon="times" @click="closeNav()" class="closeBtn" onload="closeSideNav()"/>
-            <a @click="myFunction()" id="sideNav-link" class="nav-link sideNavLink service-link" type="button">Services<font-awesome-icon 
+            <font-awesome-icon icon="times" @click="closeNav()" class="closeBtn"/>
+            <a @click="myFunction(), toggleList()" id="sideNav-link" class="nav-link sideNavLink service-link" type="button">Services<font-awesome-icon 
               icon="chevron-down"  class="services-drop-down"/></a>
-            <div id="sideNavHomeDropDown" class="drop-down-links2">
+            <div id="sideNavHomeDropDown" class="drop-down-links2" :class="{active: isActive}">
                 <a href="maintenance_repair.html">Maintenance Repair</a>
                 <a href="autocare.html">AutoCare Products & Parts</a>
                 <a href="insurance.html">Insurance & Documents</a>
@@ -21,7 +21,7 @@
             <!-- The main nav -->
         <div>
             <nav class="navbar navbar-expand-lg sticky-top">
-                <font-awesome-icon href="javascript:void(0)" icon="bars" @click="openNav()" class="openNavBtn"/>
+                <font-awesome-icon icon="bars" @click="openNav()" class="openNavBtn"/>
                 <router-link to="/"><img src="../assets/logo.png" alt="Motormata Logo"></router-link>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,7 +34,7 @@
                         <font-awesome-icon class="services-drop-down" icon="chevron-down"/></a>
                     </li>
                     <!-- drop-down links -->
-                    <div id="homeDropDown" class="drop-down-links">
+                    <div id="homeDropDown" class="drop-down-links sideNav">
                     <router-link to="/maintenance">Maintenance Repair</router-link>
                     <router-link to="/autocare">AutoCare Products & Parts</router-link>
                     <router-link to="/insurance">Insurance & Documents</router-link>
@@ -61,7 +61,7 @@ export default {
     name:'Navbar',
     data: ()=>{
         return{
-
+         isActive: false       
         }
     },
     methods:{
@@ -80,6 +80,10 @@ export default {
         closeNav() {
         document.getElementById("sideNav").style.display = "none";
         },
+        toggleList(){
+        this.isActive = !this.isActive
+        }
+
 
     }
 
@@ -191,7 +195,7 @@ ul.navbar-nav  {
 
 /* SideNav */
 #sideNav    {
-    width: 40%;
+    width: 44%;
     background-color: rgb(255, 255, 255);
     display: none;
     overflow: hidden;
@@ -201,8 +205,8 @@ ul.navbar-nav  {
     height: 100vh;
     left: 0;
     top: 0;
-    z-index: 1;
-    box-shadow: 10px 8px 20px 6px rgba(0, 0, 0, 0.2);
+    // z-index: 0;
+    box-shadow: 10px 8px 20px 6px rgba(0, 0, 0, 0.1);
 }
 
 #sideNav a.nav-link {
@@ -226,23 +230,20 @@ ul.navbar-nav  {
 
 .closeBtn   {
     position: absolute;
-    left: 18rem;
+    left: 80%;
     top: 2rem;
     cursor: pointer;
 }
 
 .signin-side-navBtn {
-    width: 140px;
-    position: relative;
-    top: 0.5rem;
-    left: 5rem;
+    width: 8.5rem;
+    margin: 0 10px 10px 10px;
+   
 }
 
 .signup-side-navBtn {
     text-align: center;
-    position: relative;
-    top: 4rem;
-    left: -5.3rem;
+  
 }
 
 .drop-down-links2   {
@@ -261,32 +262,40 @@ ul.navbar-nav  {
     color: #000;
 }
 
-.showing {
-    display: block;
-}
-
 @media only screen and (min-width: 320px) and (max-width: 475px){
     nav {
     position: fixed;
     background-color: #fff;
     top: 0;
-}
-.openNavBtn{
+    }
+    .openNavBtn{
     display: block;
-     left: 20rem;
-     z-index: 99;
+    
     }  
-    #sideNav {
-        width: 60%;
+    
+    .navbar-nav{
+        display: none;
     }
-    .signin-side-navBtn {
-        left: 5rem;
+       .drop-down-links2 {
+        display: none;
+        background-color: #eee;
+        border-radius: 0;
+        position: relative;
+        top: -1rem;
+        left: 0;
     }
-    .signup-side-navBtn {
-        top: 3.5rem;
-        left: -5.2rem;
+    .drop-down-links2 a {
+        color: #9D9D9D;
+        padding: 15px 30px !important;
+        border-bottom: 1px solid #ddd;
+        text-decoration: none;
     }
-
+    .drop-down-links2 a:last-child {
+        border-bottom: none;
+    }
+    .active{
+        display: none;
+    }
 }
 
 </style>
