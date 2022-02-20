@@ -5,9 +5,9 @@
             <!-- SideNav -->
         <div class="sidenav" id="sideNav">
             <font-awesome-icon icon="times" @click="closeNav()" class="closeBtn"/>
-            <a @click="myFunction(), toggleList()" id="sideNav-link" class="nav-link sideNavLink service-link" type="button">Services<font-awesome-icon 
-              icon="chevron-down"  class="services-drop-down"/></a>
-            <div id="sideNavHomeDropDown" class="drop-down-links2" :class="{active: isActive}">
+            <a @click="toggleList()"  id="sideNav-link" class="nav-link sideNavLink service-link" type="button">Services<font-awesome-icon 
+               icon="chevron-down" class="services-drop-down"/></a>
+            <div id="sideNavHomeDropDown" class="drop-down-links2" v-bind:style='{"display" : (isActive? "block" : "none" )}'>
                 <a href="maintenance_repair.html">Maintenance Repair</a>
                 <a href="autocare.html">AutoCare Products & Parts</a>
                 <a href="insurance.html">Insurance & Documents</a>
@@ -68,9 +68,7 @@ export default {
          myNewFunction() {
           document.getElementById("homeDropDown").classList.toggle("showing");
         },
-         myFunction() {
-         document.getElementById("sideNavHomeDropDown").style.display = "block";
-        },
+     
         
         //SideNav
         openNav() {
@@ -81,11 +79,13 @@ export default {
         document.getElementById("sideNav").style.display = "none";
         },
         toggleList(){
-        this.isActive = !this.isActive
+                this.isActive = !this.isActive
+        console.log("wtf");
         }
 
 
-    }
+    },
+  
 
 }
 </script>
@@ -248,9 +248,7 @@ ul.navbar-nav  {
 
 .drop-down-links2   {
     background-color: #fff;
-    position: relative;
     margin: 0;
-    top: -30px;
     display: none;
 }
 
@@ -260,6 +258,9 @@ ul.navbar-nav  {
 
 .openNavBtn:hover {
     color: #000;
+}
+.active{
+    display: block;
 }
 
 @media only screen and (min-width: 320px) and (max-width: 475px){
@@ -276,14 +277,7 @@ ul.navbar-nav  {
     .navbar-nav{
         display: none;
     }
-       .drop-down-links2 {
-        display: none;
-        background-color: #eee;
-        border-radius: 0;
-        position: relative;
-        top: -1rem;
-        left: 0;
-    }
+
     .drop-down-links2 a {
         color: #9D9D9D;
         padding: 15px 30px !important;
@@ -292,9 +286,6 @@ ul.navbar-nav  {
     }
     .drop-down-links2 a:last-child {
         border-bottom: none;
-    }
-    .active{
-        display: none;
     }
 }
 
