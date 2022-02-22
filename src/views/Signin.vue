@@ -1,7 +1,7 @@
 <template>
     <div>
           <section id="signup">         
-            <router-link to="/" class="go-home-link" ><i class="fas fa-chevron-left"></i> &nbsp; Go home</router-link>
+            <router-link to="/" class="go-home-link"> <font-awesome-icon icon="chevron-left"/>  Go home</router-link>
             <div class="container-fluid">
                 <img class="signup-image" src="../assets/Hero-illustration.png" alt="">
                 <div class="signup-container">
@@ -38,11 +38,11 @@ export default {
 </script>
 
 
-<style lang="scss">
+<style scoped lang="scss">
 #signup {
     background-color: #97ffa6;
     padding: 5% 7%;
-    height: 100vh
+    height: 100vh;
 }
 
 .signup-image   {
@@ -105,11 +105,11 @@ export default {
 }
 
 .go-home-link   {
+    color: black;
+    text-decoration: none;
     position: absolute;
     left: 150px;
     top: 40px;
-    color: black;
-    text-decoration: none;
 }
 
 .go-home-link:hover  {
@@ -137,7 +137,7 @@ export default {
     left: 25px;
 }
 
-.sign-with-email-btn    {
+.sign-with-email-btn{
     display: block;
     width: 100%;
     margin: 5% 0;
@@ -155,7 +155,9 @@ export default {
 .signwithemaillink:hover  {
     text-decoration: none;
 }
-
+.signwithemaillink{
+    text-decoration: none;
+}
 .signin-acct-btn    {
     padding: 10px 20px;
     background-color: #53FF6E;
@@ -182,7 +184,7 @@ export default {
 }
 
 .pass-forgot  a:hover  {
-    color: rgb(78, 78, 78);
+    color: #53FF6E;
 }
 
 .dont-have-acct {

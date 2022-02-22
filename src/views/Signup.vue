@@ -98,11 +98,38 @@ export default {
     left: 150px;
     top: 40px;
     color: black;
+    text-decoration: none;
 }
 
 .go-home-link:hover  {
     color: #aaa;
     text-decoration: none;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 475px){
+    .signup-container{
+        padding: 10% 7%;
+        width: 100%;
+    }
+    
+
+}
+@media (min-width: 2560px){
+    .signup-image{
+        left: 87rem;
+        width: 53rem;
+    }
+}
+
+@media(max-width: 320px){
+    .go-home-link {
+        left: 33px;
+        top: 2px;
+        font-size: 14px;
+    }
+    .create-acct-btn{
+        margin: 0;
+    }
 }
 
 </style>
