@@ -8,19 +8,24 @@
                     <form action="#">
                         <h4 class="create-acct-title">Sign in to your account</h4>
                         <p class="create-acct-paragraph">Fill the form below to sign in</p>
+                        <div v-if="show">
                         <input type="tel" name="phoneNumber" id="phoneNumber" placeholder="Mobile Number" required>
                         <input type="password" name="password" id="password" placeholder="Password" required>
+                        </div>
+                        <div v-else>
+                        <input type="email" name="Email" id="Email" placeholder="Email" required>
+                        <input type="password" name="password" id="password" placeholder="Password" required>
+                        </div>
+                        
                         <p class="pass-forgot"><a href="#">Forgot Password?</a></p>
                         <a href="dashboard.html"><button type="button" class="btn signin-acct-btn">Sign in</button></a>
                         <hr class="signin-divider">
                         <span>Or</span>
                         <hr class="signin-divider2">
-                        <a class="signwithemaillink" href="signinwithemail.html">
-                            <button type="button" class="btn sign-with-email-btn">Sign in with email</button>
-                        </a>
-                        
+                        <button @click="show = !show" v-if="show" type="button" class="btn sign-with-email-btn">Sign in with email</button>
+                        <button @click="show =!show" v-if="!show" type="button" class="btn sign-with-email-btn">Sign in with Phone number</button>
                         <p class="dont-have-acct">
-                            <a href="signup.html">Create account</a> 
+                            <router-link to="/signup">Create account</router-link> 
                             if you don't have an account.
                         </p>
                     </form>
@@ -34,6 +39,11 @@
 <script>
 export default {
     name: 'Signin',
+    data: () =>{
+        return{
+            show: true,
+        }
+    }
 }
 </script>
 
@@ -199,6 +209,37 @@ export default {
 .dont-have-acct a:hover {
     color: #00410a;
     text-decoration: none;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 475px){
+    .signup-container{
+        padding: 10% 7%;
+        width: 100%;
+        span{
+            left: 10px;
+        }
+    }
+       .go-home-link {
+        left: 33px;
+        top: 85px;
+    }
+}
+
+@media(max-width: 320px){
+    .go-home-link {
+        left: 33px;
+        top: 2px;
+        font-size: 14px;
+    }
+    .signin-divider, .signin-divider2{
+        display: none;
+    }
+    .signup-container{
+        span{
+            display: block;
+            text-align: center;
+        }
+    }
 }
 
 

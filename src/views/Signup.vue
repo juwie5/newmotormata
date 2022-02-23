@@ -5,7 +5,7 @@
         <div class="container-fluid">
             <img class="signup-image" src="../assets/Hero-illustration.png" alt="">
             <div class="signup-container">
-                <form action="mailto:ayomidbankole@gmail.com" enctype="text/plain" method="POST">
+                <form>
                     <h4 class="create-acct-title">Create your account</h4>
                     <p class="create-acct-paragraph">Fill the form below to register</p>
                     <input type="text" name="fullname" id="fullname" placeholder="Fullname" required>
@@ -13,7 +13,7 @@
                     <input type="tel" name="phoneNumber" id="phoneNumber" placeholder="Mobile Number" required>
                     <input type="password" name="password" id="password" placeholder="Create Password" required>
                     <button type="submit" class="btn create-acct-btn">Create account</button>
-                    <p class="already-have-acct"><a href="signin.html">Sign in</a> if you already have an account.</p>
+                    <p class="already-have-acct"><router-link to="/signin">Sign in</router-link> if you already have an account.</p>
                 </form>
             </div>
         </div>
@@ -24,6 +24,11 @@
 <script>
 export default {
     name: 'Signup',
+    data: () =>{
+        return{
+
+        }
+    }
 }
 </script>
 
@@ -111,8 +116,13 @@ export default {
         padding: 10% 7%;
         width: 100%;
     }
-    
-
+    .go-home-link {
+        left: 33px;
+        top: 85px;
+    }
+    .create-acct-btn{
+        margin-top: 10px;
+    }
 }
 @media (min-width: 2560px){
     .signup-image{
@@ -127,9 +137,7 @@ export default {
         top: 2px;
         font-size: 14px;
     }
-    .create-acct-btn{
-        margin: 0;
-    }
+   
 }
 
 </style>
