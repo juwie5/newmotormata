@@ -1311,12 +1311,12 @@ h1.join-us  {
 @media (max-width: 375px){
 
 .hero-car-icon {
-  top: 333px; 
+  top: 310px; 
   left: 4rem;
 }
 
 .hero-call-icon {
-    top: 384px;
+    top: 365px;
     left: 4rem;
     font-size: 13px;
 }

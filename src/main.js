@@ -10,10 +10,10 @@ import "./styles/mediaqueries.scss"
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import { faChevronDown, faCar, faPhoneAlt, faCheck, faChevronLeft, faChevronRight, faThumbsUp, faCoins, faBinoculars, faAward, faStar, faBars, faTimes} from '@fortawesome/free-solid-svg-icons';
+import { faChevronDown,faChevronUp, faCar, faPhoneAlt, faCheck, faChevronLeft, faChevronRight, faThumbsUp, faCoins, faBinoculars, faAward, faStar, faBars, faTimes, faPlus, faAngleLeft, faAngleRight} from '@fortawesome/free-solid-svg-icons';
 import {faFacebook, faInstagram, faTwitter, faWhatsapp} from '@fortawesome/free-brands-svg-icons'
 
-library.add(faChevronDown, faCar, faPhoneAlt, faCheck, faChevronRight, faChevronLeft, faThumbsUp, faCoins, faBinoculars, faAward, faStar, faFacebook, faInstagram, faTwitter, faWhatsapp, faBars, faTimes)
+library.add(faChevronDown, faCar, faPhoneAlt, faCheck, faChevronRight, faChevronLeft, faThumbsUp, faCoins, faBinoculars, faAward, faStar, faFacebook, faInstagram, faTwitter, faWhatsapp, faBars, faTimes, faPlus, faChevronUp, faAngleLeft, faAngleRight)
 
 
 

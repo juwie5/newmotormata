@@ -80,7 +80,6 @@ export default {
         },
         toggleList(){
                 this.isActive = !this.isActive
-        console.log("wtf");
         }
 
 
