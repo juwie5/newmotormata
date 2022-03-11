@@ -1,6 +1,6 @@
 <template>
 <div>
-    <section id="header">
+    <section>
 
             <!-- SideNav -->
         <div class="sidenav" id="sideNav">
@@ -8,19 +8,20 @@
             <a @click="toggleList()"  id="sideNav-link" class="nav-link sideNavLink service-link" type="button">Services<font-awesome-icon 
                icon="chevron-down" class="services-drop-down"/></a>
             <div id="sideNavHomeDropDown" class="drop-down-links2" v-bind:style='{"display" : (isActive? "block" : "none" )}'>
-                <a href="maintenance_repair.html">Maintenance Repair</a>
-                <a href="autocare.html">AutoCare Products & Parts</a>
-                <a href="insurance.html">Insurance & Documents</a>
+                <router-link to="/maintenance">Periodic Services</router-link>
+                <router-link to="/autocare">Inspection & Diagnostics</router-link>
+                <router-link to="/insurance">Insurance & Papers</router-link>
+                <router-link to="/insurance">Spares & Repair</router-link>
             </div>
             <router-link to="/home#faqs" class="nav-link">FAQs</router-link>
-            <a class="nav-link" href="#">Contact</a>
+            <router-link to="/contact" class="nav-link">Contact</router-link>
             <router-link to="/signin"><button class="btn signin-side-navBtn">Sign in</button></router-link>
             <router-link to="/signup"><button class="btn signup-side-navBtn">Create account</button></router-link>
         </div>
 
             <!-- The main nav -->
-        <div>
-            <nav class="navbar navbar-expand-lg sticky-top">
+        <div id="nav-pos">
+            <nav class="navbar navbar-expand-lg">
                 <font-awesome-icon icon="bars" @click="openNav()" class="openNavBtn"/>
                 <router-link to="/"><img src="../assets/logo.png" alt="Motormata Logo"></router-link>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -35,15 +36,16 @@
                     </li>
                     <!-- drop-down links -->
                     <div id="homeDropDown" class="drop-down-links sideNav">
-                    <router-link to="/maintenance">Maintenance Repair</router-link>
-                    <router-link to="/autocare">AutoCare Products & Parts</router-link>
-                    <router-link to="/insurance">Insurance & Documents</router-link>
+                            <router-link to="/maintenance">Periodic Services</router-link>
+                            <router-link to="/autocare">Inspection & Diagnostics</router-link>
+                            <router-link to="/insurance">Insurance & Papers</router-link>
+                            <router-link to="/insurance">Spares & Repair</router-link>
                     </div>
                     <li class="nav-item">
                     <router-link :to="{path:'/', hash:'#faqs'}" class="nav-link">FAQs</router-link>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="#cta">Contact</a>
+                    <router-link to="/contact" class="nav-link">Contact</router-link>
                     </li>
                 </ul>
                 </div>
@@ -101,11 +103,7 @@ export default {
     padding: 2% 5% 0;
 }
 
-.sticky-top {
-    position: sticky;
-    background-color: #fff;
-    top: 0;
-}
+
 
 ul.navbar-nav  {
     margin: 0 20px;

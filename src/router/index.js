@@ -5,7 +5,8 @@ import Autocare from '../views/Autocare.vue';
 import Insurance from '../views/Insurance.vue';
 import Signin from '../views/Signin.vue';
 import Signup from '../views/Signup.vue';
-import Faqs from '../views/Faqs.vue'
+import Contact from '../views/Contact.vue';
+
 
 
 const routes = [
@@ -23,6 +24,11 @@ const routes = [
     path:'/signin',
     name: 'Signin',
     component: Signin
+  },
+  {
+    path:'/contact',
+    name: 'Contact',
+    component: Contact
   },
   {
     path: '/maintenance',
@@ -53,7 +59,21 @@ const routes = [
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
-  routes
+  routes,
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) {
+        return savedPosition;
+
+    }
+
+     if (to.hash) {
+        return { selector: to.hash };
+    }
+    return { x: 0, y: 0 }
+  }
 })
 
 export default router
+
+
+//const Home = { template: '#home', mounted: function(){		if(this.$router.currentRoute['hash']){ 	Vue.use(VueScrollTo); 	VueScrollTo.scrollTo(this.$router.currentRoute['hash'], 500);

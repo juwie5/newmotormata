@@ -1,7 +1,7 @@
 <template>
   <div>
     <section>
-        <Navbar class="container-fluid"/>
+      <Navbar class="container-fluid"/>
       <section id="hero-video">
         <video loop muted autoplay preload="auto">
           <source src="../assets/video/how_car_works.mp4" type="video/mp4">

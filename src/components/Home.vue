@@ -1,6 +1,7 @@
 <template>
 <div> 
   <!-- Header -->
+  
   <section class="container-fluid" id="header">
       <Navbar/>
       <div class="hero row">
@@ -17,12 +18,12 @@
         <img class="col-lg-8 col-md-8 hero-illustration" src="../assets/Hero-illustration.png" alt="">
 
         <div class="reg-vehicle">
-          <h1 class="reg-text">Register your Vehicle</h1>
+          <h1 class="reg-text">Tell us about your Car</h1>
           <font-awesome-icon icon="car" class="hero-car-icon"/>
-          <input type="number" placeholder="Plate number">
+          <input type="text" placeholder="Plate number" v-model="form.plateNo">
           <font-awesome-icon icon="phone-alt" class="hero-call-icon"/>
-          <input type="tel" placeholder="Mobile number">
-          <button class="btn reg-veh-btn">Get Started</button>
+          <input type="tel" placeholder="Mobile number" v-model="form.phoneNo">
+          <button @click="regUser()" class="btn reg-veh-btn">Get Started</button>
           <h1 class="join-us">Join our 30,000+ Happy Customers</h1>
         </div>
 
@@ -33,47 +34,50 @@
 
   <!-- Services section -->
   <section id="services">
-    <div class="row">
-      <div class="col-lg-4 col-md-6 col-sm-12 maintenance">
+    <div class="ser-group">
+      <div class="ser-col">
         <router-link to="/maintenance">
           <div class="maintenance-container">
-            <h1 class="maintenance-title">Maintenance & Repair</h1>
+            <h1 class="maintenance-title">Periodic Services</h1>
             <hr class="service-divider">
             <ul>
               <font-awesome-icon class="periodic-check-icon" icon="check"/>
-              <li>Periodic Services</li>
+              <li>Complete Car Service</li>
               <font-awesome-icon class="ac-check-icon" icon="check"/>
-              <li>A/C Repair</li>
+              <li>Oil Change</li>
                <font-awesome-icon class="repair-check-icon" icon="check"/>
-              <li>Body Repair</li>
+              <li>Major Car Service</li>
               <font-awesome-icon class="crepair-check-icon" icon="check"/>
-              <li>Custom Repair</li>
+              <li>Wheel Alignment, 
+                Balancing and Rotation</li>
+              <font-awesome-icon class="crepair-check-icon" icon="check"/>
+              <li>Complete Car Service Kit</li>
+                <font-awesome-icon class="crepair-check-icon" icon="check"/>
+              <li>Oil Change Kit</li>
             </ul>
           </div>
         </router-link>
       </div>
-      <div class="col-lg-4 col-md-6 col-sm-12 autocare">
+      <div class="ser-col">
         <router-link to="/autocare">
           <div class="autocare-container">
-            <h1 class="autocare-title">Auto Care Products & Parts</h1>
+            <h1 class="autocare-title">Inspection & Diagnostics</h1>
             <hr class="service-divider">
             <ul>
               <font-awesome-icon class="periodic-check-icon p-icon" icon="check"/>
-              <li>Auto care Products</li>
+              <li>Car Scanning</li>
               <font-awesome-icon class="ac-check-icon ac-icon" icon="check"/>
-              <li>Battery</li>
+              <li>Pre-purchase Inspection</li>
               <font-awesome-icon class="repair-check-icon re-icon" icon="check"/>
-              <li>Tyres</li>
-              <font-awesome-icon class="crepair-check-icon cr-icon" icon="check"/>
-              <li>Replacement Parts</li>
+              <li>Complete Car Inspection</li>
             </ul>
           </div>
         </router-link>
       </div>
-      <div class="col-lg-4 col-md-6 col-sm-12 insurance">
+      <div class="ser-col">
         <router-link to="/insurance">
           <div class="insurance-container">
-            <h1 class="insurance-title">Insurance & Documents</h1>
+            <h1 class="insurance-title">Insurance & Papers</h1>
             <hr class="service-divider">
             <ul>
               <font-awesome-icon class="periodic-check-icon e-icon" icon="check"/>
@@ -81,9 +85,29 @@
               <font-awesome-icon class="ac-check-icon ca-icon" icon="check"/>
               <li>Registration</li>
               <font-awesome-icon class="repair-check-icon er-icon" icon="check"/>
-              <li>Renewal</li>
+              <li>Papers Renewal</li>
               <font-awesome-icon class="crepair-check-icon rc-icon" icon="check"/>
-              <li>Ownership Transfer</li>
+              <li></li>
+            </ul>
+          </div>
+        </router-link>
+      </div>
+        <div class="ser-col">
+        <router-link to="/insurance">
+          <div class="insurance-container">
+            <h1 class="insurance-title">Spares & Repair</h1>
+            <hr class="service-divider">
+            <ul>
+              <font-awesome-icon class="periodic-check-icon e-icon" icon="check"/>
+              <li>Tyres</li>
+              <font-awesome-icon class="ac-check-icon ca-icon" icon="check"/>
+              <li>Battery</li>
+              <font-awesome-icon class="repair-check-icon er-icon" icon="check"/>
+              <li>Auto Care</li>
+              <font-awesome-icon class="crepair-check-icon rc-icon" icon="check"/>
+              <li>Spare Parts</li>
+               <font-awesome-icon class="crepair-check-icon rc-icon" icon="check"/>
+              <li>Book a Repair</li>
             </ul>
           </div>
         </router-link>
@@ -94,18 +118,16 @@
   <!-- Motormata Assurance -->
   <section id="assurance">
     <div class="motormata-assurance">
-      <h1 class="assurance-title">Motormata Assurance</h1>
+      <h1 class="assurance-title">Mobile Car Services at your Convinience</h1>
       <hr class="service-divider">
       <ul>
-        <li>Up to ₦5,000,000 insurance protection by Leadway Insurance</li>
-        <li>Service per excellence</li>
-        <li>Service per excellence</li>
-        <li>Service per excellence</li>
-        <li class="hidden-element">Service with excellence always</li>
-        <li class="hidden-element">Service with excellence always</li>
-        <li class="hidden-element">Service with excellence always</li>
+        <li>Unparelled convenience</li>
+        <li>One-on-one service</li>
+        <li>Affordable pricing</li>
+        <li>Fast and efficient service</li>
+        <li>Easy scheduling</li>
+        <li>Quality work</li>         
       </ul>
-      <button class="btn assurance-readmore-btn" id="readMore_btn">Read more</button>
     </div>
   </section>
 
@@ -119,26 +141,7 @@
         <h1 class="col-lg-6 hw-we-wrk-title">How we work</h1>
         <hr class="service-divider">
         <ol>
-          <li class="ordered-list">Select your preferred car service online or call 09023456789
-            <ul>
-              <li>Schedule an appointment at your convenient date & time</li>
-            </ul>
-          </li>
-          <li class="ordered-list">Get an appointment for a Doorstep Service
-            <ul>
-              <li>Motormata in-house technicians service your car at your location</li>
-            </ul>
-          </li>
-          <li class="ordered-list">Relax
-            <ul>
-              <li>Relax and spent time on other things that matter</li>
-            </ul>
-          </li>
-          <li class="ordered-list">Refer and win
-            <ul>
-              <li>Earn upto ₦5,000 when you refer a friend. Your friend also earns ₦5,000.</li>
-            </ul>
-          </li>
+          <li class="ordered-list">Select your preferred car service online or call 09023456789</li>
         </ol>
       </div>
     </div>
@@ -215,22 +218,17 @@
       <div class="col-lg-6 col-md-12 col-sm-12 affordable">
         <font-awesome-icon icon="coins" class="t-icon"/>
         <h4 class="affordable-title">Affordable</h4>
-        <p class="affordable-paragraph">Doorstep service, Free pickup and dropoff. You don’t need to visit the workshop
-          if not necessary.</p>
+        <p class="affordable-paragraph">Pocket friendly sevices with no compromise on service delivery.</p>
       </div>
 
       <div class="col-lg-6 col-md-12 col-sm-12 transparent">
         <font-awesome-icon icon="binoculars" class="icon"/>
         <h4 class="transparent-title">Transparent</h4>
-        <p class="transparent-paragraph">Doorstep service, Free pickup and dropoff. You don’t need to visit the workshop
-          if not necessary.</p>
       </div>
 
       <div class="col-lg-6 col-md-12 col-sm-12 quality">
         <font-awesome-icon icon="award" class="t-icon"/>
         <h4 class="quality-title">Quality</h4>
-        <p class="quality-paragraph">Doorstep service, Free pickup and dropoff. You don’t need to visit the workshop
-          if not necessary.</p>
       </div>
     </div>
   </section>
@@ -238,8 +236,8 @@
   <!-- Numbers section -->
   <section id="numbers">
     <div class="row">
-      <p class="col-lg-4 col-md-6 col-sm-6 service-number"><strong>100,000+</strong> Services rendered</p>
-      <p class="col-lg-4 col-md-6 col-sm-6 customers-number"><strong>30,000+</strong> Happy Customers</p>
+      <p class="col-lg-4 col-md-6 col-sm-6 service-number"><strong>50,000+</strong> Services rendered</p>
+      <p class="col-lg-4 col-md-6 col-sm-6 customers-number"><strong>20,000+</strong> Happy Customers</p>
       <p class="col-lg-4 col-md-6 col-sm-6 rating-number"><strong>4.8 </strong>Ratings</p>
     </div>
   </section>
@@ -268,13 +266,41 @@
         <img src="../assets/technician.png" alt="">
 
         <div class="staff-content">
-          <h4 class="staff-name">Mike</h4>
+          <h4 class="staff-name">Akeem</h4>
           <font-awesome-icon icon="star" class="star"/>
           <font-awesome-icon icon="star" class="star"/>
           <font-awesome-icon icon="star" class="star"/>
           <font-awesome-icon icon="star" class="star"/>
-          <font-awesome-icon icon="star" class="star"/>
+          <font-awesome-icon icon="star-half-alt" class="star"/>
           <p class="experience">5 years Experience</p>
+        </div>
+
+      </div>
+
+      <div class="col-lg-6 col-md-6 col-sm-12 first-tech">
+        <img src="../assets/technician.png" alt="">
+
+        <div class="staff-content">
+          <h4 class="staff-name">Tosin</h4>
+          <font-awesome-icon icon="star" class="star"/>
+          <font-awesome-icon icon="star" class="star"/>
+          <font-awesome-icon icon="star" class="star"/>
+          <p class="experience">1 years Experience</p>
+        </div>
+
+      </div>
+
+      <div class="col-lg-6 col-md-6 col-sm-12 first-tech">
+        <img src="../assets/technician.png" alt="">
+
+        <div class="staff-content">
+          <h4 class="staff-name">Temitope</h4>
+          <font-awesome-icon icon="star" class="star"/>
+          <font-awesome-icon icon="star" class="star"/>
+          <font-awesome-icon icon="star" class="star"/>
+          <font-awesome-icon icon="star" class="star"/>
+          <font-awesome-icon icon="star-half-alt" class="star"/>
+          <p class="experience">4 years Experience</p>
         </div>
 
       </div>
@@ -287,39 +313,8 @@
           <font-awesome-icon icon="star" class="star"/>
           <font-awesome-icon icon="star" class="star"/>
           <font-awesome-icon icon="star" class="star"/>
-          <font-awesome-icon icon="star" class="star"/>
-          <font-awesome-icon icon="star" class="star"/>
-          <p class="experience">5 years Experience</p>
-        </div>
-
-      </div>
-
-      <div class="col-lg-6 col-md-6 col-sm-12 first-tech">
-        <img src="../assets/technician.png" alt="">
-
-        <div class="staff-content">
-          <h4 class="staff-name">Mike</h4>
-          <font-awesome-icon icon="star" class="star"/>
-          <font-awesome-icon icon="star" class="star"/>
-          <font-awesome-icon icon="star" class="star"/>
-          <font-awesome-icon icon="star" class="star"/>
-          <font-awesome-icon icon="star" class="star"/>
-          <p class="experience">5 years Experience</p>
-        </div>
-
-      </div>
-
-      <div class="col-lg-6 col-md-6 col-sm-12 first-tech">
-        <img src="../assets/technician.png" alt="">
-
-        <div class="staff-content">
-          <h4 class="staff-name">Mike</h4>
-          <font-awesome-icon icon="star" class="star"/>
-          <font-awesome-icon icon="star" class="star"/>
-          <font-awesome-icon icon="star" class="star"/>
-          <font-awesome-icon icon="star" class="star"/>
-          <font-awesome-icon icon="star" class="star"/>
-          <p class="experience">5 years Experience</p>
+          <font-awesome-icon icon="star-half-alt" class="star"/>
+          <p class="experience">3 years Experience</p>
         </div>
 
       </div>
@@ -350,7 +345,7 @@
             <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
             <div class="accordion-body">
               <div class="card-body">
-                <span class="answer">Yes.</span>
+                <span class="answer">Yes. Motormata will send a certified technician to your doorstep for routine maintenance services and repair.</span>
               </div>
           </div>
          </div>
@@ -380,13 +375,8 @@
         <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
           <div class="accordion-body">
             <div class="card-body">
-                <span class="answer">Yes, inspection is important. It helps us identify the cause of your car issues so that
-                  we can recommended
-                  the most appropriate fix. Inspection compromises of complete car health check-up followed by submission of
-                  an inspection report on the status of the vehicle.Post evaluation of your car condition,the technician
-                  will
-                  advice a course of action for the same. Post your approval of the quote your car will be repaired in a
-                  Pitstop certified garage near you.</span>
+                <span class="answer">Yes, inspection is important. It helps us identify the cause of your car issues so that we can recommended the most appropriate fix. Inspection comprises of complete car health check-up followed by submission of an inspection report on the status of the vehicle. Post evaluation of your car condition, 
+                  the technician will advice a course of action for the same.</span>
               </div>
           </div>  
         </div>
@@ -394,21 +384,14 @@
       <!-- <-- Fouthcard -->
       <div class="accordion-item" id="headingFour">
         <h5 class="accordion-header" id="flush-headingFour">
-          <button class="faq-btn accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseThree">
+          <button class="faq-btn accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
             <span>What type of engine oil will you use?</span>
           </button>
         </h5>
         <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
           <div class="accordion-body">
             <div class="card-body">
-                <span class="answer">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
-                  ad squid. 3 wolf moon
-                  officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3
-                  wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
-                  Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan
-                  excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth
-                  nesciunt
-                  you probably haven't heard of them accusamus labore sustainable VHS.</span>
+                <span class="answer">We use manufacturer recommended engine oil be it Synthetic, Semi-Synthetic or None Synthetic engine oil.</span>
               </div>
             </div>
         </div>
@@ -416,19 +399,49 @@
       <!-- <-- Fithcard --> 
       <div class="accordion-item" id="headingFive">
         <h5 class="accordion-header" id="flush-headingFive">
-          <button class="faq-btn accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseThree">
-            <span>Where will the service be done?</span>
+          <button class="faq-btn accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
+            <span>Do i need to do routine maintenance?</span>
           </button>
         </h5>
         <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample">
           <div class="accordion-body">
             <div class="card-body">
-                <span class="answer">At the comfort of your home for most services while those that require heavy lifting
-                  will be done at the workshop.</span>
+                <span class="answer">Yes. Regular routine maintenance will reduce the need for expensive repairs and extend the lifespan of your car.</span>
             </div>
           </div>
         </div>
       </div>
+      <!-- <-- Sixthcard --> 
+      <div class="accordion-item" id="headingSix">
+        <h5 class="accordion-header" id="flush-headingSix">
+          <button class="faq-btn accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
+            <span>How do i renew my vehicle papers?</span>
+          </button>
+        </h5>
+        <div id="flush-collapseSix" class="accordion-collapse collapse" aria-labelledby="flush-headingSix" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">
+            <div class="card-body">
+                <span class="answer">By simply telling us your plate/registration number and phone number.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <-- Seventhcard --> 
+      <div class="accordion-item" id="headingSeven">
+        <h5 class="accordion-header" id="flush-headingSeven">
+          <button class="faq-btn accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSeven" aria-expanded="false" aria-controls="flush-collapseSeven">
+            <span>Can Motormata inspect a car that I want to buy?</span>
+          </button>
+        </h5>
+        <div id="flush-collapseSeven" class="accordion-collapse collapse" aria-labelledby="flush-headingSeven" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">
+            <div class="card-body">
+                <span class="answer">Yes, we offer Pre-Purchase Inspection as a service.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
 
       </div>
   </section>
@@ -438,6 +451,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 import { setTimeout } from 'timers'
 import Navbar from '../components/Navbar.vue'
 import Footer from '../components/Footer.vue'
@@ -457,6 +471,10 @@ export default {
       newTextDelay: 2000,
       typeArrayIndex: 0,
       charIndex: 0,
+      form:{
+        plateNo: '',
+        phoneNo: ''
+      }
       }
   }, 
   methods: {
@@ -492,7 +510,22 @@ export default {
           setTimeout(this.typeText, this.typingSpeed + 1000);
         }
       },
+        async regUser(){
+           let plate_no = this.form.plateNo
+           let phone_no = this.form.phoneNo
+           const BASE_ENDPOINT = "https://bpms.motormata.com/api/v3/registration?"
+          const REQ_ENDPOINT = `${BASE_ENDPOINT}plate_no=${plate_no}&phone_no=${phone_no}`
+ 
+        try{
+        const res = await axios.post(REQ_ENDPOINT);
+        console.log(res.data.message)
+        } catch (err){
+          console.log(err)
+        } 
+      
+        
     },
+  },
     created() {
       setTimeout(this.typeText, this.newTextDelay + 200);
     }
@@ -509,7 +542,7 @@ export default {
     padding: 20px;
     position: absolute;
     top: 27rem;
-    left: 5rem;
+    left: 6rem;
     border-radius: 3px;
     box-shadow: 1px 1px 10px rgb(179, 179, 179);
     z-index: 1;
@@ -627,7 +660,12 @@ h1.join-us  {
 #services   {
     position: relative;
     background-color: #ebebeb;
-    padding: 7% 7%;
+    padding: 5% 7%;
+}
+.ser-group{
+  display: flex;
+  justify-content: space-around;
+
 }
 
 #services a {
@@ -645,6 +683,10 @@ h1.join-us  {
     font-size: 18px;
     padding: 10px;
 }
+.ser-col{
+   max-width: 300px;
+    width: 25%;
+}
 
 .maintenance-title, .autocare-title, .insurance-title  {
     font-size: 24px;
@@ -652,10 +694,10 @@ h1.join-us  {
 
 .maintenance-container, .autocare-container, .insurance-container    {
     background-color: #fff;
-    padding: 30px 20px;
-    margin: 10px auto;
-    max-width: 400px;
+    padding: 20px 0 0 10px;
+    margin: 10px 5px;
     border-radius: 3px;
+    
 }
 
 .periodic-check-icon {
@@ -698,9 +740,6 @@ h1.join-us  {
     padding: 5% 7%;
 }
 
-.assurance-title    {
-    font-size: 48px;
-}
 
 .motormata-assurance ul {
     margin: 40px 0;
@@ -714,8 +753,7 @@ h1.join-us  {
 }
 
 .motormata-assurance li::before {
-    content: "\2022";
-    color: #53FF6E;
+   color: #53FF6E;
     font-weight: bold;
     display: inline-block; 
     width: 1em;
@@ -758,7 +796,6 @@ h1.join-us  {
   }
 
   .hw-we-wrk-title  {
-      font-size: 48px;
       max-width: 100%;
       padding: 0;
   }
@@ -1312,12 +1349,12 @@ h1.join-us  {
 
 .hero-car-icon {
   top: 310px; 
-  left: 4rem;
+  left: 64px;
 }
 
 .hero-call-icon {
     top: 365px;
-    left: 4rem;
+    left: 64px;
     font-size: 13px;
 }
 .drive-green{

@@ -23,9 +23,9 @@
         <h3 class="ft-service-title">Our Services</h3>
         <ul>
           <li><router-link to="/autocare" href="#">Periodic Services</router-link></li>
-          <li><router-link to="/autocare">Body Repairs</router-link></li>
-          <li><router-link to="/insurance">Insurance</router-link></li>
-          <li><router-link to="/maintenance">Car A/C</router-link></li>
+          <li><router-link to="/autocare">Inspection & Diagnostics</router-link></li>
+          <li><router-link to="/insurance">Insurance & Papers</router-link></li>
+          <li><router-link to="/maintenance">Spares & Repair</router-link></li>
           <li><router-link to="/maintenance">Custom Services</router-link></li>
         </ul>
       </div>
