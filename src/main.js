@@ -7,7 +7,7 @@ import 'jquery/src/jquery.js'
 import 'bootstrap/dist/js/bootstrap.min.js'
 import "bootstrap"
 import "./styles/mediaqueries.scss"
-import "vue-scrollto"
+
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
