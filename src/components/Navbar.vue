@@ -261,11 +261,6 @@ ul.navbar-nav  {
 }
 
 @media only screen and (min-width: 320px) and (max-width: 475px){
-    nav {
-    position: fixed;
-    background-color: #fff;
-    top: 0;
-    }
     .openNavBtn{
     display: block;
     

@@ -688,6 +688,8 @@ h1.join-us  {
     width: 25%;
 }
 
+
+
 .maintenance-title, .autocare-title, .insurance-title  {
     font-size: 24px;
 }
@@ -698,6 +700,10 @@ h1.join-us  {
     margin: 10px 5px;
     border-radius: 3px;
     
+}
+
+.maintenance-container:hover, .autocare-container:hover, .insurance-container:hover{
+  border: 1px solid #53FF6E;
 }
 
 .periodic-check-icon {
@@ -1019,9 +1025,9 @@ h1.join-us  {
       border: none;
       box-shadow: none;
   }
-  // .accordion-body{
-  //     background-color: #f0f0f0;
-  // }
+  .accordion-body{
+      background-color: #f0f0f0;
+  }
 
   #headingOne, #headingTwo, #headingThree, #headingFour, #headingFive   {
       background-color: #f0f0f0;
@@ -1117,6 +1123,15 @@ h1.join-us  {
         font-size: 15px;
     }
     /* Services */
+    .ser-group{
+      display: flex;
+     flex-direction: column;
+    align-items: center;
+    }
+    .ser-col{
+      width: 350px;
+    }
+
     #services li {
         text-align: left;
         font-size: 16px;
