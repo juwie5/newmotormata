@@ -265,7 +265,6 @@ ul.navbar-nav  {
     display: block;
     
     }  
-    
     .navbar-nav{
         display: none;
     }
