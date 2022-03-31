@@ -1373,12 +1373,12 @@ h1.join-us  {
 @media (max-width: 375px){
 
 .hero-car-icon {
-  top: 332px; 
+  top: 310px; 
   left: 68px;
 }
 
 .hero-call-icon {
-    top: 385px;
+    top: 365px;
     left: 68px;
     font-size: 13px;
 }
@@ -1415,12 +1415,12 @@ h1.join-us  {
 @media (max-width: 320px){
   .hero-car-icon {
   top: 325px; 
-  left: 66px;
+  left: 2.8rem;
 }
 
 .hero-call-icon {
     top: 378px;
-    left: 66px;
+    left: 2.8rem;
 }
 
 .assurance-title, .hw-we-wrk-title{
