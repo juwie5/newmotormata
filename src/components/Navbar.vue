@@ -192,7 +192,7 @@ ul.navbar-nav  {
 
 /* SideNav */
 #sideNav    {
-    width: 44%;
+    width: 60%;
     background-color: rgb(255, 255, 255);
     display: none;
     overflow: hidden;

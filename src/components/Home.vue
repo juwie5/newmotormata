@@ -20,11 +20,13 @@
         <div class="reg-vehicle">
           <h1 class="reg-text">Tell us about your Car</h1>
           <font-awesome-icon icon="car" class="hero-car-icon"/>
-          <input type="text" placeholder="Plate number" v-model="form.plateNo">
+          <input type="text" placeholder="Plate number" v-model="form.plateNo" maxlength="8">
           <font-awesome-icon icon="phone-alt" class="hero-call-icon"/>
-          <input type="tel" placeholder="Mobile number" v-model="form.phoneNo">
+          <input type="tel" placeholder="Mobile number" v-model="form.phoneNo" maxlength="11">
           <button @click="regUser()" class="btn reg-veh-btn">Get Started</button>
-          <h1 class="join-us">Join our 30,000+ Happy Customers</h1>
+          <h1 v-show="base" class="join-us">Join our 30,000+ Happy Customers</h1>
+          <h1  v-show="show" class="join-us">Thank you for Joining</h1>
+          <h1  v-show="hide" class="join-us">Please contact <router-link to="/contact">Support</router-link></h1>
         </div>
 
       </div>
@@ -474,7 +476,10 @@ export default {
       form:{
         plateNo: '',
         phoneNo: ''
-      }
+      },
+      base: true,
+      show: false,
+      hide: false
       }
   }, 
   methods: {
@@ -513,12 +518,18 @@ export default {
         async regUser(){
            let plate_no = this.form.plateNo
            let phone_no = this.form.phoneNo
+           let show = this.show
+           let hide = this.hide
            const BASE_ENDPOINT = "https://bpms.motormata.com/api/v3/registration?"
           const REQ_ENDPOINT = `${BASE_ENDPOINT}plate_no=${plate_no}&phone_no=${phone_no}`
  
         try{
         const res = await axios.post(REQ_ENDPOINT);
-        console.log(res.data.message)
+        if( res.status == 200){
+          return show = true
+        } else if (res.status == 404){
+          return hide = true 
+        }
         } catch (err){
           console.log(err)
         } 
@@ -699,12 +710,11 @@ h1.join-us  {
     padding: 20px 0 0 10px;
     margin: 10px 5px;
     border-radius: 3px;
+    max-height: 400px;
     
 }
 
-.maintenance-container:hover, .autocare-container:hover, .insurance-container:hover{
-  border: 1px solid #53FF6E;
-}
+
 
 .periodic-check-icon {
     color: #53FF6E;

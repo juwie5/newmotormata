@@ -1,11 +1,13 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../components/Home.vue';
+import Dashboard from '../components/Dashboard.vue'
 import Maintenance from '../views/Maintenance.vue';
 import Autocare from '../views/Autocare.vue';
 import Insurance from '../views/Insurance.vue';
 import Signin from '../views/Signin.vue';
 import Signup from '../views/Signup.vue';
 import Contact from '../views/Contact.vue';
+import Profile from '../views/user/Profile.vue'
 
 
 
@@ -15,6 +17,16 @@ const routes = [
     name: 'Home',
     component: Home
   },
+  {
+    path: '/dashboard',
+    name: 'Dashboard',
+    component: Dashboard,    
+  },
+    {
+      path: '/dashboard/:profile',
+      name: "Profile",
+      component: Profile
+    },
   {
     path:'/signup',
     name: 'Signup',

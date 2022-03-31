@@ -18,7 +18,7 @@
                         </div>
                         
                         <p class="pass-forgot"><a href="#">Forgot Password?</a></p>
-                        <a href="dashboard.html"><button type="button" class="btn signin-acct-btn">Sign in</button></a>
+                        <router-link to="/dashboard"><button type="button" class="btn signin-acct-btn">Sign in</button></router-link>
                         <hr class="signin-divider">
                         <span>Or</span>
                         <hr class="signin-divider2">
