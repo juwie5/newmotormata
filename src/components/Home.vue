@@ -577,7 +577,7 @@ export default {
 .hero-car-icon  {
     position: absolute;
     top: 104px;
-    left: 40px;
+    left: 42px;
     color: #9D9D9D;
     font-size: 18px;
 }
@@ -585,7 +585,7 @@ export default {
 .hero-call-icon {
     position: absolute;
     top: 168px;
-    left: 40px;
+    left: 42px;
     color: #9D9D9D;
     font-size: 18px;
 }
@@ -1116,12 +1116,12 @@ h1.join-us  {
     }
     .hero-car-icon {
         top: 384px;
-        left: 95px;
+        left: 98px;
         font-size: 14px;
     }
     .hero-call-icon {
         top: 438px;
-        left: 95px;
+        left: 98px;
         font-size: 13px;
     }
     .reg-veh-btn {
@@ -1373,13 +1373,13 @@ h1.join-us  {
 @media (max-width: 375px){
 
 .hero-car-icon {
-  top: 310px; 
-  left: 64px;
+  top: 332px; 
+  left: 68px;
 }
 
 .hero-call-icon {
-    top: 365px;
-    left: 64px;
+    top: 385px;
+    left: 68px;
     font-size: 13px;
 }
 .drive-green{
@@ -1415,12 +1415,12 @@ h1.join-us  {
 @media (max-width: 320px){
   .hero-car-icon {
   top: 325px; 
-  left: 2.8rem;
+  left: 66px;
 }
 
 .hero-call-icon {
     top: 378px;
-    left: 2.8rem;
+    left: 66px;
 }
 
 .assurance-title, .hw-we-wrk-title{
