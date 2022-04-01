@@ -3,7 +3,7 @@
        <!-- Dash Navigation  -->
        <section class="dash-contain">
            <nav class="dash-nav">
-               <div><img src="../assets/logo.png" alt="logo"></div>
+               <div><img  class="nav-img" src="../assets/logo.png" alt="logo"></div>
                <div>
                    <h2 @click="myNewFunction()" class="userName">Emmanuel Adesanya <img src="../assets/user-profile.png" alt="userProfile"> <font-awesome-icon icon="caret-down"/></h2>    
                </div>
@@ -120,10 +120,6 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- <div class="modal-footer">
-                    <p class="date-serviced">Motormata Engineers Started working on this Car since August 12, 2021</p>
-                </div> -->
             </div>
         </div>
        </section>
@@ -430,7 +426,11 @@ h2{
  top: 0;
  width: 97%;
  max-height: 80px; 
- padding-top: 5px;
+ padding-top: 15px;
+}
+
+.nav-img{
+    padding-left: 15px;
 }
 
 .drop-down{

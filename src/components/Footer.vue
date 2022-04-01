@@ -3,7 +3,7 @@
     <section id="footer">
     <div class="row">
       <div class="col-lg-3 col-md-4 col-sm-6 footer-brand">
-        <img src="../assets/logo.png" alt="">
+        <img  class="footer-img" src="../assets/logo.png" alt="">
         <font-awesome-icon :icon="['fab', 'facebook']" class="ft-brand"/>
         <font-awesome-icon :icon="['fab', 'instagram']" class="ft-brand"/>
         <font-awesome-icon :icon="['fab', 'twitter']" class="ft-brand"/>
@@ -152,6 +152,11 @@ export default {
       font-size: 16px;
     }
   }
+  #footer{
+    text-align: center;
+  }
+  
+
 }
 
 </style>

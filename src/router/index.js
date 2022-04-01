@@ -7,7 +7,11 @@ import Insurance from '../views/Insurance.vue';
 import Signin from '../views/Signin.vue';
 import Signup from '../views/Signup.vue';
 import Contact from '../views/Contact.vue';
-import Profile from '../views/user/Profile.vue'
+import Profile from '../views/user/Profile.vue';
+import ProfileHome from '../views/user/ProfileHome.vue';
+import Messages from '../views/user/Messages.vue';
+import Security from '../views/user/Security.vue';
+import Settings from '../views/user/Settings.vue'
 
 
 
@@ -24,8 +28,30 @@ const routes = [
   },
     {
       path: '/dashboard/:profile',
-      name: "Profile",
-      component: Profile
+      name: 'Profile',
+      component: Profile,
+      children:[
+        {
+        path: '',
+        name: 'ProfileHome',
+        component: ProfileHome
+      },
+      {
+        path: 'messages',
+        name: 'Messages',
+        component: Messages
+      },
+      {
+        path: 'security',
+        name: 'Security',
+        component: Security
+      },
+      {
+        path: 'settings',
+        name: 'Settings',
+        component: Settings
+      }
+    ]
     },
   {
     path:'/signup',
