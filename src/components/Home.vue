@@ -335,7 +335,6 @@
   <!-- FAQs -->
   <section id="faqs">
     <h1 class="faq-title">FAQs</h1>
-
       <div class="accordion accordion-flush" id="accordionFlushExample">
             <!--Firstcard -->
           <div class="accordion-item" id="headingOne">

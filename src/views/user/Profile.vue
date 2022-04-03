@@ -4,7 +4,7 @@
             <nav class="dash-nav">
              <div><img class="nav-img" src="../../assets/logo.png" alt="logo"></div>
               <div>
-                <h2 class="userName">Emmanuel Adesanya <img src="../../assets/user-profile.png" alt="userProfile"> <font-awesome-icon class="shop" icon="shopping-bag"/> </h2>       
+                <h2 class="userName">Cart <font-awesome-icon class="shop" icon="shopping-bag"/></h2>       
             </div>
             </nav>
         </section>
@@ -57,10 +57,10 @@ export default {
 .dash-nav{   
  display: flex;
  background-color: #ffffff;
- justify-content: space-between;
+ justify-content: space-around;
  position: fixed;
  top: 0;
- width: 97%;
+ width: 85%;
  max-height: 80px; 
  padding-top: 15px;
 }
@@ -74,7 +74,7 @@ h2{
 }
 
 .nav-img{
-    padding-left: 15px;
+    margin-right: 395px;
 }
 
 .profile-content{
@@ -86,7 +86,7 @@ h2{
 
 .content{
     width: 25%;
-    padding: 0 auto;
+    padding-top: 20px;
 }
 
 .content a{
@@ -97,13 +97,14 @@ h2{
 }
 
 .cntname{
-    padding: 2% 3%;
+    padding: 4% 3%;
     max-width: 50%;
     cursor: pointer;
     font-size: 18px;
     font-weight: 600;
     text-align: center; 
     margin: 0 auto;
+    width: 150px;
 
 }
 
