@@ -1,17 +1,17 @@
 <template>
     <div>
-        <section>
-            <h1>About Page</h1>
-        </section>
+        Repairs Page
     </div>
 </template>
 
 
 <script>
 export default {
-    name:'About',
-    data: () =>{
+    name: 'Repairs',
+    data: ()=>{
+        return{
 
+        }
     }
 }
 </script>

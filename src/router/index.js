@@ -4,6 +4,7 @@ import Dashboard from '../components/Dashboard.vue'
 import Maintenance from '../views/Maintenance.vue';
 import Autocare from '../views/Autocare.vue';
 import Insurance from '../views/Insurance.vue';
+import Spares from '../views/Spares.vue';
 import Signin from '../views/Signin.vue';
 import Signup from '../views/Signup.vue';
 import Contact from '../views/Contact.vue';
@@ -12,6 +13,7 @@ import ProfileHome from '../views/user/ProfileHome.vue';
 import Messages from '../views/user/Messages.vue';
 import Security from '../views/user/Security.vue';
 import Settings from '../views/user/Settings.vue'
+
 
 
 
@@ -82,6 +84,11 @@ const routes = [
     path: '/autocare',
     name: 'Autocare',
     component: Autocare
+  },
+  {
+    path: '/repairs',
+    name: 'Spares',
+    component: Spares
   },
   {
     path: '/about',

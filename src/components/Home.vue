@@ -52,9 +52,9 @@
               <font-awesome-icon class="crepair-check-icon" icon="check"/>
               <li>Wheel Alignment, 
                 Balancing and Rotation</li>
-              <font-awesome-icon class="crepair-check-icon" icon="check"/>
+              <font-awesome-icon class="srepair-check-icon" icon="check"/>
               <li>Complete Car Service Kit</li>
-                <font-awesome-icon class="crepair-check-icon" icon="check"/>
+                <font-awesome-icon class="drepair-check-icon" icon="check"/>
               <li>Oil Change Kit</li>
             </ul>
           </div>
@@ -88,27 +88,25 @@
               <li>Registration</li>
               <font-awesome-icon class="repair-check-icon er-icon" icon="check"/>
               <li>Papers Renewal</li>
-              <font-awesome-icon class="crepair-check-icon rc-icon" icon="check"/>
-              <li></li>
             </ul>
           </div>
         </router-link>
       </div>
         <div class="ser-col">
-        <router-link to="/insurance">
+        <router-link to="/repairs">
           <div class="insurance-container">
             <h1 class="insurance-title">Spares & Repair</h1>
             <hr class="service-divider">
             <ul>
-              <font-awesome-icon class="periodic-check-icon e-icon" icon="check"/>
+              <font-awesome-icon class="periodic-check-icon es-icon" icon="check"/>
               <li>Tyres</li>
-              <font-awesome-icon class="ac-check-icon ca-icon" icon="check"/>
+              <font-awesome-icon class="ac-check-icon ce-icon" icon="check"/>
               <li>Battery</li>
-              <font-awesome-icon class="repair-check-icon er-icon" icon="check"/>
+              <font-awesome-icon class="repair-check-icon eq-icon" icon="check"/>
               <li>Auto Care</li>
-              <font-awesome-icon class="crepair-check-icon rc-icon" icon="check"/>
+              <font-awesome-icon class="crepair-check-icon qc-icon" icon="check"/>
               <li>Spare Parts</li>
-               <font-awesome-icon class="crepair-check-icon rc-icon" icon="check"/>
+               <font-awesome-icon class="lrepair-check-icon wc-icon" icon="check"/>
               <li>Book a Repair</li>
             </ul>
           </div>
@@ -718,28 +716,47 @@ h1.join-us  {
 .periodic-check-icon {
     color: #53FF6E;
     position: absolute;
-    top: 40%;
+    top: 32%;
 }
 
 .ac-check-icon    {
     color: #53FF6E;
     position: absolute;
-   top: 49%; 
+   top: 40%; 
 }
 
 .repair-check-icon    {
     color: #53FF6E;
     position: absolute;
-    top: 57%;
+    top: 49%;
     
 }
 
 .crepair-check-icon    {
     color: #53FF6E;
     position: absolute;
-    top: 66%;
-    
+    top: 57%;   
 }
+
+.srepair-check-icon{
+    color: #53FF6E;
+    position: absolute;
+    top: 70%;   
+}
+
+.drepair-check-icon {
+    color: #53FF6E;
+    position: absolute;
+    top: 79%; 
+}
+
+.lrepair-check-icon {
+   color: #53FF6E;
+    position: absolute;
+    top: 66%; 
+}
+
+
 
 .service-divider    {
     background-color: #53FF6E;
@@ -1135,10 +1152,10 @@ h1.join-us  {
     .ser-group{
       display: flex;
      flex-direction: column;
-    align-items: center;
+      align-items: center;
     }
     .ser-col{
-      width: 350px;
+      width: 355px;
     }
 
     #services li {
@@ -1148,37 +1165,37 @@ h1.join-us  {
     }
     .periodic-check-icon {
         left: 6rem;
-        top: 14%;
+        top: 10.5%;
     }
     .p-icon{
-      top: 45.5%;
+      top: 42%;
     }
     .e-icon{
-      top: 77%;
+      top: 61.5%;
     }
     .ac-check-icon {
         left: 6rem;
-        top: 18%;
+        top: 14%;
     }
     .ac-icon{
-      top: 50%;
+      top: 45.5%;
     }
     .ca-icon{
-      top: 81%;
+      top: 65%;
     }
     .repair-check-icon {
         left: 6rem;
-        top: 22%;
+        top: 18%;
     }
     .re-icon{
-      top: 54%;
+      top: 49%;
     }
     .er-icon{
-      top: 85.5%;
+      top: 68.5%;
     }
     .crepair-check-icon {
         left: 6rem;
-        top: 26%;
+        top: 21%;
     }
     .cr-icon{
       top: 58%;
@@ -1186,6 +1203,35 @@ h1.join-us  {
     .rc-icon{
       top: 89.5%;
     }
+    .srepair-check-icon{
+     left: 6rem;
+      top: 26%;   
+    }
+
+    .drepair-check-icon {
+      left: 6rem;
+      top: 29.5%; 
+    }
+    .es-icon{
+      top: 81%;
+    }
+
+    .ce-icon{
+      top: 84%;
+    }
+
+    .eq-icon{
+      top: 88%;
+    }
+
+    .qc-icon{
+      top: 91.5%;
+    }
+    .wc-icon{
+      top: 94.5%;
+      left: 6rem;
+    }
+
     .service-divider {
         margin: 5% auto 10%;
         background-color: #53FF6E;
