@@ -38,12 +38,12 @@
       name: 'Home',
       data: () =>{
           return{
-              Firstname: '',
-              Lastname: '',
-              email:'',
-              number: '',
-              address: '',
-              message: ''
+              Firstname: null,
+              Lastname: null,
+              email:null,
+              number: null,
+              address: null,
+              message: null
 
           }
       },
@@ -127,6 +127,10 @@ textarea{
  input[type='submit']:hover{
      background-color: #000;
      color: #fff;
+ }
+
+ @media only screen and (min-width: 320px) and (max-width: 475px) {
+     
  }
   
   </style>
