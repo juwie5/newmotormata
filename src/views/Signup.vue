@@ -5,13 +5,14 @@
         <div class="container-fluid">
             <img class="signup-image" src="../assets/Hero-illustration.png" alt="">
             <div class="signup-container">
-                <form>
+                <form @submit.prevent="regUser">
                     <h4 class="create-acct-title">Create your account</h4>
                     <p class="create-acct-paragraph">Fill the form below to register</p>
-                    <input type="text" name="fullname" id="fullname" placeholder="Fullname" required>
-                    <input type="email" name="email" id="email" placeholder="Email address" required>
-                    <input type="tel" name="phoneNumber" id="phoneNumber" placeholder="Mobile Number" required>
-                    <input type="password" name="password" id="password" placeholder="Create Password" required>
+                    <input type="text" name="fullname" id="fullname" placeholder="Fullname" v-model="fullName" required>
+                    <input type="text" name="platenumber" id="platenumber" placeholder="PlateNumber" v-model="plateNumber" required>
+                    <input type="email" name="email" id="email" placeholder="Email address" v-model="email" required>
+                    <input type="tel" name="phoneNumber" id="phoneNumber" placeholder="Mobile Number" v-model="mobileNumber" required>
+                    <input type="password" name="password" id="password" placeholder="Create Password" v-model="password" required>
                     <button type="submit" class="btn create-acct-btn">Create account</button>
                     <p class="already-have-acct"><router-link to="/signin">Sign in</router-link> if you already have an account.</p>
                 </form>
@@ -22,11 +23,41 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
     name: 'Signup',
     data: () =>{
         return{
+            fullName: '',
+            plateNumber:'',
+            email:'',
+            mobileNumber: '',
+            password: '',
+            error: ''
+        }
+    },
+    methods: {
+         async regUser(){
+            let name = this.fullName
+            let email = this.email
+            let plate_no = this.plateNumber
+            let phone_no = this.mobileNumber
+            let password = this.password
+            const BASE_ENDPOINT = "https://bpms.motormata.com/api/v1/auth/register?"
+           const REQ_ENDPOINT = `${BASE_ENDPOINT}name=${name}&plate_no=${plate_no}&phone_no=${phone_no}&email=${email}&password=${password}`
 
+            try{
+                const res = await axios.post(REQ_ENDPOINT);
+                if( res.status == 200 ){
+                    this.$router.push('/dashboard')
+                } else {
+                    
+                }
+            } catch(err){
+                console.log(err)
+                this.error = err
+            }
+            console.log(this.fullName, this.email, this.mobileNumber, this.password)
         }
     }
 }
@@ -41,7 +72,7 @@ export default {
 
 .signup-image   {
     position: absolute;
-    left: 40rem;
+    left: 45rem;
     width: 38rem;
 }
 
