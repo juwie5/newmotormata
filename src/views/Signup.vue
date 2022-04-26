@@ -44,7 +44,7 @@ export default {
             let phone_no = this.mobileNumber
             let password = this.password
             const BASE_ENDPOINT = "https://bpms.motormata.com/api/v1/auth/register?"
-           const REQ_ENDPOINT = `${BASE_ENDPOINT}name=${name}&plate_no=${plate_no}&phone_no=${phone_no}&email=${email}&password=${password}`
+            const REQ_ENDPOINT = `${BASE_ENDPOINT}name=${name}&plate_no=${plate_no}&phone_no=${phone_no}&email=${email}&password=${password}`
 
             try{
                 const res = await axios.post(REQ_ENDPOINT);
