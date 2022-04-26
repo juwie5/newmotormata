@@ -50,6 +50,7 @@ export default {
                 const res = await axios.post(REQ_ENDPOINT);
                 if( res.status == 200 ){
                     this.$router.push('/dashboard')
+                    console.log(res.data)
                 } else {
                     
                 }
