@@ -1,14 +1,19 @@
 import { createStore } from 'vuex'
+import auth from './auth'
 
 const store = createStore({
+    namespaced: true,
     state:{
-    
-        token : null,
-        user: null
      
     },
     mutations: {
       
+    },
+    actions: {
+       
+    }, 
+    modules:{
+        auth
     }
   })
 
