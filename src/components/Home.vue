@@ -694,6 +694,8 @@ h1.join-us  {
 .ser-col{
    max-width: 300px;
     width: 25%;
+    background-color: #fff;
+    border-radius: 3px;
 }
 
 
