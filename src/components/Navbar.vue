@@ -166,6 +166,7 @@ ul.navbar-nav  {
     top: 4rem;
     left: 28rem;
     box-shadow: 0px 8px 16px 6px rgba(173, 173, 173, 0.2);
+    z-index: 5;
     
 }
 

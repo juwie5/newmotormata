@@ -8,11 +8,11 @@
                 <form @submit.prevent="regUser">
                     <h4 class="create-acct-title">Create your account</h4>
                     <p class="create-acct-paragraph">Fill the form below to register</p>
-                    <input type="text" name="fullname" id="fullname" placeholder="Fullname" v-model="fullName" required>
-                    <input type="text" name="platenumber" id="platenumber" placeholder="PlateNumber" v-model="plateNumber" required>
-                    <input type="email" name="email" id="email" placeholder="Email address" v-model="email" required>
-                    <input type="tel" name="phoneNumber" id="phoneNumber" placeholder="Mobile Number" v-model="mobileNumber" required>
-                    <input type="password" name="password" id="password" placeholder="Create Password" v-model="password" required>
+                    <input type="text" name="fullname" id="fullname" placeholder="Fullname" v-model="form.fullName" required>
+                    <input type="text" name="platenumber" id="platenumber" placeholder="PlateNumber" v-model="form.plateNumber" required>
+                    <input type="email" name="email" id="email" placeholder="Email address" v-model="form.email" required>
+                    <input type="tel" name="phoneNumber" id="phoneNumber" placeholder="Mobile Number" v-model="form.mobileNumber" required>
+                    <input type="password" name="password" id="password" placeholder="Create Password" v-model="form.password" required>
                     <button type="submit" class="btn create-acct-btn">Create account</button>
                     <p class="already-have-acct"><router-link to="/signin">Sign in</router-link> if you already have an account.</p>
                 </form>
@@ -28,12 +28,13 @@ export default {
     name: 'Signup',
     data: () =>{
         return{
-            fullName: '',
-            plateNumber:'',
-            email:'',
-            mobileNumber: '',
-            password: '',
-            error: ''
+            form:{
+                fullName: '',
+                plateNumber:'',
+                email:'',
+                mobileNumber: '',
+                password: '',   
+            }
         }
     },
     methods: {

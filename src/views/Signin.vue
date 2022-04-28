@@ -9,16 +9,16 @@
                         <h4 class="create-acct-title">Sign in to your account</h4>
                         <p class="create-acct-paragraph">Fill the form below to sign in</p>
                         <div v-if="show">
-                        <input type="tel" name="phoneNumber" id="phoneNumber" placeholder="Mobile Number" required>
-                        <input type="password" name="password" id="password" placeholder="Password" required>
+                        <input type="tel" name="plateNumber" id="plateNumber" placeholder="Plate Number" v-model="form.plateNumber" required>
+                        <input type="password" name="password" id="password" placeholder="Password" v-model="form.password" required>
                         </div>
                         <div v-else>
-                        <input type="email" name="Email" id="Email" placeholder="Email" required>
-                        <input type="password" name="password" id="password" placeholder="Password" required>
+                        <input type="email" name="Email" id="email" placeholder="Email" v-model="form.email" required>
+                        <input type="password" name="password" id="password" placeholder="Password" v-model="form.password1" required>
                         </div>
                         
                         <p class="pass-forgot"><a href="#">Forgot Password?</a></p>
-                        <router-link to="/dashboard"><button type="button" class="btn signin-acct-btn">Sign in</button></router-link>
+                        <button type="button" class="btn signin-acct-btn" @click="signIn()">Sign in</button>
                         <hr class="signin-divider">
                         <span>Or</span>
                         <hr class="signin-divider2">
@@ -37,13 +37,29 @@
 </template>
 
 <script>
+import axios from 'axios'
+import { mapActions } from 'vuex'
 export default {
     name: 'Signin',
     data: () =>{
         return{
             show: true,
+            form:{
+                plateNumber: '',
+                password: '',
+                email:'',
+                password1: ''
+            }
         }
-    }
+    },
+    methods:{
+        ...mapActions({
+            authSign: 'auth/authSign'
+            }),
+        signIn(){
+            this.authSign(this.form)
+         }  
+          }
 }
 </script>
 
