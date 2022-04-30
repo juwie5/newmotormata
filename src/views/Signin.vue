@@ -53,10 +53,10 @@ export default {
     },
     methods:{
         ...mapActions({
-            authSign: 'auth/authSign'
+            authSign: 'auth/authSignin'
             }),
         signIn(){
-            this.authSign(this.form)
+            this.authSignin(this.form)
          }  
           }
 }

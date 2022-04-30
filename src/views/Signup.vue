@@ -5,7 +5,7 @@
         <div class="container-fluid">
             <img class="signup-image" src="../assets/Hero-illustration.png" alt="">
             <div class="signup-container">
-                <form @submit.prevent="regUser">
+                <form @submit.prevent="reqUser">
                     <h4 class="create-acct-title">Create your account</h4>
                     <p class="create-acct-paragraph">Fill the form below to register</p>
                     <input type="text" name="fullname" id="fullname" placeholder="Fullname" v-model="form.fullName" required>
@@ -23,10 +23,10 @@
 </template>
 
 <script>
-import axios from 'axios'
+import { mapActions } from 'vuex'
 export default {
     name: 'Signup',
-    data: () =>{
+    data: () => {
         return{
             form:{
                 fullName: '',
@@ -37,35 +37,19 @@ export default {
             }
         }
     },
-    methods: {
-         async regUser(){
-            let name = this.fullName
-            let email = this.email
-            let plate_no = this.plateNumber
-            let phone_no = this.mobileNumber
-            let password = this.password
-            const BASE_ENDPOINT = "https://bpms.motormata.com/api/v1/auth/register?"
-            const REQ_ENDPOINT = `${BASE_ENDPOINT}name=${name}&plate_no=${plate_no}&phone_no=${phone_no}&email=${email}&password=${password}`
-
-            try{
-                const res = await axios.post(REQ_ENDPOINT);
-                if( res.status == 200 ){
-                    this.$router.push('/dashboard')
-                    console.log(res.data)
-                } else {
-                    
-                }
-            } catch(err){
-                console.log(err)
-                this.error = err
-            }
-            console.log(this.fullName, this.email, this.mobileNumber, this.password)
+    methods:{
+        ...mapActions({
+            authUser: 'auth/authUser'
+    }),
+    reqUser(){
+        this.authUser(this.form)
         }
     }
 }
 </script>
 
 <style lang="scss" scoped>
+
 #signup {
     background-color: #97ffa6;
     padding: 5% 7%;

@@ -12,7 +12,7 @@ export default{
       
     },
     actions: {
-        async authSign(_, credrentials){
+        async authSignin(_, credrentials){
             let plate_no = credrentials.plateNumber
             let password = credrentials.password
 
@@ -31,8 +31,18 @@ export default{
                 console.log(err)
                 this.error = err
             }            
+        },
+        authUser(_, credrentials){
+            let name = credrentials.fullName
+            let email= credrentials.email
+            let plate_no = credrentials.plateNumber
+            let phone_no = credrentials.mobileNumber
+            let password = credrentials.password
 
-
+            console.log(name, email, plate_no, phone_no, password)
+            // this.authSignin();
+            console.log(authSignin)
         }
+
     }
 }
