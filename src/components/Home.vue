@@ -668,7 +668,7 @@ h1.join-us  {
 #services   {
     position: relative;
     background-color: #ebebeb;
-    padding: 5% 7%;
+    padding: 8% 3%;
 }
 .ser-group{
   display: flex;

@@ -5,14 +5,36 @@ export default{
     namespaced: true,
     state:{
         token : null,
-        user: null
-     
+        user: null,
+        error: null
     },
+
+    getters: {
+        authenticated(state){
+            return state.token && state.user
+        },
+        user(state){
+            return state.user
+        }, 
+        error(state){
+            return state.error
+        }
+    },
+
     mutations: {
-      
+      SET_TOKEN (state, token){
+          state.token = token
+      },
+      SET_USER (state, data){
+          state.user = data
+          localStorage.setItem('userData', JSON.stringify(state.user));
+      },
+      SET_ERROR (state, error){
+          state.error = error
+      }
     },
     actions: {
-        async authSignin(_, credrentials){
+        async authSignin({ commit }, credrentials){
             let plate_no = credrentials.plateNumber
             let password = credrentials.password
 
@@ -22,26 +44,34 @@ export default{
             try{
                 const res = await axios.post(REQ_ENDPOINT);
                 if( res.status == 200 ){
-                    router.push('/dashboard')
-                    console.log(res.data)
-                } else {
-                    
-                }
+                    router.push('/dashboard');
+                    commit('SET_TOKEN', res.data.token)
+                    commit('SET_USER', res.data)  
+                } 
+
             } catch(err){
                 console.log(err)
                 this.error = err
             }            
         },
-        authUser(_, credrentials){
+       async authUser({dispatch}, credrentials){
             let name = credrentials.fullName
             let email= credrentials.email
             let plate_no = credrentials.plateNumber
             let phone_no = credrentials.mobileNumber
             let password = credrentials.password
 
-            console.log(name, email, plate_no, phone_no, password)
-            // this.authSignin();
-            console.log(authSignin)
+            const BASE_ENDPOINT = "https://bpms.motormata.com/api/v1/auth/register?"
+            const REQ_ENDPOINT = `${BASE_ENDPOINT}name=${name}&plate_no=${plate_no}&phone_no=${phone_no}&email=${email}&password=${password}`
+
+            try{
+                const res = await axios.post(REQ_ENDPOINT);
+                if( res.status == 200){
+                 dispatch('authSignin', credrentials);
+                }
+            } catch (err){
+
+            }    
         }
 
     }

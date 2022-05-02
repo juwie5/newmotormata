@@ -13,7 +13,7 @@ import ProfileHome from '../views/user/ProfileHome.vue';
 import Messages from '../views/user/Messages.vue';
 import Security from '../views/user/Security.vue';
 import Settings from '../views/user/Settings.vue'
-
+import store from '@/store'
 
 
 
@@ -26,12 +26,28 @@ const routes = [
   {
     path: '/dashboard',
     name: 'Dashboard',
-    component: Dashboard,    
+    component: Dashboard,   
+    beforeEnter: ( to, from , next) => {
+        if (!store.getters['auth/authenticated']){
+          return next({
+            name: 'Signin'
+          })
+        }
+        next()
+    }
   },
     {
       path: '/dashboard/:profile',
       name: 'Profile',
       component: Profile,
+      beforeEnter: ( to, from , next) => {
+        if (!store.getters['auth/authenticated']){
+          return next({
+            name: 'Signin'
+          })
+        }
+        next()
+    },
       children:[
         {
         path: '',

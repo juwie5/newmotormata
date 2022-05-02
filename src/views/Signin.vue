@@ -16,14 +16,14 @@
                         <input type="email" name="Email" id="email" placeholder="Email" v-model="form.email" required>
                         <input type="password" name="password" id="password" placeholder="Password" v-model="form.password1" required>
                         </div>
-                        
+                        <p>{{error}}</p>
                         <p class="pass-forgot"><a href="#">Forgot Password?</a></p>
                         <button type="button" class="btn signin-acct-btn" @click="signIn()">Sign in</button>
                         <hr class="signin-divider">
                         <span>Or</span>
                         <hr class="signin-divider2">
                         <button @click="show = !show" v-if="show" type="button" class="btn sign-with-email-btn">Sign in with email</button>
-                        <button @click="show =!show" v-if="!show" type="button" class="btn sign-with-email-btn">Sign in with Phone number</button>
+                        <button @click="show =!show" v-if="!show" type="button" class="btn sign-with-email-btn">Sign in with Plate number</button>
                         <p class="dont-have-acct">
                             <router-link to="/signup">Create account</router-link> 
                             if you don't have an account.
@@ -37,7 +37,7 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
 export default {
     name: 'Signin',
     data: () =>{
@@ -51,9 +51,14 @@ export default {
             }
         }
     },
+    computed:{
+        ...mapGetters({
+            error: 'auth/error'
+        })    
+    },
     methods:{
         ...mapActions({
-            authSign: 'auth/authSignin'
+            authSignin: 'auth/authSignin'
             }),
         signIn(){
             this.authSignin(this.form)

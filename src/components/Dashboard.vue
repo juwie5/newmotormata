@@ -5,7 +5,7 @@
            <nav class="dash-nav">
                <div><img  class="nav-img" src="../assets/logo.png" alt="logo"></div>
                <div>
-                   <h2 @click="myNewFunction()" class="userName">Emmanuel Adesanya <img src="../assets/user-profile.png" alt="userProfile"> <font-awesome-icon icon="caret-down"/></h2>    
+                   <h2 @click="myNewFunction()" class="userName"> {{user.username}} <img src="../assets/user-profile.png" alt="userProfile"> <font-awesome-icon icon="caret-down"/></h2>    
                </div>
                <div id="dashDropDown" class="drop-down">
                             <router-link to="/dashboard/profile"><font-awesome-icon icon="user-alt"/> Profile</router-link>
@@ -13,7 +13,7 @@
                             <router-link to="/dashboard/messages"><font-awesome-icon icon="comment-alt"/> Messages</router-link>
                             <router-link to="/"> <font-awesome-icon icon="sign-out-alt"/> Logout</router-link>
                 </div>
-           </nav>
+           </nav>  
        </section>
        <!-- Dash Body  -->
        <section class="dash-contain">
@@ -354,8 +354,15 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
     name: 'Dashboard',
+    computed:{
+        ...mapGetters({
+            authenticated : 'auth/authenticated',
+            user: 'auth/user'
+        })    
+    },
     data: () => {
         return{
 
