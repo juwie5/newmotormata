@@ -18,15 +18,16 @@
         <img class="col-lg-8 col-md-8 hero-illustration" src="../assets/Hero-illustration.png" alt="">
 
         <div class="reg-vehicle">
-          <h1 class="reg-text">Tell us about your Car</h1>
+          <form ref="form" @submit.prevent="regUser()">
+            <h1 class="reg-text">Tell us about your Car</h1>
           <font-awesome-icon icon="car" class="hero-car-icon"/>
           <input type="text" placeholder="Plate number" v-model="form.plateNo" maxlength="8">
           <font-awesome-icon icon="phone-alt" class="hero-call-icon"/>
           <input type="tel" placeholder="Mobile number" v-model="form.phoneNo" maxlength="11">
-          <button @click="regUser()" class="btn reg-veh-btn">Get Started</button>
-          <h1 v-show="base" class="join-us">Join our 30,000+ Happy Customers</h1>
-          <h1  v-show="show" class="join-us">Thank you for Joining</h1>
-          <h1  v-show="hide" class="join-us">Please contact <router-link to="/contact">Support</router-link></h1>
+          <button  class="btn reg-veh-btn">Get Started</button>
+          <h1 v-if="base" class="join-us">Join our 30,000+ Happy Customers</h1>
+          <h1  v-else class="join-us">Thank you for Joining us</h1>
+          </form>
         </div>
 
       </div>
@@ -475,11 +476,11 @@ export default {
         phoneNo: ''
       },
       base: true,
-      show: false,
-      hide: false
+      error: ''
       }
   }, 
   methods: {
+    //Typewriter function
     typeText(){
         if(this.charIndex < this.typeArray[this.typeArrayIndex].length) {
           if(!this.typeStatus)
@@ -495,6 +496,7 @@ export default {
           setTimeout(this.eraseText, this.newTextDelay);
         }
     }, 
+    //Erase function
     eraseText(){
        if(this.charIndex > 0) {
           if(!this.typeStatus)
@@ -512,26 +514,27 @@ export default {
           setTimeout(this.typeText, this.typingSpeed + 1000);
         }
       },
+      // Register User 
         async regUser(){
            let plate_no = this.form.plateNo
            let phone_no = this.form.phoneNo
-           let show = this.show
-           let hide = this.hide
            const BASE_ENDPOINT = "https://bpms.motormata.com/api/v3/registration?"
           const REQ_ENDPOINT = `${BASE_ENDPOINT}plate_no=${plate_no}&phone_no=${phone_no}`
- 
+          //send details to endpoint
         try{
-        const res = await axios.post(REQ_ENDPOINT);
+         const res = await axios.post(REQ_ENDPOINT);
         if( res.status == 200){
-          return show = true
-        } else if (res.status == 404){
-          return hide = true 
-        }
+            this.base = false
+        }  
         } catch (err){
           console.log(err)
         } 
-      
-        
+        // reset form 
+        setTimeout(() => {
+          this.base = true
+          this.form.plateNo = ''
+          this.form.phoneNo = ''
+        }, "5000")  
     },
   },
     created() {
@@ -1056,6 +1059,11 @@ h1.join-us  {
   .accordion-body{
       background-color: #f0f0f0;
   }
+
+  .accordion-button:not(.collapsed) {
+        color: none;
+        background-color: none;
+ }
 
   #headingOne, #headingTwo, #headingThree, #headingFour, #headingFive   {
       background-color: #f0f0f0;
