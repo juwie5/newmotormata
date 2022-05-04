@@ -142,7 +142,26 @@
         <h1 class="col-lg-6 hw-we-wrk-title">How we work</h1>
         <hr class="service-divider">
         <ol>
-          <li class="ordered-list">Select your preferred car service online or call 09023456789</li>
+          <li class="ordered-list">Choose your preferred service
+            <ul>
+              <li>Option to Repair/Buy Now Pay Later or pay in full at once.</li>
+            </ul>
+          </li>
+          <li class="ordered-list">Schedule Service
+            <ul>
+              <li>We offer mobile services, drive in workshops and delivery. </li>
+            </ul>
+          </li>
+          <li class="ordered-list">Track Your Car Service in Real-Time
+            <ul>
+              <li>Get timely updates and pictures as work progresses on your car.</li>
+            </ul>
+          </li>
+          <li class="ordered-list">Tell everyone about Motormata and be rewarded.
+            <ul>
+              <li>Get upto 10% discount for every successful referral.</li>
+            </ul>
+          </li>
         </ol>
       </div>
     </div>
@@ -160,14 +179,14 @@
               <img class="review-image" src="../assets/angel-reviewer.png" alt="reviewer-profile">
               <span class="review-text">“I enjoyed using Motormata, they help me manage my car very well and I really
                 appreciate them for all they’ve done.” </span>
-              <p class="reviewer-name">Angel Baruwa</p>
+              <p class="reviewer-name">Obinna Anapusim</p>
             </div>
             <div class="col-lg-2"></div>
             <div class="col-lg-5 the-guy second">
               <img class="review-image sec-img" src="../assets/lekan-reviewer.png" alt="reviewer-profile">
               <span class="review-text sec-text">“I enjoyed using Motormata, they help me manage my car very well and I
                 really appreciate them for all they’ve done.” </span>
-              <p class="reviewer-name2">Lekan Baruwa</p>
+              <p class="reviewer-name2"> Olajide Ogunleye</p>
             </div>
           </div>
         </div>
@@ -282,11 +301,11 @@
         <img src="../assets/technician.png" alt="">
 
         <div class="staff-content">
-          <h4 class="staff-name">Tosin</h4>
+          <h4 class="staff-name">Waris</h4>
           <font-awesome-icon icon="star" class="star"/>
           <font-awesome-icon icon="star" class="star"/>
           <font-awesome-icon icon="star" class="star"/>
-          <p class="experience">1 years Experience</p>
+          <p class="experience">1 year Experience</p>
         </div>
 
       </div>
@@ -295,7 +314,7 @@
         <img src="../assets/technician.png" alt="">
 
         <div class="staff-content">
-          <h4 class="staff-name">Temitope</h4>
+          <h4 class="staff-name">Samson</h4>
           <font-awesome-icon icon="star" class="star"/>
           <font-awesome-icon icon="star" class="star"/>
           <font-awesome-icon icon="star" class="star"/>
@@ -310,7 +329,7 @@
         <img src="../assets/technician.png" alt="">
 
         <div class="staff-content">
-          <h4 class="staff-name">Mike</h4>
+          <h4 class="staff-name">Tobi</h4>
           <font-awesome-icon icon="star" class="star"/>
           <font-awesome-icon icon="star" class="star"/>
           <font-awesome-icon icon="star" class="star"/>

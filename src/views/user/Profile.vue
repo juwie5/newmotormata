@@ -4,7 +4,7 @@
             <nav class="dash-nav">
              <div><img class="nav-img" src="../../assets/logo.png" alt="logo"></div>
               <div>
-                <h2 class="userName">Cart <font-awesome-icon class="shop" icon="shopping-bag"/></h2>       
+                <router-link to="/dashboard/cart"><h2 class="userName">Cart <font-awesome-icon class="shop" icon="shopping-bag"/></h2></router-link>       
             </div>
             </nav>
         </section>

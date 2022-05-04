@@ -40,7 +40,7 @@ export default{
 
             const BASE_ENDPOINT = "https://bpms.motormata.com/api/v1/auth/login?"
             const REQ_ENDPOINT = `${BASE_ENDPOINT}plate_no=${plate_no}&password=${password}`
-
+            //send details to endpoint
             try{
                 const res = await axios.post(REQ_ENDPOINT);
                 if( res.status == 200 ){
@@ -63,7 +63,7 @@ export default{
 
             const BASE_ENDPOINT = "https://bpms.motormata.com/api/v1/auth/register?"
             const REQ_ENDPOINT = `${BASE_ENDPOINT}name=${name}&plate_no=${plate_no}&phone_no=${phone_no}&email=${email}&password=${password}`
-
+            //send details to endpoint
             try{
                 const res = await axios.post(REQ_ENDPOINT);
                 if( res.status == 200){

@@ -12,7 +12,8 @@ import Profile from '../views/user/Profile.vue';
 import ProfileHome from '../views/user/ProfileHome.vue';
 import Messages from '../views/user/Messages.vue';
 import Security from '../views/user/Security.vue';
-import Settings from '../views/user/Settings.vue'
+import Settings from '../views/user/Settings.vue';
+import Cart from '../views/user/Cart.vue';
 import store from '@/store'
 
 
@@ -34,7 +35,14 @@ const routes = [
           })
         }
         next()
-    }
+    },
+    children:[
+      {
+        path: 'cart',
+        name: 'Cart',
+        component: Cart
+      }
+    ]
   },
     {
       path: '/dashboard/:profile',

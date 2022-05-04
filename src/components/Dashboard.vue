@@ -10,7 +10,7 @@
                <div id="dashDropDown" class="drop-down">
                             <router-link to="/dashboard/profile"><font-awesome-icon icon="user-alt"/> Profile</router-link>
                             <router-link to="/dashboard/cart"><font-awesome-icon icon="shopping-bag"/> Cart</router-link>
-                            <router-link to="/dashboard/messages"><font-awesome-icon icon="comment-alt"/> Messages</router-link>
+                            <router-link to="/dashboard/profile/messages"><font-awesome-icon icon="comment-alt"/> Messages</router-link>
                             <router-link to="/"> <font-awesome-icon icon="sign-out-alt"/> Logout</router-link>
                 </div>
            </nav>  
