@@ -4,7 +4,7 @@
             <nav class="dash-nav">
              <div><img class="nav-img" src="../../assets/logo.png" alt="logo"></div>
               <div>
-                <router-link to="/dashboard/cart"><h2 class="userName">Cart <font-awesome-icon class="shop" icon="shopping-bag"/></h2></router-link>       
+                <h2 class="cart"><router-link to="/dashboard/cart">Cart <font-awesome-icon class="shop" icon="shopping-bag"/></router-link></h2>    
             </div>
             </nav>
         </section>
@@ -75,6 +75,11 @@ h2{
 
 .nav-img{
     margin-right: 395px;
+}
+
+.cart a{
+    color: #000000;
+    text-decoration: none;
 }
 
 .profile-content{

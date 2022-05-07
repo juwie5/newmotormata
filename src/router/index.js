@@ -28,34 +28,32 @@ const routes = [
     path: '/dashboard',
     name: 'Dashboard',
     component: Dashboard,   
-    beforeEnter: ( to, from , next) => {
-        if (!store.getters['auth/authenticated']){
-          return next({
-            name: 'Signin'
-          })
-        }
-        next()
-    },
-    children:[
+    // beforeEnter: ( to, from , next) => {
+    //     if (!store.getters['auth/authenticated']){
+    //       return next({
+    //         name: 'Signin'
+    //       })
+    //     }
+    //     next()
+    // },
+  },
       {
-        path: 'cart',
+        path: '/dashboard/cart',
         name: 'Cart',
         component: Cart
-      }
-    ]
-  },
+      },
     {
       path: '/dashboard/:profile',
       name: 'Profile',
       component: Profile,
-      beforeEnter: ( to, from , next) => {
-        if (!store.getters['auth/authenticated']){
-          return next({
-            name: 'Signin'
-          })
-        }
-        next()
-    },
+    //   beforeEnter: ( to, from , next) => {
+    //     if (!store.getters['auth/authenticated']){
+    //       return next({
+    //         name: 'Signin'
+    //       })
+    //     }
+    //     next()
+    // },
       children:[
         {
         path: '',
