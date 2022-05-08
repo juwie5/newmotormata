@@ -1486,7 +1486,7 @@ h1.join-us  {
 
 }
 
-@media (max-width: 320px){
+@media   (max-width: 320px){
   .hero-car-icon {
   top: 325px; 
   left: 2.8rem;
@@ -1517,12 +1517,24 @@ h1.join-us  {
 
 }
 
+@media only screen and (min-width: 325px) and (max-width: 360px){
+    .hero-car-icon {
+  top: 333px; 
+  left: 4.5rem;
+}
 
+.hero-call-icon {
+    top: 387px;
+    left: 4.5rem;
+}
+}
 
 @media (max-width: 1024px){
 .maintenance-title, .autocare-title, .insurance-title {
     font-size: 18px;
 }
+
+
 }
 
 </style>
