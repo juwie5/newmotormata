@@ -1160,12 +1160,12 @@ h1.join-us  {
         padding: 10px 10px 10px 40px;
     }
     .hero-car-icon {
-        top: 65.8%;
+        top: 386px;
         left: 98px;
         font-size: 14px;
     }
     .hero-call-icon {
-        top: 74.5%;
+        top: 440px;
         left: 98px;
         font-size: 13px;
     }
@@ -1448,12 +1448,12 @@ h1.join-us  {
 
 .hero-car-icon {
   top: 310px; 
-  left: 68px;
+  left: 70px;
 }
 
 .hero-call-icon {
     top: 365px;
-    left: 68px;
+    left: 70px;
     font-size: 13px;
 }
 .drive-green{
@@ -1486,7 +1486,7 @@ h1.join-us  {
 
 }
 
-@media   (max-width: 320px){
+@media (max-width: 320px){
   .hero-car-icon {
   top: 325px; 
   left: 2.8rem;

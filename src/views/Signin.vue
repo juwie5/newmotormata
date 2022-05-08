@@ -9,7 +9,7 @@
                         <h4 class="create-acct-title">Sign in to your account</h4>
                         <p class="create-acct-paragraph">Fill the form below to sign in</p>
                         <div v-if="show">
-                        <input type="tel" name="plateNumber" id="plateNumber" placeholder="Plate Number" v-model="form.plateNumber" required>
+                        <input type="text" name="plateNumber" id="plateNumber" placeholder="Plate Number" v-model="form.plateNumber" required>
                         <input type="password" name="password" id="password" placeholder="Password" v-model="form.password" required>
                         </div>
                         <div v-else>
