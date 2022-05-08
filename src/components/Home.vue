@@ -1160,12 +1160,12 @@ h1.join-us  {
         padding: 10px 10px 10px 40px;
     }
     .hero-car-icon {
-        top: 384px;
+        top: 65.8%;
         left: 98px;
         font-size: 14px;
     }
     .hero-call-icon {
-        top: 438px;
+        top: 74.5%;
         left: 98px;
         font-size: 13px;
     }

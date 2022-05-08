@@ -28,32 +28,42 @@ const routes = [
     path: '/dashboard',
     name: 'Dashboard',
     component: Dashboard,   
-    // beforeEnter: ( to, from , next) => {
-    //     if (!store.getters['auth/authenticated']){
-    //       return next({
-    //         name: 'Signin'
-    //       })
-    //     }
-    //     next()
-    // },
+    beforeEnter: ( to, from , next) => {
+        if (!store.getters['auth/authenticated']){
+          return next({
+            name: 'Signin'
+          })
+        }
+        next()
+    },
   },
-      {
+
+  {
         path: '/dashboard/cart',
         name: 'Cart',
-        component: Cart
+        component: Cart,
+        beforeEnter: ( to, from , next) => {
+          if (!store.getters['auth/authenticated']){
+            return next({
+              name: 'Signin'
+            })
+          }
+          next()
       },
-    {
+  },
+
+ {
       path: '/dashboard/:profile',
       name: 'Profile',
       component: Profile,
-    //   beforeEnter: ( to, from , next) => {
-    //     if (!store.getters['auth/authenticated']){
-    //       return next({
-    //         name: 'Signin'
-    //       })
-    //     }
-    //     next()
-    // },
+      beforeEnter: ( to, from , next) => {
+        if (!store.getters['auth/authenticated']){
+          return next({
+            name: 'Signin'
+          })
+        }
+        next()
+    },
       children:[
         {
         path: '',
@@ -81,7 +91,7 @@ const routes = [
     path:'/signup',
     name: 'Signup',
     component: Signup
-  },
+ },
   {
     path:'/signin',
     name: 'Signin',

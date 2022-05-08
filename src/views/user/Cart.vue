@@ -1,5 +1,5 @@
 <template>
-    <div class="contain">
+    <div class="contain" v-if="!show">
         <section>
             <h2 class="h2-text">Review & Checkout</h2>
             <div class="order-menu">
@@ -51,19 +51,67 @@
                     <p class="sum-p">Total Due Today</p>
                     <h2 class="sum-h2">N40,000.00</h2>
                 </div>
-                <button class="btn-chk chk">Checkout</button>
+                <button @click="showInvoice()" class="btn-chk chk">Checkout</button>
             </div>
             <p class="last-p">By Continuing, I agree with all  <span class="green"> Terms </span> & <br/> <span class="green">Policies </span> of Motormata</p>
         </section>
     </div>
+    <div class="contain" v-else>
+        <section>
+            <h2>Invoice  #934210</h2>
+            <div class="order-menu">
+                <div class="ord-item">
+                    <h4 class="h4-text">Description</h4>
+                    <h4 class="h4-text ord-p">Amount</h4>
+                </div>
+                <div class="ord-item">
+                    <h4 class="h4-text">Basic Service</h4>
+                    <h4 class="h4-text ord-p">N20,000</h4>
+                </div>
+                  <div class="ord-item">
+                    <h4 class="h4-text">Battery</h4>
+                    <h4 class="h4-text ord-p">N20,000</h4>
+                </div>
+                <div> 
+                    <h4>Name:</h4>
+                    <p>Emmanuel Adesanya</p>
+                </div>
+                <div>
+                    <h4>Address</h4>
+                    <p>5, Akinsanya Street, Agbowo, UI, Ibadan</p>
+                </div>
+                <div>
+                    <h4>Shipping Address</h4>
+                    <p>5, Akinsanya Street, Agbowo, UI, Ibadan</p>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="sum-sect">
+                <div class="sum-tot">
+                    <h2 class="sum-h2">N40,000.00</h2>
+                    <button id="pay-btn" class="btn-chk chk">Pay with Paystack</button>
+                    <button  class="btn-chk chk">Pay with Paga</button>
+                    <button  class="btn-chk chk">Pay with Flutterwave</button>
+                    <button  id="bank-btn" class="btn-chk chk">Bank Transfer</button>
+                </div>
+            </div>
+        </section>
+    </div>
 </template>
+
 
 <script>
 export default {
     name: 'Cart',
     data:  () => {
         return{
-
+            show: false,
+        }
+    },
+    methods:{
+        showInvoice(){
+          return this.show =  true
         }
     }
 }
@@ -122,6 +170,7 @@ export default {
 
 .chk {
     width: 270px;
+    margin-bottom: 10px;
 }
 
 .btn-emp{
@@ -193,5 +242,14 @@ export default {
 
 .green{
     color: #53FF6E;
+}
+
+#pay-btn{
+    background-color:  #0077BA;;
+}
+
+#bank-btn{
+    background-color: #C1C1C1;
+;
 }
 </style>
