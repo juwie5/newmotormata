@@ -37,81 +37,37 @@
 
   <!-- Services section -->
   <section id="services">
-    <div class="ser-group">
-      <div class="ser-col">
-        <router-link to="/maintenance">
-          <div class="maintenance-container">
-            <h1 class="maintenance-title">Periodic Services</h1>
-            <hr class="service-divider">
-            <ul>
-              <font-awesome-icon class="periodic-check-icon" icon="check"/>
-              <li>Complete Car Service</li>
-              <font-awesome-icon class="ac-check-icon" icon="check"/>
-              <li>Oil Change</li>
-               <font-awesome-icon class="repair-check-icon" icon="check"/>
-              <li>Major Car Service</li>
-              <font-awesome-icon class="crepair-check-icon" icon="check"/>
-              <li>Wheel Alignment, 
-                Balancing and Rotation</li>
-              <font-awesome-icon class="srepair-check-icon" icon="check"/>
-              <li>Complete Car Service Kit</li>
-                <font-awesome-icon class="drepair-check-icon" icon="check"/>
-              <li>Oil Change Kit</li>
-            </ul>
-          </div>
-        </router-link>
+    <div class="services">
+      <div class="why-sers">
+          <h4 class="why-heading">Why Use Motormata?</h4>
+          <h2 class="why-h2">
+            Motormata helps car owners drive with confidence. <br/>
+            We leverage technology to track critical components <br/> 
+            of your vehicle and connect you to vetted mobile<br/>  
+            mechanics or workshops.
+          </h2>
+          <ul class="why-ul">
+            <h3>With the option to allow you </h3>
+            <li>Repair/Buy Now Pay Later</li>
+            <li>Access to Vetted Mechanics</li>
+            <li>Genuine Spare Parts</li>
+            <li>Transparent Pricing</li>
+          </ul>
       </div>
-      <div class="ser-col">
-        <router-link to="/autocare">
-          <div class="autocare-container">
-            <h1 class="autocare-title">Inspection & Diagnostics</h1>
-            <hr class="service-divider">
-            <ul>
-              <font-awesome-icon class="periodic-check-icon p-icon" icon="check"/>
-              <li>Car Scanning</li>
-              <font-awesome-icon class="ac-check-icon ac-icon" icon="check"/>
-              <li>Pre-purchase Inspection</li>
-              <font-awesome-icon class="repair-check-icon re-icon" icon="check"/>
-              <li>Complete Car Inspection</li>
-            </ul>
-          </div>
-        </router-link>
-      </div>
-      <div class="ser-col">
-        <router-link to="/insurance">
-          <div class="insurance-container">
-            <h1 class="insurance-title">Insurance & Papers</h1>
-            <hr class="service-divider">
-            <ul>
-              <font-awesome-icon class="periodic-check-icon e-icon" icon="check"/>
-              <li>Insurance</li>
-              <font-awesome-icon class="ac-check-icon ca-icon" icon="check"/>
-              <li>Registration</li>
-              <font-awesome-icon class="repair-check-icon er-icon" icon="check"/>
-              <li>Papers Renewal</li>
-            </ul>
-          </div>
-        </router-link>
-      </div>
-        <div class="ser-col">
-        <router-link to="/repairs">
-          <div class="insurance-container">
-            <h1 class="insurance-title">Spares & Repair</h1>
-            <hr class="service-divider">
-            <ul>
-              <font-awesome-icon class="periodic-check-icon es-icon" icon="check"/>
-              <li>Tyres</li>
-              <font-awesome-icon class="ac-check-icon ce-icon" icon="check"/>
-              <li>Battery</li>
-              <font-awesome-icon class="repair-check-icon eq-icon" icon="check"/>
-              <li>Auto Care</li>
-              <font-awesome-icon class="crepair-check-icon qc-icon" icon="check"/>
-              <li>Spare Parts</li>
-               <font-awesome-icon class="lrepair-check-icon wc-icon" icon="check"/>
-              <li>Book a Repair</li>
-            </ul>
-          </div>
-        </router-link>
+      <div class="cards-set">
+        <div class="cards">
+          <img src="../assets/micn-b.svg" alt="">
+          <h3 class="cards-h3">Repair now/Pay Later</h3>
+        </div>
+        <div class="cards">
+          <img src="../assets/micn-c.svg" alt="">
+          <h3 class="cards-h3" >Mobile maintenance</h3>
+        </div>
+        <div class="cards">
+          <img src="../assets/micn-a.svg" alt="">
+          <h3 class="cards-h3">Vehicle papers</h3>
+        </div>
+
       </div>
     </div>
   </section>
@@ -692,99 +648,67 @@ h1.join-us  {
     background-color: #ebebeb;
     padding: 8% 3%;
 }
-.ser-group{
+.services{
   display: flex;
-  justify-content: space-around;
+    justify-content: space-between;
+    padding: 5% 7%;
+}
+
+.why-sers{
+  width: 75%;
+  // background-color: #fff;
+  padding: 10px;
+  text-align: left;
 
 }
 
-#services a {
-    color: #000;
-    text-decoration: none;
+.why-heading{
+   font-size: 24px;
+   color: #008937;
+   font-weight: 600;
+   margin-bottom: 25px;
 }
 
-#services a:hover {
-    text-decoration: none;
+.why-h2{
+  font-size: 38px;
+  margin: 15px 0;
+  margin-bottom: 30px;
+   font-weight: 600;
+   line-height: 1.2em;
 }
 
-#services li {
+.why-ul{
+  padding: 0;
+}
+.cards-set{
+  display: inline-grid;
+  grid-template-columns: auto auto;
+  column-gap: 50px;
+  row-gap: 50px;
+}
+
+.cards{
+  background-color: #fff;
+  text-align: center;
+  border-radius: 3px;
+}
+
+.cards-h3{
+  font-size: 18px;
+}
+
+.services li {
     list-style: none;
     margin-left: 20px;
-    font-size: 18px;
+    font-size: 22px;
     padding: 10px;
 }
-.ser-col{
-   max-width: 300px;
-    width: 25%;
-    background-color: #fff;
-    border-radius: 3px;
-}
 
-
-
-.maintenance-title, .autocare-title, .insurance-title  {
-    font-size: 24px;
-}
-
-.maintenance-container, .autocare-container, .insurance-container    {
-    background-color: #fff;
-    padding: 20px 0 0 10px;
-    margin: 10px 5px;
-    border-radius: 3px;
-    max-height: 400px;
-    
-}
-
-
-
-.periodic-check-icon {
-    color: #53FF6E;
-    position: absolute;
-    top: 32%;
-}
-
-.ac-check-icon    {
-    color: #53FF6E;
-    position: absolute;
-   top: 40%; 
-}
-
-.repair-check-icon    {
-    color: #53FF6E;
-    position: absolute;
-    top: 49%;
-    
-}
-
-.crepair-check-icon    {
-    color: #53FF6E;
-    position: absolute;
-    top: 57%;   
-}
-
-.srepair-check-icon{
-    color: #53FF6E;
-    position: absolute;
-    top: 70%;   
-}
-
-.drepair-check-icon {
-    color: #53FF6E;
-    position: absolute;
-    top: 79%; 
-}
-
-.lrepair-check-icon {
-   color: #53FF6E;
-    position: absolute;
-    top: 66%; 
-}
-
-
-
-.service-divider    {
+.service-divider {
     background-color: #53FF6E;
     width: 70px;
+    margin: 0;
+    opacity: 0.8;
 }
 
 
