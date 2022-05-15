@@ -21,12 +21,12 @@
           <form ref="form" @submit.prevent="regUser()">
             <h1 class="reg-text">Tell us about your Car</h1>
           <font-awesome-icon icon="car" class="hero-car-icon"/>
-          <input type="text" placeholder="Plate number" v-model="form.plateNo" maxlength="8">
+          <input type="text" placeholder="Plate number" v-model="form.plateNo" maxlength="8" required>
           <font-awesome-icon icon="phone-alt" class="hero-call-icon"/>
-          <input type="tel" placeholder="Mobile number" v-model="form.phoneNo" maxlength="11">
+          <input type="tel" placeholder="Mobile number" v-model="form.phoneNo" maxlength="11" required>
           <button  class="btn reg-veh-btn">Get Started</button>
           <h1 v-if="base" class="join-us">Join our 30,000+ Happy Customers</h1>
-          <h1  v-else class="join-us">Thank you for Joining us</h1>
+          <h1  v-else class="join-us .green">Thank you for Joining us</h1>
           </form>
         </div>
 
@@ -546,6 +546,10 @@ export default {
     padding: 10px 20px 10px 45px;
     border-radius: 3px;
     border: 1px solid #9D9D9D;
+}
+
+.green{
+  color: #53FF6E;
 }
 
   
