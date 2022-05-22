@@ -12,7 +12,7 @@
 
       <div class="col-lg-3 col-md-4 col-sm-6  footer-about">
         <h3 class="ft-about-title">About us</h3>
-        <ul>
+        <ul class="row-ul">
           <li><router-link to="/about">FAQs</router-link></li>
           <li><router-link to="/about">Company</router-link></li>
           <li><router-link to="/about">Team</router-link></li>
@@ -21,18 +21,17 @@
 
       <div class="col-lg-3 col-md-4 col-sm-6  footer-services">
         <h3 class="ft-service-title">Our Services</h3>
-        <ul>
+        <ul class="row-ul">
           <li><router-link to="/autocare" href="#">Periodic Services</router-link></li>
           <li><router-link to="/autocare">Inspection & Diagnostics</router-link></li>
           <li><router-link to="/insurance">Insurance & Papers</router-link></li>
           <li><router-link to="/maintenance">Spares & Repair</router-link></li>
-          <li><router-link to="/maintenance">Custom Services</router-link></li>
         </ul>
       </div>
 
       <div class="col-lg-3 col-md-4 col-sm-6  footer-legal">
         <h3 class="ft-legal-title">Legal</h3>
-        <ul>
+        <ul class="row-ul">
           <li><router-link to="/about">Terms & Conditions</router-link></li>
           <li><router-link to="/about">Privacy Policy</router-link></li>
         </ul>
@@ -126,6 +125,10 @@ export default {
 
 .footer-legal li a:hover{
     color: #53FF6E;
+}
+
+.row-ul{
+  padding: 0;
 }
 /* Copyright */
 #copyright  {

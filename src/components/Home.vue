@@ -39,8 +39,8 @@
   <section id="services">
     <div class="services">
       <div class="why-sers">
-          <h4 class="why-heading">Why Use Motormata?</h4>
-          <h2 class="why-h2">
+          <h4 class="drive-green">Why Use Motormata?</h4>
+          <h2 class="txt-type">
             Motormata helps car owners drive with confidence. <br/>
             We leverage technology to track critical components <br/> 
             of your vehicle and connect you to vetted mobile<br/>  
@@ -75,16 +75,20 @@
   <!-- Motormata Assurance -->
   <section id="assurance">
     <div class="motormata-assurance">
-      <h1 class="assurance-title">Mobile Car Services at your Convinience</h1>
+      <h1 class="assurance-title">Mobile Car Services at your convenience</h1>
       <hr class="service-divider">
-      <ul>
-        <li>Unparelled convenience</li>
-        <li>One-on-one service</li>
-        <li>Affordable pricing</li>
-        <li>Fast and efficient service</li>
-        <li>Easy scheduling</li>
-        <li>Quality work</li>         
-      </ul>
+      <div class="assurance">
+        <ul>
+          <li>Unparelled convenience</li>
+          <li>One-on-one service</li>
+          <li>Affordable pricing</li>
+          <li>Fast and efficient service</li>
+          <li>Easy scheduling</li>
+          <li>Quality work</li>         
+        </ul>
+        <img src="../assets/assuranceCar.jpeg" alt="asuurance-car">
+      </div>
+     
     </div>
   </section>
 
@@ -200,11 +204,15 @@
       <div class="col-lg-6 col-md-12 col-sm-12 transparent">
         <font-awesome-icon icon="binoculars" class="icon"/>
         <h4 class="transparent-title">Transparent</h4>
+        <p class="convinience-paragraph">Our prices are fair and competitive current market prices, and we make sure that you are getting the
+            best prices possible on our products and services.</p>
       </div>
 
       <div class="col-lg-6 col-md-12 col-sm-12 quality">
         <font-awesome-icon icon="award" class="t-icon"/>
         <h4 class="quality-title">Quality</h4>
+        <p class="convinience-paragraph">We offer premium products and provide you with premium services, right at your doorstep for your
+            convenience.</p>
       </div>
     </div>
   </section>
@@ -239,10 +247,10 @@
 
     <div class="row">
       <div class="col-lg-6 col-md-6 col-sm-12 first-tech">
-        <img src="../assets/technician.png" alt="">
+        <img class="tech-img" src="../assets/mike.jpg" alt="">
 
         <div class="staff-content">
-          <h4 class="staff-name">Akeem</h4>
+          <h4 class="staff-name">Mike</h4>
           <font-awesome-icon icon="star" class="star"/>
           <font-awesome-icon icon="star" class="star"/>
           <font-awesome-icon icon="star" class="star"/>
@@ -254,7 +262,7 @@
       </div>
 
       <div class="col-lg-6 col-md-6 col-sm-12 first-tech">
-        <img src="../assets/technician.png" alt="">
+        <img  class="tech-img" src="../assets/waris.jpg" alt="">
 
         <div class="staff-content">
           <h4 class="staff-name">Waris</h4>
@@ -301,7 +309,7 @@
 
   <!-- Subscription section -->
   <section id="subscription">
-    <h1 class="subscription-title">Subscribe</h1>
+    <h1 class="subscription-title">Subscribe to our newsletter</h1>
     <input type="email" name="subscribe" id="sub" placeholder="Enter your email">
     <button type="submit" class="btn subscribe-btn">Subscribe</button>
   </section>
@@ -519,6 +527,14 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
+<style>
+ .accordion-button:not(.collapsed) {
+        color: #fff;
+        background-color: none;
+ }
+
+</style>
+
 <style scoped lang="scss">
 .reg-vehicle{
     background-color: #fff;
@@ -702,7 +718,6 @@ h1.join-us  {
 }
 
 .services li {
-    list-style: none;
     margin-left: 20px;
     font-size: 22px;
     padding: 10px;
@@ -724,6 +739,10 @@ h1.join-us  {
     padding: 5% 7%;
 }
 
+.assurance{
+  display: flex;
+  justify-content: space-between;
+}
 
 .motormata-assurance ul {
     margin: 40px 0;
@@ -935,6 +954,12 @@ h1.join-us  {
       position: relative;
       top: -30px;
   }
+  .tech-img{
+     border-radius: 50%;
+     width:216px; 
+     height: 222px;
+     object-fit: cover;
+  }
 
   .staff-content    {
     display: inline-block;
@@ -1007,10 +1032,7 @@ h1.join-us  {
       background-color: #f0f0f0;
   }
 
-  .accordion-button:not(.collapsed) {
-        color: none;
-        background-color: none;
- }
+ 
 
   #headingOne, #headingTwo, #headingThree, #headingFour, #headingFive   {
       background-color: #f0f0f0;
@@ -1106,6 +1128,9 @@ h1.join-us  {
         font-size: 15px;
     }
     /* Services */
+    .services{
+      flex-direction: column;
+    }
     .ser-group{
       display: flex;
      flex-direction: column;
@@ -1124,72 +1149,7 @@ h1.join-us  {
         left: 6rem;
         top: 10.5%;
     }
-    .p-icon{
-      top: 42%;
-    }
-    .e-icon{
-      top: 61.5%;
-    }
-    .ac-check-icon {
-        left: 6rem;
-        top: 14%;
-    }
-    .ac-icon{
-      top: 45.5%;
-    }
-    .ca-icon{
-      top: 65%;
-    }
-    .repair-check-icon {
-        left: 6rem;
-        top: 18%;
-    }
-    .re-icon{
-      top: 49%;
-    }
-    .er-icon{
-      top: 68.5%;
-    }
-    .crepair-check-icon {
-        left: 6rem;
-        top: 21%;
-    }
-    .cr-icon{
-      top: 58%;
-    }
-    .rc-icon{
-      top: 89.5%;
-    }
-    .srepair-check-icon{
-     left: 6rem;
-      top: 26%;   
-    }
-
-    .drepair-check-icon {
-      left: 6rem;
-      top: 29.5%; 
-    }
-    .es-icon{
-      top: 81%;
-    }
-
-    .ce-icon{
-      top: 84%;
-    }
-
-    .eq-icon{
-      top: 88%;
-    }
-
-    .qc-icon{
-      top: 91.5%;
-    }
-    .wc-icon{
-      top: 94.5%;
-      left: 6rem;
-    }
-
-    .service-divider {
+      .service-divider {
         margin: 5% auto 10%;
         background-color: #53FF6E;
         width: 70px;

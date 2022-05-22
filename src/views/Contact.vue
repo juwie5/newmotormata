@@ -1,41 +1,39 @@
 <template>
     <div id="bod">
+        <Navbar class="space"/>
+
         <section class="contain">
-            <router-link to="/" class="go-home-link"><font-awesome-icon icon="chevron-left"/> Home</router-link>
-            <div class="box">
-                
-                    <h2>Get in Touch</h2> 
-                
+            <div>
+                <h2 class="contain-h2">Contact Support</h2>
+                <p class="contain-p">We're avaible around the clock. <br/>
+                 Let us know how we can help!</p>
+            </div>
+           
+            <div class="box"> 
                 <form class="formmain">
-                <div>
-                 <div class="pad">
                     <input type="text" placeholder="Firstname" v-model="Firstname">
                     <input type="text" placeholder="Lastname" v-model="Lastname">
-                 </div>
-                 <div class="pad">
                     <input type="email" placeholder="Email" v-model="email">
                     <input type="tel" placeholder="Phone number" v-model="number">
-                 </div>
-                </div>
-                <div>
-                <div class="pad">
-                    <input type="text" class="full" placeholder="Address" v-model="address">
-                </div>
-                <div class="pad">
-                    <textarea name="comments" id="comments" cols="30" class="full" placeholder="Type your message here" v-model="message"></textarea>
-                </div>
-                <div class="pad">
-                    <input type="submit" value="Submit">
-                </div>
-                </div>                
+                    <input type="text" placeholder="Address" v-model="address">
+                    <textarea name="comments" id="comments" row="6"  class="full" placeholder="Type your message here" v-model="message"></textarea>
+                    <input type="submit" value="Submit">                      
             </form>
             </div>
         </section>
+        <Footer/>
     </div>
 </template>
+
   <script>
+    import Navbar from '../components/Navbar.vue'
+    import Footer from '../components/Footer.vue'
   export default {
       name: 'Home',
+      components: {
+          Navbar,
+          Footer
+      },
       data: () =>{
           return{
               Firstname: null,
@@ -55,28 +53,39 @@
 
   <style scoped>
   #bod{
-      height: 100vh;
-      background-color: #97FFA6;
-      padding-top: 3%; 
+      padding-top: 2%; 
   }
-  h2{
-      font-size: 24px;
-  }
-  
-  .contain{
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;    
+  .space{
+      padding: 0 5% 0;
+      margin-bottom: 25px;
   }
 
-  .box{
+
+  .contain{
       display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      justify-content: space-around;
+      padding: 5%;
+      align-items: flex-start;    
+      background-image: url(/img/benefit-bg.c234ef8f.png);
+          background-repeat: no-repeat;
+         background-size: cover;
+
+  }
+    .contain-h2{
+     font-size: 4rem;
+    letter-spacing: -.03em;
+    line-height: 8.6rem;
+    font-weight: 500;
+  }
+  .contain-p{
+    font-size: 2.2rem;
+    font-weight: 300;
+    line-height: 3.2rem;
+  }
+  
+
+  .box{
       width:  50%;
-      background-color: #fff;
       padding: 2% 0 ;
   }
 
@@ -93,9 +102,11 @@
     text-decoration: none;
 }
  .formmain{
-     display: flex;
-     flex-direction: column;
+   display: flex;
+   flex-direction: column;
+  
  }
+
  .pad{
      padding: 2% 0;
  }
@@ -107,16 +118,17 @@ input{
 }
 
 .full{ 
-    width: 98%;
+    width: 48%;
+    margin: 1%  0 1% 7px;
 }
 
 textarea{
     padding: 10px;
+    transition: border-color .3s ease,color .3s ease,outline-color .3s ease;
 }
  
  input[type='submit']{
      display: block;
-     margin: 0 auto;
      background-color: #53FF6E;
      border: 1px solid transparent;
      border-radius: 3px;
@@ -130,7 +142,28 @@ textarea{
  }
 
  @media only screen and (min-width: 320px) and (max-width: 475px) {
-     
+   .contain{
+       flex-direction: column;
+      
+   }  
+   .box{
+       width: 100%;
+   }
+   input{
+       width: 100%;
+   }
+   .full{
+       width: 100%;
+       margin-left: 5px;
+   }
+   .contain-h2{
+    font-size:  calc(3rem - 3vw);
+    line-height: 4.4rem;
+   }
+   .contain-p{
+    font-size: calc(1.8rem - 3vw);
+    line-height: 2.8rem;
+   }
  }
   
   </style>
