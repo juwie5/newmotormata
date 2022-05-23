@@ -10,11 +10,20 @@
                         <p class="create-acct-paragraph">Fill the form below to sign in</p>
                         <div v-if="show">
                         <input type="text" name="plateNumber" id="plateNumber" placeholder="Plate Number" v-model="form.plateNumber" required>
-                        <input type="password" name="password" id="password" placeholder="Password" v-model="form.password" required>
+                        <div class="pass">
+                            <input type="password" name="password" id="password" placeholder="Password" v-model="form.password" required ref="password">
+                            <p class="pass-toggle" v-if="hide" @click="showPassword()">SHOW</p>
+                            <p class="pass-toggle" v-if="!hide" @click="showPassword()">HIDE</p>
+                        </div>
+                        
                         </div>
                         <div v-else>
                         <input type="email" name="Email" id="email" placeholder="Email" v-model="form.email" required>
-                        <input type="password" name="password" id="password" placeholder="Password" v-model="form.password1" required>
+                        <div class="pass">
+                            <input type="password" name="password" id="password" placeholder="Password" v-model="form.password1" required ref="password">
+                            <p class="pass-toggle" v-if="hide" @click="showPassword()">SHOW</p>
+                            <p class="pass-toggle" v-if="!hide" @click="showPassword()">HIDE</p>
+                        </div>
                         </div>
                         <p>{{error}}</p>
                         <p class="pass-forgot"><a href="#">Forgot Password?</a></p>
@@ -40,9 +49,10 @@
 import { mapActions, mapGetters } from 'vuex'
 export default {
     name: 'Signin',
-    data: () =>{
-        return{
+    data: () => {
+        return {
             show: true,
+            hide: true,
             form:{
                 plateNumber: '',
                 password: '',
@@ -62,8 +72,16 @@ export default {
             }),
         signIn(){
             this.authSignin(this.form)
-         }  
-          }
+         },
+         showPassword(){
+            let password = this.$refs.password
+                const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+                password.setAttribute('type', type);
+                this.hide = !this.hide
+            
+        }  
+    }
+         
 }
 </script>
 
@@ -229,6 +247,18 @@ export default {
 .dont-have-acct a:hover {
     color: #00410a;
     text-decoration: none;
+}
+
+.pass{
+    position: relative;
+}
+
+.pass-toggle{
+    position: absolute;
+    right: 10px;
+    top: 12px;
+    color: #6F6F6F;
+    cursor: pointer;
 }
 
 @media only screen and (min-width: 320px) and (max-width: 475px){

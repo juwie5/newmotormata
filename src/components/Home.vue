@@ -26,7 +26,8 @@
           <input type="tel" placeholder="Mobile number" v-model="form.phoneNo" maxlength="11" required>
           <button  class="btn reg-veh-btn">Get Started</button>
           <h1 v-if="base" class="join-us">Join our 30,000+ Happy Customers</h1>
-          <h1  v-else class="join-us .green">Thank you for Joining us</h1>
+          <h1  v-else class="join-us green">Thank you for Joining us</h1>
+           <h1 class="red">{{error}}</h1>
           </form>
         </div>
 
@@ -40,19 +41,20 @@
     <div class="services">
       <div class="why-sers">
           <h4 class="drive-green">Why Use Motormata?</h4>
-          <h2 class="txt-type">
-            Motormata helps car owners drive with confidence. <br/>
-            We leverage technology to track critical components <br/> 
-            of your vehicle and connect you to vetted mobile<br/>  
-            mechanics or workshops.
-          </h2>
-          <ul class="why-ul">
+          <div class="sect-sers">
+          <p class="sers-txt">Motormata helps car owners drive with confidence. </p>
+          <p class="sers-txt" > We leverage technology to track critical components </p> 
+          <p class="sers-txt"> of your vehicle and connect you to vetted mobile mechanics or workshops.</p>  
+          <p class="sers-txt"> </p>
+          </div>
+          
+          <!-- <ul class="why-ul">
             <h3>With the option to allow you </h3>
             <li>Repair/Buy Now Pay Later</li>
             <li>Access to Vetted Mechanics</li>
             <li>Genuine Spare Parts</li>
             <li>Transparent Pricing</li>
-          </ul>
+          </ul> -->
       </div>
       <div class="cards-set">
         <div class="cards">
@@ -86,7 +88,7 @@
           <li>Easy scheduling</li>
           <li>Quality work</li>         
         </ul>
-        <img src="../assets/assuranceCar.jpeg" alt="asuurance-car">
+        <img src="../assets/assuranceCar.png" alt="asuurance-car" class="assure-img">
       </div>
      
     </div>
@@ -220,6 +222,7 @@
   <!-- Numbers section -->
   <section id="numbers">
     <div class="row">
+      <font-awesome-icon icon="solid users-gear" />
       <p class="col-lg-4 col-md-6 col-sm-6 service-number"><strong>50,000+</strong> Services rendered</p>
       <p class="col-lg-4 col-md-6 col-sm-6 customers-number"><strong>20,000+</strong> Happy Customers</p>
       <p class="col-lg-4 col-md-6 col-sm-6 rating-number"><strong>4.8 </strong>Ratings</p>
@@ -262,7 +265,7 @@
       </div>
 
       <div class="col-lg-6 col-md-6 col-sm-12 first-tech">
-        <img  class="tech-img" src="../assets/waris.jpg" alt="">
+        <img class="tech-img" src="../assets/waris.jpg" alt="">
 
         <div class="staff-content">
           <h4 class="staff-name">Waris</h4>
@@ -275,7 +278,7 @@
       </div>
 
       <div class="col-lg-6 col-md-6 col-sm-12 first-tech">
-        <img src="../assets/technician.png" alt="">
+        <img class="tech-img" src="../assets/samson.jpg" alt="">
 
         <div class="staff-content">
           <h4 class="staff-name">Samson</h4>
@@ -496,28 +499,42 @@ export default {
 
           setTimeout(this.typeText, this.typingSpeed + 1000);
         }
-      },
+      }, 
       // Register User 
-        async regUser(){
-           let plate_no = this.form.plateNo
-           let phone_no = this.form.phoneNo
-           const BASE_ENDPOINT = "https://bpms.motormata.com/api/v3/registration?"
-          const REQ_ENDPOINT = `${BASE_ENDPOINT}plate_no=${plate_no}&phone_no=${phone_no}`
-          //send details to endpoint
-        try{
-         const res = await axios.post(REQ_ENDPOINT);
-        if( res.status == 200){
-            this.base = false
-        }  
-        } catch (err){
-          console.log(err)
-        } 
-        // reset form 
-        setTimeout(() => {
-          this.base = true
-          this.form.plateNo = ''
-          this.form.phoneNo = ''
-        }, "5000")  
+         async regUser(){
+          let phoneTest= /^\d{11}$/
+          let plateTest = /^[a-zA-Z0-9]*$/
+          let plate = plateTest.test(this.form.plateNo)
+          let phone = phoneTest.test(this.form.phoneNo)
+          
+          //validate user input
+          if(plate && phone == true){
+            
+            let plate_no = this.form.plateNo
+            let phone_no = this.form.phoneNo
+            const BASE_ENDPOINT = "https://bpms.motormata.com/api/v3/registration?"
+            const REQ_ENDPOINT = `${BASE_ENDPOINT}plate_no=${plate_no}&phone_no=${phone_no}`
+                //send details to endpoint
+              try{
+              const res = await axios.post(REQ_ENDPOINT);
+              if( res.status == 200){
+                  this.base = false
+              }  
+              } catch (err){
+                console.log(err)
+              }// reset form 
+              setTimeout(() => {
+                this.base = true
+                this.form.plateNo = ''
+                this.form.phoneNo = ''
+              }, "5000") 
+                
+          } else {
+            this.error = "Please check details entered"
+          } 
+
+          
+         
     },
   },
     created() {
@@ -566,6 +583,10 @@ export default {
 
 .green{
   color: #53FF6E;
+}
+
+.red{
+  color: #FF0000,
 }
 
   
@@ -672,11 +693,10 @@ h1.join-us  {
   display: flex;
     justify-content: space-between;
     padding: 5% 7%;
+    align-items: center;
 }
 
 .why-sers{
-  width: 75%;
-  // background-color: #fff;
   padding: 10px;
   text-align: left;
 
@@ -697,14 +717,18 @@ h1.join-us  {
    line-height: 1.2em;
 }
 
+.sers-txt{
+  font-size: 22px;
+  font-weight: 500;
+}
+
 .why-ul{
   padding: 0;
 }
 .cards-set{
-  display: inline-grid;
-  grid-template-columns: auto auto;
-  column-gap: 50px;
-  row-gap: 50px;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  column-gap: 10px;
 }
 
 .cards{
@@ -714,7 +738,7 @@ h1.join-us  {
 }
 
 .cards-h3{
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .services li {
@@ -1131,13 +1155,8 @@ h1.join-us  {
     .services{
       flex-direction: column;
     }
-    .ser-group{
-      display: flex;
-     flex-direction: column;
-      align-items: center;
-    }
-    .ser-col{
-      width: 355px;
+    .cards-set{
+      display: inline-block;
     }
 
     #services li {
@@ -1158,6 +1177,10 @@ h1.join-us  {
     .assurance-title {
         padding-top: 10%;
         font-size: 30px;
+    }
+
+    .assure-img{
+      display: none;
     }
     .download-title {
         font-size: 30px;
@@ -1289,11 +1312,10 @@ h1.join-us  {
         text-align: center;
         font-size: 30px;
     }
-    .first-tech img {
-        max-width: 20%;
-        margin-right: 5%;
-        position: relative;
-        top: -30px;
+    
+    .tech-img{
+      width: 200px;
+      height: 150px;
     }
     .staff-name {
         font-size: 15px;
@@ -1371,6 +1393,10 @@ h1.join-us  {
 .motormata-assurance li{
   font-size: 20px;
 }
+.tech-img{
+      width: 200px;
+      height: 130px;
+    }
 
 }
 
@@ -1402,6 +1428,10 @@ h1.join-us  {
 #how-we-work ol{
   margin: 0;
 }
+.tech-img{
+      width: 160px;
+      height: 110px;
+    }
 
 }
 

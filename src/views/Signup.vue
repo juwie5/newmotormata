@@ -12,7 +12,11 @@
                     <input type="text" name="platenumber" id="platenumber" placeholder="PlateNumber" v-model="form.plateNumber" required>
                     <input type="email" name="email" id="email" placeholder="Email address" v-model="form.email" required>
                     <input type="tel" name="phoneNumber" id="phoneNumber" placeholder="Mobile Number" v-model="form.mobileNumber" required>
-                    <input type="password" name="password" id="password" placeholder="Create Password" v-model="form.password" required>
+                    <div class="pass">
+                            <input type="password" name="password" id="password" placeholder="Password" v-model="form.password" required ref="password">
+                            <p class="pass-toggle" v-if="hide" @click="showPassword()">SHOW</p>
+                            <p class="pass-toggle" v-if="!hide" @click="showPassword()">HIDE</p>
+                        </div>
                     <button type="submit" class="btn create-acct-btn">Create account</button>
                     <p class="already-have-acct"><router-link to="/signin">Sign in</router-link> if you already have an account.</p>
                 </form>
@@ -34,17 +38,27 @@ export default {
                 email:'',
                 mobileNumber: '',
                 password: '',   
-            }
+            },
+            hide: true
         }
     },
     methods:{
         ...mapActions({
             authUser: 'auth/authUser'
-    }),
-    reqUser(){
+         }),
+
+        reqUser(){
         this.authUser(this.form)
+        },
+
+        showPassword(){
+            let password = this.$refs.password
+                const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+                password.setAttribute('type', type);
+                this.hide = !this.hide 
         }
     }
+     
 }
 </script>
 
@@ -126,6 +140,18 @@ export default {
 .go-home-link:hover  {
     color: #aaa;
     text-decoration: none;
+}
+
+.pass{
+    position: relative;
+}
+
+.pass-toggle{
+    position: absolute;
+    right: 10px;
+    top: 12px;
+    color: #6F6F6F;
+    cursor: pointer;
 }
 
 @media only screen and (min-width: 320px) and (max-width: 475px){

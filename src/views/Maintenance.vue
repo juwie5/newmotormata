@@ -3,10 +3,7 @@
     <section>
       <Navbar class="container-fluid"/>
       <section id="hero-video">
-        <video loop muted autoplay preload="auto">
-          <source src="../assets/video/how_car_works.mp4" type="video/mp4">
-          Your browser does not support the video tag. Use Chrome, Safari or Firefox. Get updated my guy.
-        </video>
+      
 
         <div class="hero-vid-caption">
           <h1 class="hero-vid-title">Maintenance & Repair</h1>
