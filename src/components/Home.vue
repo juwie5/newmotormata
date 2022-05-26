@@ -221,11 +221,20 @@
 
   <!-- Numbers section -->
   <section id="numbers">
-    <div class="row">
-      <font-awesome-icon icon="solid users-gear" />
-      <p class="col-lg-4 col-md-6 col-sm-6 service-number"><strong>50,000+</strong> Services rendered</p>
-      <p class="col-lg-4 col-md-6 col-sm-6 customers-number"><strong>20,000+</strong> Happy Customers</p>
-      <p class="col-lg-4 col-md-6 col-sm-6 rating-number"><strong>4.8 </strong>Ratings</p>
+    <div>
+      <div>
+         <font-awesome-icon icon="users"/>
+         <p><strong>20,000+</strong></p>
+        <p> Happy Customers</p>
+      </div>
+          <font-awesome-icon icon="users"/>
+         <p><strong>50,000+</strong></p>
+        <p> Services rendered</p>
+      <div>
+      </div>
+        <font-awesome-icon icon="users"/>
+        <p><strong>4.8 </strong></p>
+        <p>Ratings</p>
     </div>
   </section>
 
