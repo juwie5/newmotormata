@@ -221,20 +221,22 @@
 
   <!-- Numbers section -->
   <section id="numbers">
-    <div>
+    <div class="num-sect">
       <div>
-         <font-awesome-icon icon="users"/>
+         <font-awesome-icon class="num-sect-icon" icon="users"/>
          <p><strong>20,000+</strong></p>
         <p> Happy Customers</p>
       </div>
-          <font-awesome-icon icon="users"/>
+      <div>
+          <font-awesome-icon class="num-sect-icon" icon="handshake"/>
          <p><strong>50,000+</strong></p>
         <p> Services rendered</p>
-      <div>
       </div>
-        <font-awesome-icon icon="users"/>
+      <div>
+        <font-awesome-icon class="num-sect-icon" icon="user-check"/>
         <p><strong>4.8 </strong></p>
         <p>Ratings</p>
+      </div>  
     </div>
   </section>
 
@@ -678,9 +680,6 @@ img.hero-illustration   {
 }
 
 /* register your vehicle container */
-
-
-
 h1.join-us  {
     font-size: 24px;
     margin: 6%;
@@ -955,6 +954,17 @@ h1.join-us  {
       text-align: center;
   }
 
+  .num-sect{
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .num-sect p{
+    margin: 0;
+  }
+  .num-sect-icon{
+    font-size: 24px;
+  }
   /* App download */
   #download {
       padding: 5% 7%;
@@ -1296,6 +1306,16 @@ h1.join-us  {
         max-width: 100%;
         text-align: center;
     }
+
+    /* Number section */
+    .num-sect{
+      flex-direction: column;
+    }
+    
+    .num-sect  div{
+      margin-bottom: 10px;
+    }
+
     /* Subscribe */
     #subscription {
         padding: 10% 7%;

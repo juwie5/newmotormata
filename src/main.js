@@ -12,10 +12,10 @@ import "./styles/mediaqueries.scss"
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import { faChevronDown,faChevronUp, faCar, faPhoneAlt, faCheck, faChevronLeft, faChevronRight, faThumbsUp, faCoins, faBinoculars, faAward, faStar, faBars, faTimes, faPlus, faAngleLeft, faAngleRight, faStarHalfAlt, faStarHalf, faTimesCircle, faCaretDown, faCommentAlt, faUserAlt, faShoppingBag, faSignOutAlt, faCaretUp, faTrash, faUsers} from '@fortawesome/free-solid-svg-icons';
+import { faChevronDown,faChevronUp, faCar, faPhoneAlt, faCheck, faChevronLeft, faChevronRight, faThumbsUp, faCoins, faBinoculars, faAward, faStar, faBars, faTimes, faPlus, faAngleLeft, faAngleRight, faStarHalfAlt, faStarHalf, faTimesCircle, faCaretDown, faCommentAlt, faUserAlt, faShoppingBag, faSignOutAlt, faCaretUp, faTrash, faUsers, faHandshake, faUserCheck} from '@fortawesome/free-solid-svg-icons';
 import {faFacebook, faInstagram, faTwitter, faWhatsapp} from '@fortawesome/free-brands-svg-icons'
 
-library.add(faChevronDown, faCar, faPhoneAlt, faCheck, faChevronRight, faChevronLeft, faThumbsUp, faCoins, faBinoculars, faAward, faStar, faFacebook, faInstagram, faTwitter, faWhatsapp, faBars, faTimes, faPlus, faChevronUp, faAngleLeft, faAngleRight, faStarHalf, faStarHalfAlt, faTimesCircle, faCaretDown, faCommentAlt,faUserAlt, faShoppingBag, faSignOutAlt, faCaretUp, faTrash, faUsers)
+library.add(faChevronDown, faCar, faPhoneAlt, faCheck, faChevronRight, faChevronLeft, faThumbsUp, faCoins, faBinoculars, faAward, faStar, faFacebook, faInstagram, faTwitter, faWhatsapp, faBars, faTimes, faPlus, faChevronUp, faAngleLeft, faAngleRight, faStarHalf, faStarHalfAlt, faTimesCircle, faCaretDown, faCommentAlt,faUserAlt, faShoppingBag, faSignOutAlt, faCaretUp, faTrash, faUsers, faHandshake, faUserCheck)
 
 
 const app = createApp(App);

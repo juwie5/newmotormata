@@ -28,14 +28,14 @@ const routes = [
     path: '/dashboard',
     name: 'Dashboard',
     component: Dashboard,   
-    beforeEnter: ( to, from , next) => {
-        if (!store.getters['auth/authenticated']){
-          return next({
-            name: 'Signin'
-          })
-        }
-        next()
-    },
+    // beforeEnter: ( to, from , next) => {
+    //     if (!store.getters['auth/authenticated']){
+    //       return next({
+    //         name: 'Signin'
+    //       })
+    //     }
+    //     next()
+    //},
   },
 
   {

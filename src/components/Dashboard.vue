@@ -135,19 +135,19 @@
             </div>
             <div class="countdown">
                 <div class="container-day">
-                    <h3 class="day">Time</h3>
+                    <h3 class="day">{{textDay}}</h3>
                     <p>Day</p>
                 </div>
                 <div class="container-hour">
-                    <h3 class="hour">Time</h3>
+                    <h3 class="hour">{{textHour}}</h3>
                     <p>hour</p>
                 </div>
                 <div class="container-minute">
-                    <h3 class="minute">Time</h3>
+                    <h3 class="minute">{{textMinute}}</h3>
                     <p>minutes</p>
                 </div>
                 <div class="container-second">
-                    <h3 class="seconds">Time</h3>
+                    <h3 class="seconds">{{textSecond}}</h3>
                     <p>seconds</p>
                 </div>
             </div>
@@ -361,13 +361,20 @@ export default {
         ...mapGetters({
             authenticated : 'auth/authenticated',
             user: 'auth/user'
-        })    
+        }), 
+            
     },
     data: () => {
         return{
-
+            textDay: '',
+            textHour: '',
+            textMinute: '',
+            textSecond:'',
         }
     }, 
+    mounted(){
+        setInterval(this.countdown, 1000)
+    },
     methods:{
         myNewFunction() {
           document.getElementById("dashDropDown").classList.toggle("showing");
@@ -409,9 +416,24 @@ export default {
         },
          closeRecommendationModal() {
             document.querySelector(".dash-recommendation-modal").style.display = "none";
-        }
+        },
+        countdown(){
+         const countDate = new Date("January 1,2022 00:00:00").getTime()
+         const now = new Date().getTime()
+         const gap = countDate - now
+         
+         const seconds = 1000
+         const minute = seconds * 60
+         const hour = minute * 60
+         const day = hour * 24
 
-   
+        this.textDay = Math.floor(gap / day)
+        this.textHour = Math.floor((gap % day) / hour)
+        this.textMinute = Math.floor((gap % hour) / minute)
+        this.textSecond = Math.floor((gap % minute) / seconds) 
+        },
+
+        
     }
 }
 </script>
@@ -1173,6 +1195,302 @@ h2{
     color: #777;
 }
 
+@media (max-width: 1300px) { 
+    .car-type-clsBtn {
+        left: 75rem;
+    }
+
+} 
+
+@media (max-width: 1024px) { 
+    .car-type-clsBtn {
+        left: 60rem;
+    }
+}
+
+@media (max-width: 768px) { 
+     .car-type-clsBtn {
+        left: 44rem;
+    }
+}
+
+@media (max-width: 430px) { 
+        #dash-nav {
+        display: none;
+    }
+
+    .new-dash-nav {
+        padding: 10px;
+        background-color: #fff;
+        color: #000;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .new-dash-nav .new-dashboard-title {
+        font-size: 1.4rem;
+        margin: auto 0;
+        padding: 20px;
+        font-weight: 600;
+    }
+
+    .new-dash-nav i.open-nav {
+        font-size: 1.4rem;
+        margin: auto 0;
+        padding: 20px;
+        cursor: pointer;
+    }
+
+    /* My Car section */
+    #dash-myCar {
+        padding: 7%;
+    }
+
+    .mycar-top-content {
+        margin-bottom: 1rem;
+    }
+
+    .mycar-top-title {
+        font-size: 1.3rem;
+        margin: auto 0;
+    }
+
+    button.mycar-btn, button.mycar-btn2 {
+        padding: 8px 13px;
+        font-size: 0.7rem;
+        border: none;
+    }
+
+    .dash-mycar-details {
+        padding: 1rem;
+        border-radius: 3px;
+    }
+
+    .dash-mycar-details .car-name {
+        font-size: 1rem;
+    }
+
+    .dash-mycar-details button {
+        padding: 8px 13px;
+    }
+
+    /* Add Car Modal */
+    .car-type-clsBtn {
+        font-size: 1.2rem;
+        left: 24rem;
+    }
+
+    .car-type-btn {
+        margin: 0.1rem auto;
+        width: 240px;
+        background-color: #000;
+        color: #fff;
+        padding: 10px 0;
+    }
+
+    /* My Car Type */
+    .modal-container {
+        border-radius: 5px;
+        width: 100%;
+        height: 50vh;
+    }
+
+    .modal-close {
+        font-size: 1rem;
+        right: 5rem;
+    }
+
+    .modal-close:hover {
+        font-size: 1.4rem;
+    }
+
+    .modal-container .car-name {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #545454;
+    }
+
+    .modal-container img {
+        width: 200px;
+        padding: 10px;
+    }
+
+    .modal-divider {
+        display: none;
+    }
+
+    /* Due Service */
+    #dash-dueServices {
+        padding: 5% 7%;
+    }
+
+    h1.dueservice-title {
+        font-size: 1.3rem;
+    }
+
+    .dueservice-duedate-content {
+        border-radius: 5px;
+    }
+
+    .day-remain .car-service-duedate {
+        font-size: 1rem;
+    }
+
+    .day, .hour, .minute, .seconds {
+        font-size: 1rem;
+    }
+
+    /* Other Services */
+    .dash-other-services {
+        margin: 3rem 0;
+        padding: 2rem 0;
+        border-radius: 5px;
+    }
+    .dash-other-services-title {
+        font-size: 1.2rem;
+        padding: 0 0 2rem;
+    }
+
+    /* History Section */
+    #dash-history {
+        padding: 2% 7%;
+    }
+
+    .history-top-title {
+        font-size: 1.3rem;
+    }
+
+    .history-main-contents {
+        border-radius: 5px;
+    }
+
+    .htry-btry-change .history-battery-change-title {
+        font-size: 1rem;
+    }
+
+    .htry-oil-change .history-battery-change-title {
+        font-size: 1rem;
+    }
+
+    .htry-body-repair .history-body-repair-title {
+        font-size: 1rem;
+    }
+
+    .selected {
+        width: 100px;
+        padding: 10px 2px;
+        font-size: 0.7rem;
+    }
+
+    /* Battery Modal Box */
+    .battery-change-box {
+        border-radius: 5px;
+        top: -1rem;
+    }
+
+    .battery-change-box .product h5.product-name, .battery-change-box .done-transaction-box h5.done-transaction, .transaction-price, .product-type {
+        font-size: 0.8rem;
+    }
+
+    .battery-change-box .status .transaction-status, .transaction-update{
+        font-size: 1rem;
+    }
+
+    /* Recommendation Section */
+    #dash-recommendations {
+        padding: 10% 7%;
+    }
+
+    .recom-top-content-title {
+        font-size: 1.3rem;
+    }
+
+    .recom-main-contents {
+        border-radius: 5px;
+    }
+
+    .recom-btry-change-title, .recom-oil-change-title, .recom-ac-service-title, .recom-tyre-change-title {
+        font-size: 1rem;
+    }
+
+    .recom-main-contents button {
+        padding: 8px 10px;
+        font-size: 0.8rem;
+    }
+
+    /* Recommendation Modal */
+    .dash-recommendation-modal-container {
+        margin: 2rem auto;
+        top: 4rem;
+        width: 100%;
+        padding: 10px;
+    }
+
+    .recom-modal-close {
+        font-size: 1.2rem;
+        top: 1rem;
+    }
+
+    .product-recommended {
+        font-size: 1rem;
+    }
+
+    /* Your Car Parts */
+    #dash-carParts {
+        padding: 10% 7%;
+    }
+
+    .carparts-top-content-title {
+        font-size: 1.3rem;
+    }
+
+    .carparts-main-contents {
+        border-radius: 5px;
+        padding: 1.2rem 2rem;
+    }
+
+    .carparts-btry-title, .carparts-oil-title, .carparts-bumper-title {
+        font-size: 1rem;
+        margin: auto 0;
+    }
+
+    .battry-detail-btn, .oil-detail-btn, .bumper-detail-btn {
+        padding: 8px 10px;
+        font-size: 0.8rem;
+    }
+
+    .carparts-btry span {
+        font-size: 0.4rem;
+        left: 14.5rem;
+        top: 126.2rem;
+        padding: 0.2rem 0.3rem;
+        color: #fff;
+    }
+
+    .closeDetail-btn {
+        width: 80px;
+        padding: 8px 6px;
+        font-size: 0.6rem;
+    }
+
+    .product-name, .product-type, .product-amount{
+        font-size: 0.7rem;
+    }
+
+    .product1 .product {
+        font-size: 0.7rem;
+    }
+
+    .carPart-container {
+        background-color: #fff;
+        padding: 50px 10px 0;
+    }
+
+    /* Footer */
+    .dash-copyrights {
+        font-size: 0.7rem;
+    }
+}
 
 
 
