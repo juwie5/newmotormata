@@ -8,10 +8,10 @@
                 <form @submit.prevent="reqUser">
                     <h4 class="create-acct-title">Create your account</h4>
                     <p class="create-acct-paragraph">Fill the form below to register</p>
-                    <input type="text" name="fullname" id="fullname" placeholder="Fullname" v-model="form.fullName" required>
-                    <input type="text" name="platenumber" id="platenumber" placeholder="PlateNumber" v-model="form.plateNumber" required>
+                    <input type="text" name="fullname" id="fullname" placeholder="Fullname" v-model="form.fullName" maxlength="30" required>
+                    <input type="text" name="platenumber" id="platenumber" placeholder="PlateNumber" v-model="form.plateNumber" maxlength="8" required>
                     <input type="email" name="email" id="email" placeholder="Email address" v-model="form.email" required>
-                    <input type="tel" name="phoneNumber" id="phoneNumber" placeholder="Mobile Number" v-model="form.mobileNumber" required>
+                    <input type="tel" name="phoneNumber" id="phoneNumber" placeholder="Mobile Number" v-model="form.mobileNumber" maxlength="11" required>
                     <div class="pass">
                             <input type="password" name="password" id="password" placeholder="Password" v-model="form.password" required ref="password">
                             <p class="pass-toggle" v-if="hide" @click="showPassword()">SHOW</p>
@@ -50,7 +50,6 @@ export default {
         reqUser(){
         this.authUser(this.form)
         },
-
         showPassword(){
             let password = this.$refs.password
                 const type = password.getAttribute('type') === 'password' ? 'text' : 'password';

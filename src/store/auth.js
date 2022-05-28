@@ -54,6 +54,10 @@ export default{
                 this.error = err
             }            
         },
+
+
+
+        
        async authUser({dispatch}, credrentials){
             let name = credrentials.fullName
             let email= credrentials.email
