@@ -134,4 +134,17 @@ h2{
     box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.25);
     border-radius: 50px;
 }
+
+@media only screen and (min-width: 320px) and (max-width: 430px){
+    .dash-nav{
+        justify-content: flex-start;
+    }
+
+    .nav-img{
+        margin-left: 20px;
+    }
+    .profile-content{
+        margin-top: 100px;
+    }
+}
 </style>

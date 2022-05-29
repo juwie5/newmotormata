@@ -42,28 +42,28 @@ const routes = [
         path: '/dashboard/cart',
         name: 'Cart',
         component: Cart,
-        beforeEnter: ( to, from , next) => {
-          if (!store.getters['auth/authenticated']){
-            return next({
-              name: 'Signin'
-            })
-          }
-          next()
-      },
+      //   beforeEnter: ( to, from , next) => {
+      //     if (!store.getters['auth/authenticated']){
+      //       return next({
+      //         name: 'Signin'
+      //       })
+      //     }
+      //     next()
+      // },
   },
 
  {
       path: '/dashboard/:profile',
       name: 'Profile',
       component: Profile,
-      beforeEnter: ( to, from , next) => {
-        if (!store.getters['auth/authenticated']){
-          return next({
-            name: 'Signin'
-          })
-        }
-        next()
-    },
+    //   beforeEnter: ( to, from , next) => {
+    //     if (!store.getters['auth/authenticated']){
+    //       return next({
+    //         name: 'Signin'
+    //       })
+    //     }
+    //     next()
+    // },
       children:[
         {
         path: '',

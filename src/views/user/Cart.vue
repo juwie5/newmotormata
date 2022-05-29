@@ -126,6 +126,7 @@ export default {
 
 .h2-text{
     font-weight: 400;
+    font-size: 1.5rem;
 }
 
 .order-menu{
@@ -181,7 +182,7 @@ export default {
 
 .h4-text{
     font-weight: 400;
-    font-size: 24px;
+    font-size: 1.5rem;
     line-height: 28px;
     font-style: normal;
 }
@@ -242,6 +243,7 @@ export default {
 
 .green{
     color: #53FF6E;
+    cursor: pointer;
 }
 
 #pay-btn{
@@ -250,6 +252,21 @@ export default {
 
 #bank-btn{
     background-color: #C1C1C1;
-;
+}
+
+@media only screen and (max-width: 768px) {
+
+    .contain{
+        flex-direction: column;
+    }   
+}
+
+@media only screen and (min-width: 320px) and (max-width: 430px){
+    .order-menu{
+        width: 100%;
+    }
+    .h4-text{
+        font-size: calc(1rem + .3vw)
+    }
 }
 </style>
