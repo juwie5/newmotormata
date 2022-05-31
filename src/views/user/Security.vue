@@ -44,6 +44,24 @@ export default {
 
 }
 
+@media only screen and (min-width: 320px) and (max-width: 430px) {
+ .sec{
+     flex-direction: column;
+     width: 100%;
+     font-size: 14px;
+     margin-top: 30px;
+ }
+ .sec-link{
+     margin: 0;
+ }
+
+.sec-link2{
+    margin-top: 40px;
+    padding: 5px 10px;
+}
+
+}
+
 
 
 </style>

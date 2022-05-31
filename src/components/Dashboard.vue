@@ -354,26 +354,21 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
 export default {
     name: 'Dashboard',
-    computed:{
-        ...mapGetters({
-            authenticated : 'auth/authenticated',
-            user: 'auth/user'
-        }), 
-            
-    },
+
     data: () => {
         return{
             textDay: '',
             textHour: '',
             textMinute: '',
             textSecond:'',
+            user: {}
         }
     }, 
     mounted(){
-        setInterval(this.countdown, 1000)
+        setInterval(this.countdown, 1000),
+        this.user = JSON.parse(localStorage.getItem('userData')) 
     },
     methods:{
         myNewFunction() {
@@ -1462,7 +1457,7 @@ h2{
     .carparts-btry span {
         font-size: 0.4rem;
         left: 14.5rem;
-        top: 126.2rem;
+        top:  123.5rem;
         padding: 0.2rem 0.3rem;
         color: #fff;
     }

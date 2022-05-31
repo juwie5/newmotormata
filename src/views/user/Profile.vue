@@ -1,11 +1,13 @@
 <template>
-    <div>
+    <div class="contain">
         <section>
             <nav class="dash-nav">
-             <div><img class="nav-img" src="../../assets/logo.png" alt="logo"></div>
+             <div class="nav-img"><img src="../../assets/logo.png" alt="logo"></div>
               <div>
-                <h2 class="cart"><router-link to="/dashboard/cart">Cart <font-awesome-icon class="shop" icon="shopping-bag"/></router-link></h2>    
-            </div>
+                <router-link class="cart" to="/dashboard/cart">
+                     <h2>Cart <font-awesome-icon class="shop" icon="shopping-bag"/></h2> 
+                </router-link>   
+              </div>
             </nav>
         </section>
         <section class="profile-content">
@@ -15,12 +17,14 @@
                 <router-link to="/dashboard/profile/messages"><h4 class="cntname">Messages</h4></router-link>
                 <router-link to="/dashboard/profile/settings"><h4 class="cntname">Settings</h4></router-link>
             </div>
-            <div><router-view></router-view></div>
+            <div>
+                <router-view></router-view>
+            </div>
         </section>
         <section id="dash-footer">
-        <footer class="dash-footer-copyrights">
-            <p class="dash-copyrights">&copy; Copyrights 2022. All Rights reserved.</p>
-        </footer>
+            <footer class="dash-footer-copyrights">
+                <p class="dash-copyrights">&copy; Copyrights 2022. All Rights reserved.</p>
+            </footer>
        </section>
     </div>
 </template>
@@ -57,11 +61,13 @@ export default {
 .dash-nav{   
  display: flex;
  background-color: #ffffff;
- justify-content: space-around;
+ justify-content: space-between;
+ align-content: center;
+ align-items: center;
  position: fixed;
  top: 0;
- width: 85%;
- max-height: 80px; 
+  width: 85%;
+  max-height: 80px; 
  padding-top: 15px;
 }
 
@@ -74,10 +80,10 @@ h2{
 }
 
 .nav-img{
-    margin-right: 395px;
+    margin-left: 70px;
 }
 
-.cart a{
+.cart{
     color: #000000;
     text-decoration: none;
 }
@@ -103,7 +109,6 @@ h2{
 
 .cntname{
     padding: 4% 3%;
-    max-width: 50%;
     cursor: pointer;
     font-size: 18px;
     font-weight: 600;
@@ -136,15 +141,23 @@ h2{
 }
 
 @media only screen and (min-width: 320px) and (max-width: 430px){
-    .dash-nav{
-        justify-content: flex-start;
+    .content{
+        margin-left: -8px;
     }
-
-    .nav-img{
-        margin-left: 20px;
-    }
+   
     .profile-content{
         margin-top: 100px;
+        justify-content: space-between;
+    }
+    .shop{
+        font-size: 30px;
+    }
+    .nav-img{
+        margin-left: 35px;
+    }
+    .cntname{
+        font-size: 15px;
+        width: 120px;
     }
 }
 </style>

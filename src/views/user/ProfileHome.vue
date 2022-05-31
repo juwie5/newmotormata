@@ -4,7 +4,7 @@
             <div class="pro-top">
                 <img class="profile-img" src="../../assets/user-profile.png" alt="">
                 <div>
-                    <h1>Emmanuel Adesanya</h1>
+                    <h1>{{user.username}}</h1>
                     <p class="sub-text">Manage your personal info, change <br> password and more.</p>
                 </div>
             </div>
@@ -15,18 +15,18 @@
                 <div class="pro-mid">
                     <div class="pro-input">
                     <label for="Fullname">Fullname</label>
-                    <input type="text" name="Fullname" placeholder="Emmanuel Adesanya">
+                    <input type="text" name="Fullname" :placeholder="user.username">
                     </div>
                     <div class="pro-input">
                     <label for="email">Email</label>
-                    <input type="email" name="Fullname" placeholder="emmaade@example.com">
+                    <input type="email" name="email" :placeholder="user.email">
                     <p class="sub-text">email is not verified <span class="green-text">Send Again</span></p>
                     </div> 
                 </div>
                 <div class="pro-mid">
                     <div class="pro-input">
                     <label for="Phonenumber">Mobile number</label>
-                    <input type="tel" name="Phonenumber" placeholder="070123456789">
+                    <input type="tel" name="Phonenumber" :placeholder="user.phone_no">
                     </div>
                     <div class="pro-input">
                     <label for="password">Password</label>
@@ -41,13 +41,17 @@
 
 
 <script>
+
 export default {
     name: 'ProfileHome',
     data: ()=> {
         return{
-
+            user: {}
         }
-    }
+    },
+    mounted(){
+         this.user = JSON.parse(localStorage.getItem('userData'))    
+    }    
 }
 </script>
 
@@ -123,9 +127,20 @@ input{
 }
 
 @media only screen and (min-width : 320px) and (max-width: 430px){
-    .pro-mid{
+
+    .pro-mid {
         flex-direction: column;
+        align-content: center;
     }
-    
+    .pro-top {
+        flex-direction: column;
+        align-items: center;
+    }
+    .pro-input{
+        margin-right: 50px;
+    }
+    .pro-btn{
+      margin: 20px 50px 50px 50px;  
+    }
 }
 </style>
