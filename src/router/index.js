@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../components/Home.vue';
 import Dashboard from '../components/Dashboard.vue'
-import Maintenance from '../views/Maintenance.vue';
+import PeriodicServices from '../views/PeriodicServices.vue';
 import Autocare from '../views/Autocare.vue';
 import Insurance from '../views/Insurance.vue';
 import Spares from '../views/Spares.vue';
@@ -104,8 +104,8 @@ const routes = [
   },
   {
     path: '/maintenance',
-    name: 'Maintenance',
-    component: Maintenance
+    name: 'PeriodicServices',
+    component: PeriodicServices
   },
   {
     path: '/insurance',

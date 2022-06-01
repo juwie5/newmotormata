@@ -38,7 +38,6 @@
       </div>
     </div>
   </section>
-
   <!-- Copyrights -->
   <section id="copyright">
     <p class="copyright-content">&copy; Copyright Motormata 2022. All rights reserved 
@@ -56,7 +55,7 @@ export default {
 <style lang="scss" scoped>
  /* Footer */
   #footer   {
-      padding: 5% 7%;
+      padding: 5% 5%;
   }
 
   .footer-brand img{

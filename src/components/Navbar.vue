@@ -1,7 +1,6 @@
 <template>
 <div>
     <section>
-
             <!-- SideNav -->
         <div class="sidenav" id="sideNav">
             <font-awesome-icon icon="times" @click="closeNav()" class="closeBtn"/>
@@ -99,7 +98,7 @@ export default {
     display: none;
 }
 
-.container-fluid    {
+.container-fluid{
     padding: 2% 5% 0;
 }
 
@@ -279,6 +278,14 @@ ul.navbar-nav  {
     .drop-down-links2 a:last-child {
         border-bottom: none;
     }
+
+}
+
+@media screen and (max-width: 768px){
+    .openNavBtn{
+    display: block;
+    
+    } 
 }
 
 </style>
