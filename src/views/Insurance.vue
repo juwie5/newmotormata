@@ -34,7 +34,7 @@
                   <p><font-awesome-icon  class="icon" icon="check-circle"/> Body Damage Inspection</p>
                   <p><font-awesome-icon  class="icon" icon="check-circle"/> Insurance Claim Advice</p>
                 </div>
-                  <router-link  class="" to="#">CHOSE SERVICE</router-link>
+                  <router-link  class="choose-btn" to="#">CHOSE SERVICE</router-link>
               </div>
             </div>
           </div>
@@ -70,7 +70,7 @@
                   <p><font-awesome-icon class="icon" icon="check-circle"/> Connect with Insurance Agent</p>
                   <p><font-awesome-icon  class="icon" icon="check-circle"/> Vehicle IDV and Premium Rate Suggestions</p>
                 </div>
-                  <router-link  class="" to="#">CHOSE SERVICE</router-link>
+                  <router-link  class="choose-btn" to="#">CHOSE SERVICE</router-link>
               </div>
             </div>
           </div>
@@ -106,7 +106,7 @@
                   <p><font-awesome-icon class="icon" icon="check-circle"/> Policy Inspectiont</p>
                   <p><font-awesome-icon  class="icon" icon="check-circle"/> Co-ordination with Insurance Company</p>
                 </div>
-                  <router-link  class="" to="#">CHOSE SERVICE</router-link>
+                  <router-link  class="choose-btn" to="#">CHOSE SERVICE</router-link>
               </div>
             </div>
           </div>

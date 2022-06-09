@@ -10,7 +10,7 @@
                 <router-link to="/maintenance">Periodic Services</router-link>
                 <router-link to="/autocare">Inspection & Diagnostics</router-link>
                 <router-link to="/insurance">Insurance & Papers</router-link>
-                <router-link to="/insurance">Spares & Repair</router-link>
+                <router-link to="/repairs">Spares & Repair</router-link>
             </div>
             <router-link to="/home#faqs" class="nav-link">FAQs</router-link>
             <router-link to="/contact" class="nav-link">Contact</router-link>
@@ -38,7 +38,7 @@
                             <router-link to="/maintenance">Periodic Services</router-link>
                             <router-link to="/autocare">Inspection & Diagnostics</router-link>
                             <router-link to="/insurance">Insurance & Papers</router-link>
-                            <router-link to="/insurance">Spares & Repair</router-link>
+                            <router-link to="/repairs">Spares & Repair</router-link>
                     </div>
                     <li class="nav-item">
                     <router-link :to="{path:'/', hash:'#faqs'}" class="nav-link">FAQs</router-link>
@@ -163,7 +163,7 @@ ul.navbar-nav  {
     border-radius: 5px;
     position: absolute;
     top: 4rem;
-    left: 28rem;
+    left: 32rem;
     box-shadow: 0px 8px 16px 6px rgba(173, 173, 173, 0.2);
     z-index: 5;
     

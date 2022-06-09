@@ -4,10 +4,10 @@
     <div class="row">
       <div class="col-lg-3 col-md-4 col-sm-6 footer-brand">
         <img  class="footer-img" src="../assets/logo.png" alt="">
-        <font-awesome-icon :icon="['fab', 'facebook']" class="ft-brand"/>
-        <font-awesome-icon :icon="['fab', 'instagram']" class="ft-brand"/>
-        <font-awesome-icon :icon="['fab', 'twitter']" class="ft-brand"/>
-        <font-awesome-icon :icon="['fab', 'whatsapp']" class="ft-brand"/>
+        <a href="https://www.facebook.com/motormata" target="_blank"><font-awesome-icon :icon="['fab', 'facebook']" class="ft-brand"/></a>
+        <a href="https://instagram.com/motormata" target="_blank"><font-awesome-icon :icon="['fab', 'instagram']" class="ft-brand"/></a>
+        <a href="https://twitter.com/motormata" target="_blank"><font-awesome-icon :icon="['fab', 'twitter']" class="ft-brand"/></a> 
+        <a href="https://api.whatsapp.com/send?phone=2349082552590" target="_blank"><font-awesome-icon :icon="['fab', 'whatsapp']" class="ft-brand"/></a>
       </div>
 
       <div class="col-lg-3 col-md-4 col-sm-6  footer-about">
@@ -22,10 +22,10 @@
       <div class="col-lg-3 col-md-4 col-sm-6  footer-services">
         <h3 class="ft-service-title">Our Services</h3>
         <ul class="row-ul">
-          <li><router-link to="/autocare" href="#">Periodic Services</router-link></li>
+          <li><router-link to="/maintenance">Periodic Services</router-link></li>
           <li><router-link to="/autocare">Inspection & Diagnostics</router-link></li>
           <li><router-link to="/insurance">Insurance & Papers</router-link></li>
-          <li><router-link to="/maintenance">Spares & Repair</router-link></li>
+          <li><router-link to="/repair">Spares & Repair</router-link></li>
         </ul>
       </div>
 

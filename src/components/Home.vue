@@ -513,7 +513,7 @@ export default {
       }, 
       // Register User 
          async regUser(){
-          let phoneTest= /^\d{11}$/
+          let phoneTest = /^\d{11}$/
           let plateTest = /^[a-zA-Z0-9]*$/
           let plate = plateTest.test(this.form.plateNo)
           let phone = phoneTest.test(this.form.phoneNo)
@@ -1066,18 +1066,18 @@ h1.join-us  {
       margin: 0 0 5%;
   }
 
-  #accordion .card {
-      background-color: transparent;
-      border: none;
-      box-shadow: none;
-  }
+
+.accordion-button:not(.collapsed) {
+        background-color: transparent !important;
+}
+  
   .accordion-body{
       background-color: #f0f0f0;
   }
 
  
 
-  #headingOne, #headingTwo, #headingThree, #headingFour, #headingFive   {
+  #headingOne, #headingTwo, #headingThree, #headingFour, #headingFive, #headingSix, #headingSeven   {
       background-color: #f0f0f0;
   }
 
