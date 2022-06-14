@@ -31,7 +31,7 @@
                   <p><font-awesome-icon  class="icon" icon="check-circle"/> Sensor Reset</p>
                   <p><font-awesome-icon  class="icon" icon="check-circle"/> Inspection of Exhaust Smoke</p>
                 </div>
-                  <router-link  class="choose-btn" to="#">CHOSE SERVICE</router-link>
+                  
               </div>
             </div>
           </div>
@@ -62,7 +62,7 @@
                   <p><font-awesome-icon  class="icon" icon="check-circle"/> Link Rod Inspection</p>
                   <p><font-awesome-icon  class="icon" icon="check-circle"/> Jump Rod Bush Inspection</p>
                 </div>
-                  <router-link  class="choose-btn" to="#">CHOSE SERVICE</router-link>
+               
               </div>
             </div>
           </div>
@@ -93,7 +93,6 @@
                   <p><font-awesome-icon  class="icon" icon="check-circle"/>Power Steering Oil Check</p>
                   <p><font-awesome-icon  class="icon" icon="check-circle"/> Battery Water Inspection</p>
                 </div>
-                  <router-link  class="choose-btn" to="#">CHOSE SERVICE</router-link>
               </div>
             </div>
           </div>

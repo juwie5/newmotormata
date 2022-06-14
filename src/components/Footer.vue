@@ -25,7 +25,7 @@
           <li><router-link to="/maintenance">Periodic Services</router-link></li>
           <li><router-link to="/autocare">Inspection & Diagnostics</router-link></li>
           <li><router-link to="/insurance">Insurance & Papers</router-link></li>
-          <li><router-link to="/repair">Spares & Repair</router-link></li>
+          <li><router-link to="/repairs">Spares & Repair</router-link></li>
         </ul>
       </div>
 

@@ -38,7 +38,7 @@
                     <p v-show="isActive"><font-awesome-icon   class="icon" icon="check-circle"/> Car Wash</p>
                     <p v-show="isActive"><font-awesome-icon   class="icon" icon="check-circle"/> Interior  Vacumming (Carpet & Seats)</p>  
                 </div>
-                  <router-link  class="choose-btn" to="#">CHOSE SERVICE</router-link>
+                  
               </div>
             </div>
           </div>
@@ -81,7 +81,7 @@
                     <p v-show="isActive1"><font-awesome-icon   class="icon" icon="check-circle"/> Rear Brake Shoe Serviced</p>  
                     <p v-show="isActive1"><font-awesome-icon   class="icon" icon="check-circle"/> Front Brake Pads Serviced</p> 
                 </div>
-                  <router-link  class="choose-btn" to="#">CHOSE SERVICE</router-link>
+                 
               </div>
             </div>
           </div>
@@ -129,7 +129,7 @@
                     <p v-show="isActive2"><font-awesome-icon   class="icon" icon="check-circle"/> Throttle Body Cleaning</p> 
                     <p v-show="isActive2"><font-awesome-icon   class="icon" icon="check-circle"/> Gear Oil Top up</p>   
                 </div>
-                  <router-link class="choose-btn" to="#">CHOSE SERVICE</router-link>
+                  
               </div>
             </div>
           </div>

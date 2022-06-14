@@ -31,7 +31,7 @@
                         <p><font-awesome-icon  class="icon" icon="check-circle"/> Shocker Mount, Shocker Coil Spring Additional Charges</p>
                         <p><font-awesome-icon class="icon" icon="check-circle"/> Free Pickup & Drop</p>
                         </div>
-                        <router-link  class="choose-btn" to="#">CHOSE SERVICE</router-link>
+                      
                     </div>
                 </div>
           </div>
@@ -61,7 +61,7 @@
                         <p><font-awesome-icon  class="icon" icon="check-circle"/> Shocker Mount, Shocker Coil Spring Additional Charges</p>
                         <p><font-awesome-icon class="icon" icon="check-circle"/> Free Pickup & Drop</p>
                         </div>
-                        <router-link  class="choose-btn" to="#">CHOSE SERVICE</router-link>
+                        
                     </div>
                 </div>
           </div>
@@ -69,7 +69,7 @@
              <div>
                     <div class="body">
                     <div>
-                    <img class="carser" src="../assets/rear.jpg" alt="">
+                    <img class="carser" src="../assets/tyre.jpg" alt="">
                     </div>
                     <div class="main">
                     <div class="main-serv">
@@ -90,7 +90,7 @@
                         <p><font-awesome-icon  class="icon" icon="check-circle"/>Tyre Replacement at Service Center</p>
                         <p><font-awesome-icon  class="icon" icon="check-circle"/> Alignment & Wheel Balancing </p>
                         </div>
-                        <router-link  class="choose-btn" to="#">CHOSE SERVICE</router-link>
+                        
                     </div>
                 </div>
           </div>
