@@ -2,6 +2,7 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
+import VueScrollTo from 'vue-scrollto'
 
 import "bootstrap/dist/css/bootstrap.min.css"
 import 'jquery/src/jquery.js'
@@ -21,6 +22,7 @@ library.add(faChevronDown, faCar, faPhoneAlt, faCheck, faChevronRight, faChevron
 const app = createApp(App);
 app.use(router);
 app.use(store);
+app.use(VueScrollTo);
 app.component('font-awesome-icon', FontAwesomeIcon);
 app.mount('#app');
 

@@ -14,7 +14,8 @@ import Messages from '../views/user/Messages.vue';
 import Security from '../views/user/Security.vue';
 import Settings from '../views/user/Settings.vue';
 import Cart from '../views/user/Cart.vue';
-import store from '@/store'
+import store from '@/store';
+
 
 
 
@@ -22,7 +23,8 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home
+    component: Home,
+    
   },
   {
     path: '/dashboard',
@@ -138,19 +140,11 @@ const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes,
   scrollBehavior(to, from, savedPosition) {
-    if (savedPosition) {
-        return savedPosition;
-
-    }
-
-     if (to.hash) {
-        return { selector: to.hash };
-    }
-    return { x: 0, y: 0 }
-  }
+    // always scroll to top
+    return { top: 0 }
+  },
 })
 
 export default router
 
 
-//const Home = { template: '#home', mounted: function(){		if(this.$router.currentRoute['hash']){ 	Vue.use(VueScrollTo); 	VueScrollTo.scrollTo(this.$router.currentRoute['hash'], 500);

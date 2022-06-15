@@ -329,7 +329,7 @@
   </section>
 
   <!-- FAQs -->
-  <section id="faqs">
+  <section id="faqs" ref="faq">
     <h1 class="faq-title">FAQs</h1>
       <div class="accordion accordion-flush" id="accordionFlushExample">
             <!--Firstcard -->
@@ -449,6 +449,7 @@
 
 <script>
 import axios from 'axios'
+import VueScrollTo from 'vue-scrollto'
 import { setTimeout } from 'timers'
 import Navbar from '../components/Navbar.vue'
 import Footer from '../components/Footer.vue'
@@ -542,15 +543,15 @@ export default {
                 
           } else {
             this.error = "Please check details entered"
-          } 
-
-          
-         
+          }     
     },
   },
     created() {
       setTimeout(this.typeText, this.newTextDelay + 200);
-    }
+    },
+    //  mounted(){
+    //      VueScrollTo.scrollTo(this.$refs.faq, 1000, { easing: 'linear' })
+    // }
 }
 </script>
 

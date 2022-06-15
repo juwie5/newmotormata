@@ -3,7 +3,7 @@
     <section id="footer">
     <div class="row">
       <div class="col-lg-3 col-md-4 col-sm-6 footer-brand">
-        <img  class="footer-img" src="../assets/logo.png" alt="">
+        <router-link to="/"><img class="footer-img" src="../assets/logo.png" alt=""></router-link>
         <a href="https://www.facebook.com/motormata" target="_blank"><font-awesome-icon :icon="['fab', 'facebook']" class="ft-brand"/></a>
         <a href="https://instagram.com/motormata" target="_blank"><font-awesome-icon :icon="['fab', 'instagram']" class="ft-brand"/></a>
         <a href="https://twitter.com/motormata" target="_blank"><font-awesome-icon :icon="['fab', 'twitter']" class="ft-brand"/></a> 
@@ -13,7 +13,7 @@
       <div class="col-lg-3 col-md-4 col-sm-6  footer-about">
         <h3 class="ft-about-title">About us</h3>
         <ul class="row-ul">
-          <li><router-link to="/about">FAQs</router-link></li>
+          <li><router-link to="/" v-scroll-to="{el:'#faqs',easing: 'linear'}" >FAQs</router-link></li>
           <li><router-link to="/about">Company</router-link></li>
           <li><router-link to="/about">Team</router-link></li>
         </ul>

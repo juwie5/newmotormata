@@ -12,7 +12,7 @@
                 <router-link to="/insurance">Insurance & Papers</router-link>
                 <router-link to="/repairs">Spares & Repair</router-link>
             </div>
-            <router-link to="/home#faqs" class="nav-link">FAQs</router-link>
+            <router-link to="/" v-scroll-to="{el:'#faqs',easing: 'linear'}" class="nav-link">FAQs</router-link>
             <router-link to="/contact" class="nav-link">Contact</router-link>
             <router-link to="/signin"><button class="btn signin-side-navBtn">Sign in</button></router-link>
             <router-link to="/signup"><button class="btn signup-side-navBtn">Create account</button></router-link>
@@ -41,7 +41,7 @@
                             <router-link to="/repairs">Spares & Repair</router-link>
                     </div>
                     <li class="nav-item">
-                    <router-link :to="{path:'/', hash:'#faqs'}" class="nav-link">FAQs</router-link>
+                    <router-link :to="{path:'/'}" v-scroll-to="{el:'#faqs',easing: 'smooth'}" class="nav-link">FAQs</router-link>
                     </li>
                     <li class="nav-item">
                     <router-link to="/contact" class="nav-link">Contact</router-link>
@@ -58,6 +58,7 @@
 </template>
 
 <script>
+import VueScrollTo from 'vue-scrollto'
 export default {
     name:'Navbar',
     data: ()=>{
@@ -82,9 +83,8 @@ export default {
         toggleList(){
                 this.isActive = !this.isActive
         }
-
-
     },
+   
   
 
 }
