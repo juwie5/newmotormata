@@ -27,7 +27,6 @@ export default{
       },
       SET_USER (state, data){
           state.user = data
-          localStorage.setItem('userData', JSON.stringify(state.user));
       },
       SET_ERROR (state, error){
           state.error = error

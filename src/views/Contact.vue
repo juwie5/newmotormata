@@ -17,7 +17,7 @@
                     <input type="tel" placeholder="Phone number" v-model="number">
                     <input type="text" placeholder="Address" v-model="address">
                     <textarea name="comments" id="comments" row="6"  class="full" placeholder="Type your message here" v-model="message"></textarea>
-                    <input type="submit" value="Submit">                      
+                    <input type="submit" value="Submit" @click.prevent="sendEmail()">                      
             </form>
             </div>
         </section>
@@ -28,6 +28,8 @@
   <script>
     import Navbar from '../components/Navbar.vue'
     import Footer from '../components/Footer.vue'
+    import mailjet from 'node-mailjet'
+    import axios from 'axios'
   export default {
       name: 'Home',
       components: {
@@ -46,8 +48,39 @@
           }
       },
       methods: {
-
-      }
+        sendEmail(){
+        const request = mailjet
+        .connect('****************************1234', '****************************abcd')
+        axios.post("send", {'version': 'v3.1'})
+        request({
+        "Messages":[
+            {
+            "From": {
+                "Email": "bibire95@gmail.com",
+                "Name": "Adejuwon"
+            },
+            "To": [
+                {
+                "Email": "bibire95@gmail.com",
+                "Name": "Adejuwon"
+                }
+            ],
+            "Subject": "Greetings from Mailjet.",
+            "TextPart": "My first Mailjet email",
+            "HTMLPart": "<h3>Dear passenger 1, welcome to <a href='https://www.mailjet.com/'>Mailjet</a>!</h3><br />May the delivery force be with you!",
+            "CustomID": "AppGettingStartedTest"
+            }
+        ]
+        })
+        request
+        .then((result) => {
+            console.log(result.body)
+        })
+        .catch((err) => {
+            console.log(err.statusCode)
+        })
+                }
+            }
   }
   </script>
 

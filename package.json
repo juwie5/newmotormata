@@ -14,11 +14,13 @@
     "@popperjs/core": "^2.11.2",
     "axios": "^0.26.1",
     "bootstrap": "^5.1.3",
+    "node-mailjet": "^4.0.1",
     "sass": "^1.49.0",
     "vue": "^3.0.0",
     "vue-router": "^4.0.0-0",
     "vue-scrollto": "^2.20.0",
-    "vuex": "^4.0.2"
+    "vuex": "^4.0.2",
+    "vuex-persistedstate": "^4.1.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-router": "~4.5.0",

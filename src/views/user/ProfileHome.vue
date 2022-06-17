@@ -41,17 +41,21 @@
 
 
 <script>
+import { mapGetters } from 'vuex'
 
 export default {
     name: 'ProfileHome',
     data: ()=> {
         return{
-            user: {}
+           
         }
     },
-    mounted(){
-         this.user = JSON.parse(localStorage.getItem('userData'))    
-    }    
+    computed: {
+        ...mapGetters({
+            user: 'auth/user'
+        })
+    }
+    
 }
 </script>
 

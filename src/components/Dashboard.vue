@@ -354,6 +354,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
     name: 'Dashboard',
 
@@ -363,12 +364,15 @@ export default {
             textHour: '',
             textMinute: '',
             textSecond:'',
-            user: {}
         }
     }, 
     mounted(){
-        setInterval(this.countdown, 1000),
-        this.user = JSON.parse(localStorage.getItem('userData')) 
+        setInterval(this.countdown, 1000)
+    },
+    computed: {
+        ...mapGetters({
+            user : 'auth/user'
+        })
     },
     methods:{
         myNewFunction() {
