@@ -27,7 +27,7 @@
           <button  class="btn reg-veh-btn">Get Started</button>
           <h1 v-if="base" class="join-us">Join our 30,000+ Happy Customers</h1>
           <h1  v-else class="join-us green">Thank you for Joining us</h1>
-           <h1 class="red">{{error}}</h1>
+           <h1 class="join-us red">{{error}}</h1>
           </form>
         </div>
 
@@ -534,13 +534,14 @@ export default {
               }  
               } catch (err){
                 console.log(err)
+                this.error = "Please check details entered"
+                console.log(this.error)
               }// reset form 
               setTimeout(() => {
                 this.base = true
                 this.form.plateNo = ''
                 this.form.phoneNo = ''
-              }, "5000") 
-                
+              }, "5000")      
           } else {
             this.error = "Please check details entered"
           }     
