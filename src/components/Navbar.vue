@@ -2,7 +2,7 @@
 <div>
     <section>
             <!-- SideNav -->
-        <div class="sidenav" id="sideNav">
+        <div class="sidenav" ref="sideNav" id="sideNav">
             <font-awesome-icon icon="times" @click="closeNav()" class="closeBtn"/>
             <a @click="toggleList()"  id="sideNav-link" class="nav-link sideNavLink service-link" type="button">Services<font-awesome-icon 
                icon="chevron-down" class="services-drop-down"/></a>
@@ -30,11 +30,11 @@
                 <div class="collapse navbar-collapse navbarplace" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                    <a @click="myNewFunction()" class="nav-link service-link" data-bs-toggle="dropdown" type="button">Services
+                    <a @click="myNewFunction()" class="nav-link service-link" type="button">Services
                         <font-awesome-icon class="services-drop-down" icon="chevron-down"/></a>
                     </li>
                     <!-- drop-down links -->
-                    <div id="homeDropDown" class="drop-down-links sideNav">
+                    <div id="homeDropDown" class="drop-down-links sideNav" ref="homeDropDown">
                             <router-link to="/maintenance">Periodic Services</router-link>
                             <router-link to="/autocare">Inspection & Diagnostics</router-link>
                             <router-link to="/insurance">Insurance & Papers</router-link>
@@ -68,17 +68,17 @@ export default {
     },
     methods:{
          myNewFunction() {
-          document.getElementById("homeDropDown").classList.toggle("showing");
+          this.$refs.homeDropDown.classList.toggle("showing");
         },
      
         
         //SideNav
         openNav() {
-         document.getElementById("sideNav").style.display = "block";
+         this.$refs.sideNav.style.display = "block";
         },
 
         closeNav() {
-        document.getElementById("sideNav").style.display = "none";
+        this.$refs.sideNav.style.display = "none";
         },
         toggleList(){
                 this.isActive = !this.isActive
