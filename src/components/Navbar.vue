@@ -3,8 +3,8 @@
     <section>
             <!-- SideNav -->
         <div class="sidenav" ref="sideNav" id="sideNav">
-            <font-awesome-icon icon="times" @click="closeNav()" class="closeBtn"/>
-            <a @click="toggleList()"  id="sideNav-link" class="nav-link sideNavLink service-link" type="button">Services<font-awesome-icon 
+            <font-awesome-icon icon="times" @click="closeNav" class="closeBtn"/>
+            <a @click="toggleList"  id="sideNav-link" class="nav-link sideNavLink service-link" type="button">Services<font-awesome-icon 
                icon="chevron-down" class="services-drop-down"/></a>
             <div id="sideNavHomeDropDown" class="drop-down-links2" v-bind:style='{"display" : (isActive? "block" : "none" )}'>
                 <router-link to="/maintenance">Periodic Services</router-link>
@@ -21,7 +21,7 @@
             <!-- The main nav -->
         <div id="nav-pos">
             <nav class="navbar navbar-expand-lg">
-                <font-awesome-icon icon="bars" @click="openNav()" class="openNavBtn"/>
+                <font-awesome-icon icon="bars" @click="openNav" class="openNavBtn"/>
                 <router-link to="/"><img src="../assets/logo.png" alt="Motormata Logo"></router-link>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -30,7 +30,7 @@
                 <div class="collapse navbar-collapse navbarplace" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                    <a @click="myNewFunction()" class="nav-link service-link" type="button">Services
+                    <a @click="myNewFunction" class="nav-link service-link" type="button">Services
                         <font-awesome-icon class="services-drop-down" icon="chevron-down"/></a>
                     </li>
                     <!-- drop-down links -->
@@ -70,29 +70,21 @@ export default {
          myNewFunction() {
           this.$refs.homeDropDown.classList.toggle("showing");
         },
-     
-        
         //SideNav
         openNav() {
          this.$refs.sideNav.style.display = "block";
         },
-
         closeNav() {
         this.$refs.sideNav.style.display = "none";
         },
         toggleList(){
-                this.isActive = !this.isActive
+             this.isActive = !this.isActive
         }
     },
-   
-  
-
 }
 </script>
 
-
 <style scoped lang="scss">
-
 /* Navbar toggler menu */
 .navbar-toggler {
     display: none;
