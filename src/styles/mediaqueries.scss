@@ -91,16 +91,7 @@
 
 /* 1024px display width */
 @media (max-width: 1024px) {
-    ul.navbar-nav {
-        margin: 0 2px;
-    }
-    .nav-item {
-        padding: 0 40px;
-    }
-    .drop-down-links {
-        position: absolute;
-        left: 14rem;
-    }
+   
     .drive-green {
         font-size: 28px;
     }
@@ -170,13 +161,14 @@
         font-size: 10px;
         top: 5px;
         max-width: 300px;
+        left: 80px;
     }
     .sec-text {
         left: 2rem;
     }
     .review-image {
         position: absolute;
-        left: 40px;
+        left: 0px;
         max-width: 80px;
     }
     .sec-img {

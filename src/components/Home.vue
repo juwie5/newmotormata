@@ -471,20 +471,7 @@ h1.join-us  {
         text-align: center;
     }
     /* nav */
-    .openNavBtn {
-        left: 22rem;
-        z-index: 3;
-    }
-    #sideNav {
-        width: 80%;
-    }
-    .signin-side-navBtn {
-        left: 5rem;
-    }
-    .signup-side-navBtn {
-        top: 3.5rem;
-        left: -5.2rem;
-    }
+ 
     /* Hero */
     .drive-green {
         font-size: 35px;
@@ -832,12 +819,25 @@ h1.join-us  {
 }
 }
 
-@media (max-width: 1024px){
+@media only screen and (min-width: 768px) and (max-width:1024px){
 .maintenance-title, .autocare-title, .insurance-title {
     font-size: 18px;
 }
+.hero-illustration{
+  display: none;
+}
+.reg-vehicle{
+  left: 50%;
+  top: 6rem;
+}
+.hero-title{
+  font-size: 52px;
+}
 
+}
 
+@media only screen and (min-width: 426px) and (max-width: 767px){
+  
 }
 
 </style>

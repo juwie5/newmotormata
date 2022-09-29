@@ -5,10 +5,9 @@ import store from './store'
 import VueScrollTo from 'vue-scrollto'
 
 import "bootstrap/dist/css/bootstrap.min.css"
-import 'jquery/src/jquery.js'
 import 'bootstrap/dist/js/bootstrap.min.js'
 import "bootstrap"
-import "./styles/mediaqueries.scss"
+//import "./styles/mediaqueries.scss"
 
 
 import { library } from '@fortawesome/fontawesome-svg-core'

@@ -12,7 +12,7 @@
                 <router-link to="/insurance">Insurance & Papers</router-link>
                 <router-link to="/repairs">Spares & Repair</router-link>
             </div>
-            <router-link to="/" v-scroll-to="{el:'#faqs',easing: 'linear'}" class="nav-link">FAQs</router-link>
+            <router-link to="/" v-scroll-to="{el:'#faqs', easing: 'linear'}" class="nav-link">FAQs</router-link>
             <router-link to="/contact" class="nav-link">Contact</router-link>
             <router-link to="/signin"><button class="btn signin-side-navBtn">Sign in</button></router-link>
             <router-link to="/signup"><button class="btn signup-side-navBtn">Create account</button></router-link>
@@ -20,36 +20,32 @@
 
             <!-- The main nav -->
         <div id="nav-pos">
-            <nav class="navbar navbar-expand-lg">
-                <font-awesome-icon icon="bars" @click="openNav" class="openNavBtn"/>
+            <nav class="navbar">
                 <router-link to="/"><img src="../assets/logo.png" alt="Motormata Logo"></router-link>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse navbarplace" id="navbarSupportedContent">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                    <a @click="myNewFunction" class="nav-link service-link" type="button">Services
-                        <font-awesome-icon class="services-drop-down" icon="chevron-down"/></a>
-                    </li>
-                    <!-- drop-down links -->
-                    <div id="homeDropDown" class="drop-down-links sideNav" ref="homeDropDown">
-                            <router-link to="/maintenance">Periodic Services</router-link>
-                            <router-link to="/autocare">Inspection & Diagnostics</router-link>
-                            <router-link to="/insurance">Insurance & Papers</router-link>
-                            <router-link to="/repairs">Spares & Repair</router-link>
-                    </div>
-                    <li class="nav-item">
-                    <router-link :to="{path:'/'}" v-scroll-to="{el:'#faqs',easing: 'smooth'}" class="nav-link">FAQs</router-link>
-                    </li>
-                    <li class="nav-item">
-                    <router-link to="/contact" class="nav-link">Contact</router-link>
-                    </li>
-                </ul>
+                <div class="navbarplace" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                        <a @click="myNewFunction" class="nav-link service-link" type="button">Services
+                            <font-awesome-icon class="services-drop-down" icon="chevron-down"/></a>
+                        </li>
+                        <!-- drop-down links -->
+                        <div id="homeDropDown" class="drop-down-links sideNav" ref="homeDropDown">
+                                <router-link to="/maintenance">Periodic Services</router-link>
+                                <router-link to="/autocare">Inspection & Diagnostics</router-link>
+                                <router-link to="/insurance">Insurance & Papers</router-link>
+                                <router-link to="/repairs">Spares & Repair</router-link>
+                        </div>
+                        <li class="nav-item">
+                        <router-link :to="{path:'/'}" v-scroll-to="{el:'#faqs',easing: 'smooth'}" class="nav-link">FAQs</router-link>
+                        </li>
+                        <li class="nav-item">
+                        <router-link to="/contact" class="nav-link">Contact</router-link>
+                        </li>
+                    </ul>
+                    <router-link to="/signin"><button class="btn nav-signin-btn">Sign in</button></router-link>
+                    <router-link to="/signup"><button class="btn nav-createacct-btn">Create account</button></router-link>
                 </div>
-                <router-link to="/signin"><button class="btn nav-signin-btn">Sign in</button></router-link>
-                <router-link to="/signup"><button class="btn nav-createacct-btn">Create account</button></router-link>
+                <font-awesome-icon icon="bars" @click="openNav" class="openNavBtn"/>
             </nav>
        </div>     
     </section>        
@@ -86,22 +82,24 @@ export default {
 
 <style scoped lang="scss">
 /* Navbar toggler menu */
+.navbar{
+    display: flex;
+}
 .navbar-toggler {
     display: none;
 }
-
 .container-fluid{
     padding: 2% 5% 0;
 }
-
-
-
 ul.navbar-nav  {
     margin: 0 20px;
 }
 
 .nav-item   {
     padding: 0 50px;
+}
+.navbar-nav{
+    flex-direction: row;
 }
 
 .nav-item a.nav-link   {
@@ -111,7 +109,6 @@ ul.navbar-nav  {
 .nav-item a.nav-link:hover   {
     color: #bbb;
 }
-
 .nav-signin-btn, .signin-side-navBtn {
     margin: 0 20px;
     border: 1px solid #000;
@@ -119,7 +116,6 @@ ul.navbar-nav  {
     width: 85px;
     border-radius: 3px;
 }
-
 .nav-signin-btn:hover, .signin-side-navBtn:hover {
     background-color: #000;
     color: #fff;
@@ -194,7 +190,7 @@ ul.navbar-nav  {
     height: 100vh;
     left: 0;
     top: 0;
-    // z-index: 0;
+    z-index: 3;
     box-shadow: 10px 8px 20px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -270,14 +266,59 @@ ul.navbar-nav  {
     .drop-down-links2 a:last-child {
         border-bottom: none;
     }
-
+    .nav-signin-btn, .nav-createacct-btn{
+        display: none;
+    }
+    .openNavBtn {
+        left: 22rem;
+        z-index: 3;
+    }
+    #sideNav {
+        width: 40%;
+    }
+    .signin-side-navBtn {
+        left: 5rem;
+    }
+    .signup-side-navBtn {
+        top: 3.5rem;
+        left: -5.2rem;
+    }
 }
 
-@media screen and (max-width: 768px){
-    .openNavBtn{
-    display: block;
-    
-    } 
+@media only screen and(min-width: 475px) and (max-width: 768px){
+    .openNavBtn {
+        left: 40px;
+        z-index: 3;
+        display: block;
+        float: left;
+    }
+    .closeBtn {
+        left: 17rem;
+    }
+    .signin-side-navBtn {
+        left: 0.5rem;
+    }
+    .signup-side-navBtn {
+        top: 2rem;
+        left: 0.5rem;
+    }
+    .navbar-nav{
+        display: none;
+    }
+    .nav-signin-btn, .nav-createacct-btn{
+        display: none;
+    }
+}
+
+@media (max-width: 922px){
+    .navbarplace{
+        display: none;
+    }
+    .openNavBtn {
+        left: 40px;
+        z-index: 3;
+        display: block;
+    }
 }
 
 </style>

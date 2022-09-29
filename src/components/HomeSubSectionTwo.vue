@@ -119,7 +119,7 @@
       </div>
 
       <div class="col-lg-6 col-md-6 col-sm-12 first-tech">
-        <img src="../assets/technician.png" alt="">
+        <img class="tech-img" src="../assets/samson.jpg" alt="">
 
         <div class="staff-content">
           <h4 class="staff-name">Tobi</h4>
@@ -242,15 +242,13 @@
   }
 
   .first-tech img{
-      max-width: 40%;
+      max-width: 150px;
       margin-right: 5%;
       position: relative;
       top: -30px;
   }
   .tech-img{
-     border-radius: 50%;
-     width:216px; 
-     height: 222px;
+     border-radius: 19%;
      object-fit: cover;
   }
 
@@ -295,5 +293,13 @@
       color: #fff;
       font-size: 1.5rem;
       margin-left: 5px;
+  }
+  @media only screen and (min-width: 768px) and (max-width: 1024px){
+    .benefit-title, .technician-title, .subscription-title{
+      font-size: calc(1.375rem + 1.5vw);
+    }
+    .first-tech img{
+      max-width: 100px;
+    }
   }
 </style>

@@ -20,7 +20,7 @@
                 <img src="../assets/micn-c.svg" alt="">
                 <h3 class="cards-h3" >Mobile maintenance</h3>
                 </div>
-                <div class="cards">
+                <div class="cards" id="tabview">
                 <img src="../assets/micn-a.svg" alt="">
                 <h3 class="cards-h3">Vehicle papers</h3>
                 </div>
@@ -368,6 +368,31 @@
     font-weight: 700;
   }
  
+ @media only screen and (min-width: 768px) and (max-width:1024px){
+  #services{
+    padding-top: 10%;
+  }
+  .cards-set{
+    grid-template-columns: auto auto;
+    row-gap: 10px;
+    align-items: center;
+  }
+  #tabview{
+    align-self: end;
+  }
+  .assure-img{
+    width: calc(75% - 14rem);
+  }
+  .review-text{
+  left: 82px;
+  }
+  .sec-text{
+    left: 0;
+  }
+  .assurance-title, .hw-we-wrk-title, .review-title{
+    font-size: 28px
+  }
+ }
 </style>
  
  
