@@ -74,7 +74,7 @@
     <h1 class="technician-title">Top Technicians</h1>
     <hr class="service-divider">
 
-    <div class="row">
+    <div class="row tech-row">
       <div class="col-lg-6 col-md-6 col-sm-12 first-tech">
         <img class="tech-img" src="../assets/mike.jpg" alt="">
 
@@ -180,7 +180,7 @@
   .icon {
       position: absolute;
       margin-top: 5px;
-      left: 10%;
+      left: 9%;
   }
   .t-icon{
     position: absolute;
@@ -296,10 +296,26 @@
   }
   @media only screen and (min-width: 768px) and (max-width: 1024px){
     .benefit-title, .technician-title, .subscription-title{
-      font-size: calc(1.375rem + 1.5vw);
+      font-size: 28px;
     }
     .first-tech img{
       max-width: 100px;
+    }
+    
+  }
+  @media only screen and (min-width: 425px) and (max-width: 767px){
+    .screenshot{
+      display: none;
+    }
+    .first-tech img{
+      max-width: 90px;
+    }
+    .tech-row{
+      display: grid;
+      grid-template-columns: auto auto;
+    }
+    .screenshot{
+      display: none;
     }
   }
 </style>

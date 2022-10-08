@@ -837,7 +837,10 @@ h1.join-us  {
 }
 
 @media only screen and (min-width: 426px) and (max-width: 767px){
-  
+ .hero-illustration{
+  display: none;
+ }
 }
+
 
 </style>

@@ -3,7 +3,7 @@
     <section id="services">
         <div class="services">
             <div class="why-sers">
-                <h4 class="drive-green">Why Use Motormata?</h4>
+                <h1 class="drive-green">Why Use Motormata?</h1>
                 <div class="sect-sers">
                 <p class="sers-txt">Motormata helps car owners drive with confidence. </p>
                 <p class="sers-txt" > We leverage technology to track critical components </p> 
@@ -50,14 +50,14 @@
 
   <!-- How We work -->
   <section id="how-we-work">
-    <div class="row">
-      <div class="col-lg-6 col-md-6 col-sm-12 abstract-image">
+    <div class="row how-we">
+      <div class="col-lg-6 col-md-12 col-sm-12 abstract-image">
         <img src="../assets/howWeWork.png" alt="">
       </div>
-      <div class="col-lg-6 col-md-6 col-sm-12 how-we-work-texts">
+      <div class="col-lg-6 col-md-12 col-sm-12 how-we-work-texts">
         <h1 class="col-lg-6 hw-we-wrk-title">How we work</h1>
         <hr class="service-divider">
-        <ol>
+        <ol class="hw-opts">
           <li class="ordered-list">Choose your preferred service
             <ul>
               <li>Option to Repair/Buy Now Pay Later or pay in full at once.</li>
@@ -167,7 +167,11 @@
   text-align: left;
 
 }
-
+.drive-green{
+  color: #008937;
+    font-size: 2.5rem;
+    font-weight: 400;
+}
 .why-heading{
    font-size: 24px;
    color: #008937;
@@ -270,7 +274,7 @@
 
   .abstract-image   {
     position: relative;
-    right: 100px;
+    right: 50px;
   }
 
   #how-we-work ol{
@@ -384,13 +388,63 @@
     width: calc(75% - 14rem);
   }
   .review-text{
-  left: 82px;
+    left: 80px;
+    bottom: 4px;
+  }
+  .review-image, .sec-img{
+      width: 9%;
+  }
+  .reviewer-name{
+    left: 85px;
   }
   .sec-text{
     left: 0;
   }
   .assurance-title, .hw-we-wrk-title, .review-title{
     font-size: 28px
+  }
+  .how-we{
+    align-items: flex-start;
+  }
+
+  .hw-opts{
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 15px;
+  }
+  .cards{
+    width: 125px;
+  }
+  .cards img{
+    width: 80px;
+  }
+  .cards-h3{
+    font-size: 12px;
+  }
+ }
+
+ @media only screen and (min-width: 425px) and (max-width: 767px){
+  .abstract-image{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .cards-set, .assure-img{
+    display: none;
+  }
+  .review-text{
+    left: 80px;
+    bottom: 4px;
+  }
+  .review-image, .sec-img{
+      width: 9%;
+  }
+  .reviewer-name{
+    left: 85px;
+  }
+  .sec-text{
+    left: 0;
   }
  }
 </style>
