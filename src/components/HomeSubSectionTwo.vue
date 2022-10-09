@@ -1,5 +1,6 @@
 <template>
-     <!-- Motormata Benefits -->
+ <div>
+         <!-- Motormata Benefits -->
   <section id="benefits">
     <h1 class="benefit-title">Motormata Benefits</h1>
     <hr class="service-divider">
@@ -142,6 +143,8 @@
     <input type="email" name="subscribe" id="sub" placeholder="Enter your email">
     <button type="submit" class="btn subscribe-btn">Subscribe</button>
   </section>
+  
+ </div>
 </template>
 
 <script>
@@ -300,6 +303,9 @@
     }
     .first-tech img{
       max-width: 100px;
+    }
+    .screenshot{
+      display: none;
     }
     
   }

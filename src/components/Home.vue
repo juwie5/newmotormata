@@ -827,7 +827,7 @@ h1.join-us  {
   display: none;
 }
 .reg-vehicle{
-  left: 50%;
+  left: 48%;
   top: 6rem;
 }
 .hero-title{

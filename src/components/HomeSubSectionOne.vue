@@ -1,5 +1,6 @@
  <template>
-   <!-- Services section -->
+  <div>
+       <!-- Services section -->
     <section id="services">
         <div class="services">
             <div class="why-sers">
@@ -96,12 +97,11 @@
                 appreciate them for all they’ve done.” </span>
               <p class="reviewer-name">Obinna Anapusim</p>
             </div>
-            <div class="col-lg-2"></div>
             <div class="col-lg-5 the-guy second">
-              <img class="review-image sec-img" src="../assets/lekan-reviewer.png" alt="reviewer-profile">
+              <img class="review-image" src="../assets/lekan-reviewer.png" alt="reviewer-profile">
               <span class="review-text sec-text">“I enjoyed using Motormata, they help me manage my car very well and I
                 really appreciate them for all they’ve done.” </span>
-              <p class="reviewer-name2"> Olajide Ogunleye</p>
+              <p class="reviewer-name"> Olajide Ogunleye</p>
             </div>
           </div>
         </div>
@@ -117,8 +117,7 @@
             <div class="col-lg-2"></div>
             <div class="col-lg-5 second">
               <img class="review-image sec-img" src="../assets/lekan-reviewer.png" alt="reviewer-profile">
-              <span class="review-text sec-text">“I enjoyed using Motormata, they help me manage my car very well and I
-                really
+              <span class="third-text">“I enjoyed using Motormata, they help me manage my car very well and I really
                 appreciate them for all they’ve done.” </span>
               <p class="reviewer-name2">Lekan Baruwa</p>
             </div>
@@ -133,7 +132,8 @@
       </button>
     </div>
   </section>
- </template>
+  </div>
+</template>
 
 
 <script>
@@ -343,7 +343,16 @@
 
   .sec-text {
       position: relative;
-      left: 1rem;
+      left: 8rem;
+  }
+
+  .third-text{
+       display: block;
+      font-size: 13px;
+      position: relative;
+      left: 2rem;
+      bottom: 16px;
+      max-width: 350px;
   }
 
   .review-image {
@@ -353,7 +362,7 @@
 
   .sec-img  {
       position: absolute;
-      left: 50%;
+       left: 50%;
   }
 
   .reviewer-name    {
@@ -366,7 +375,7 @@
 
   .reviewer-name2   {
     position: relative;
-    left: 20px;
+    left: 2rem;
     font-size: 15px;
     color: #008937;
     font-weight: 700;
