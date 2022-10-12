@@ -54,9 +54,6 @@ export default{
             }            
         },
 
-
-
-        
        async authUser({dispatch}, credrentials){
             let nameTest = /^[A-Za-z]+$/
             let phoneTest = /^\d{11}$/
@@ -68,7 +65,6 @@ export default{
             let plate = plateTest.test(credrentials.plateNumber)
             let phone = phoneTest.test(credrentials.mobileNumber)
             let pass = passwordTest.test(credrentials.password)
-
 
             if( name && email && plate && phone && pass == true){
                 let name = credrentials.fullName

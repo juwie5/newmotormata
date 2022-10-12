@@ -23,8 +23,7 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home,
-    
+    component: Home,  
   },
   {
     path: '/dashboard',
@@ -70,59 +69,81 @@ const routes = [
         {
         path: '',
         name: 'ProfileHome',
-        component: ProfileHome
+        component: function () {
+          return import(/* webpackChunkName: "userhome" */ '../views/user/ProfileHome.vue')
+        }
       },
       {
         path: 'messages',
         name: 'Messages',
-        component: Messages
+        component: function () {
+          return import(/* webpackChunkName: "usermessages" */ '../views/user/Messages.vue')
+        }
       },
       {
         path: 'security',
         name: 'Security',
-        component: Security
+        component: function () {
+          return import(/* webpackChunkName: "usersecurity" */ '../views/user/Security.vue')
+        }
       },
       {
         path: 'settings',
         name: 'Settings',
-        component: Settings
+        component: function () {
+          return import(/* webpackChunkName: "usersettings" */ '../views/user/Settings.vue')
+        }
       }
     ]
     },
   {
     path:'/signup',
     name: 'Signup',
-    component: Signup
+    component: function () {
+      return import(/* webpackChunkName: "signup" */ '../views/Signup.vue')
+    }
  },
   {
     path:'/signin',
     name: 'Signin',
-    component: Signin
+    component: function () {
+      return import(/* webpackChunkName: "signin" */ '../views/Signin.vue')
+    }
   },
   {
     path:'/contact',
     name: 'Contact',
-    component: Contact
+    component: function () {
+      return import(/* webpackChunkName: "contact" */ '../views/Contact.vue')
+    }
   },
   {
     path: '/maintenance',
     name: 'PeriodicServices',
-    component: PeriodicServices
+    component: function () {
+      return import(/* webpackChunkName: "maintenance" */ '../views/PeriodicServices.vue')
+    }
   },
   {
     path: '/insurance',
     name: 'Insurance',
-    component: Insurance
+    component: function () {
+      return import(/* webpackChunkName: "insurance" */ '../views/Insurance.vue')
+    }
   },
   {
     path: '/autocare',
     name: 'Autocare',
-    component: Autocare
+    component: function () {
+      return import(/* webpackChunkName: "autocare" */ '../views/Autocare.vue')
+    }
   },
   {
     path: '/repairs',
     name: 'Spares',
-    component: Spares
+    component: function () {
+      return import(/* webpackChunkName: "spares" */ '../views/Spares.vue')
+    }
   },
   {
     path: '/about',

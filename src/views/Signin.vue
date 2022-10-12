@@ -1,4 +1,4 @@
-<template>
+    <template>
     <div>
           <section id="signup">         
             <router-link to="/" class="go-home-link"> <font-awesome-icon icon="chevron-left"/>  Go home</router-link>

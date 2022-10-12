@@ -157,7 +157,12 @@ export default {
   #footer{
     text-align: center;
   }
-  
+  .copyright-content{
+    font-size: .7rem;
+  }
+  .footer-brand img{
+    margin: 10px auto;
+  }
 
 }
 

@@ -48,31 +48,7 @@
           }
       },
       methods: {
-        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
             }
   }
   </script>
@@ -191,5 +167,24 @@ textarea{
     line-height: 2.8rem;
    }
  }
-  
+  @media only screen and (min-width: 476px) and (max-width: 768px){
+    .contain-h2{
+        font-size: 2.5rem;
+        line-height: 6rem;
+    }
+    .contain-p{
+        font-size: 1.5rem;
+        line-height: 2rem;
+    }
+    input{
+        width: 90%;
+    }
+    .formmain{
+        align-items: center;
+    }
+    .full{
+        width: 90%;
+        margin: 0;
+    }
+  }
   </style>
