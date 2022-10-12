@@ -90,7 +90,7 @@
     <div id="review-carousel" class="carousel slide" data-ride="false">
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <div class="row">
+          <div class="car-sel">
             <div class="col-lg-5 first">
               <img class="review-image" src="../assets/angel-reviewer.png" alt="reviewer-profile">
               <span class="review-text">“I enjoyed using Motormata, they help me manage my car very well and I really
@@ -98,16 +98,16 @@
               <p class="reviewer-name">Obinna Anapusim</p>
             </div>
             <div class="col-lg-5 the-guy second">
-              <img class="review-image" src="../assets/lekan-reviewer.png" alt="reviewer-profile">
+              <img class="review-image sec-img" src="../assets/lekan-reviewer.png" alt="reviewer-profile">
               <span class="review-text sec-text">“I enjoyed using Motormata, they help me manage my car very well and I
                 really appreciate them for all they’ve done.” </span>
-              <p class="reviewer-name"> Olajide Ogunleye</p>
+              <p class="reviewer-name2"> Olajide Ogunleye</p>
             </div>
           </div>
         </div>
 
         <div class="carousel-item">
-          <div class="row">
+          <div class="car-sel">
             <div class="col-lg-5 the-lady first">
               <img class="review-image" src="../assets/angel-reviewer.png" alt="reviewer-profile">
               <span class="review-text">“I enjoyed using Motormata, they help me manage my car very well and I really
@@ -325,6 +325,11 @@
       position: absolute;
       left: 10px;
   }
+  .car-sel{
+    display: flex;
+    align-self: center;
+    justify-content: space-between;
+  }
 
   .carousel-control-next-icon   {
     color: #000;
@@ -343,22 +348,24 @@
 
   .sec-text {
       position: relative;
-      left: 8rem;
+      left: 2rem;
   }
 
   .third-text{
        display: block;
       font-size: 13px;
       position: relative;
-      left: 2rem;
-      bottom: 16px;
+      left: 5px;
+      bottom: 0;
       max-width: 350px;
   }
 
   .review-image {
       position: absolute;
-      bottom: 0;
+      // bottom: 0;
   }
+
+
 
   .sec-img  {
       position: absolute;
@@ -431,8 +438,7 @@
     font-size: 12px;
   }
  }
-
- @media only screen and (min-width: 425px) and (max-width: 767px){
+@media only screen and (min-width: 425px) and (max-width: 767px){ 
   .abstract-image{
     width: 100%;
     display: flex;
@@ -442,20 +448,122 @@
   .cards-set, .assure-img{
     display: none;
   }
-  .review-text{
-    left: 80px;
-    bottom: 4px;
-  }
+  .review-text {
+        text-align: left;
+        width: 250px;
+        top: 10px;
+        left: 120px;
+    }
+
   .review-image, .sec-img{
-      width: 9%;
+      width: 10%;
   }
+ 
   .reviewer-name{
     left: 85px;
+    top: 1rem;
   }
-  .sec-text{
-    left: 0;
+  .reviewer-name2 {
+        position: relative;
+        top: 2rem;
+        left: 6rem;
   }
+  .third-text{
+    left: 6rem;
+    max-width: 250px;
+  }
+
+  .car-sel{
+    flex-direction: column;
+    align-items: center;
+  }
+  .sec-img{
+    left: 30%;
  }
+ .sec-text {
+        left: 7.8rem;
+    }
+ .sers-txt{
+  font-size: 20px;
+}
+ .abstract-image {
+        position: unset;
+        margin: auto 0;
+        padding: 5%;
+    }
+    .abstract-image img {
+        max-width: 330px;
+    }
+
+.drive-green{
+    font-size: 2rem;
+  }
+  .motormata-assurance li{
+    font-size: 20px;
+  }
+
+      /* Services */
+      .services{
+      flex-direction: column;
+    }
+    #services li {
+        text-align: left;
+        font-size: 16px;
+        padding-left: 1.5rem;
+    }
+    .periodic-check-icon {
+        left: 6rem;
+        top: 10.5%;
+    }
+
+    /* Assurance */
+    .assurance-title {
+        padding-top: 10%;
+        font-size: 30px;
+    }
+     #how-we-work .ordered-list{
+      text-align: center;
+      font-size: 14px;
+    }
+     .ordered-list li{
+        font-size: 12px;
+        margin: 0;
+      }
+ 
+ }
+
+ @media only screen and (min-width: 320px) and (max-width: 475px){
+  .cards-set, .assure-img{
+      display: none;
+    }
+    .abstract-image{
+      position: unset;
+      margin: auto 0;
+      padding: 5%;
+  }
+  .abstract-image img{
+    max-width: 300px;
+  }
+  .second{
+    display: none;
+  }
+  .review-image{
+    width: 20%;
+    left: 10%;
+  }
+  .reviewer-name{
+    top: 20px;
+    left: -8px;
+  }
+  .review-text{
+    left: 48px;
+    max-width: 200px;
+    text-align: center;
+  }
+  .service-divider{
+    margin: 5% auto 10%;
+  }
+}
 </style>
  
  

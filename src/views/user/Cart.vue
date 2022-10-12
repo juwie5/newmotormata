@@ -16,8 +16,8 @@
                     <h4 class="h4-text">N20,000 <font-awesome-icon class="times" icon="times"/></h4>
                 </div>
                 <div class="ord-item btn">
-                    <button class="btn-chk">Continue Shopping</button>
-                    <button class="btn-chk btn-emp"><font-awesome-icon class="trash" icon="trash"/>Empty Cart </button>
+                    <button class="btn-chk"><router-link to="/dashboard">Continue Shopping</router-link></button>
+                    <button class="btn-chk btn-emp"><font-awesome-icon class="trash" icon="trash"/>Empty Cart</button>
                 </div>
             </div>
             <div class="bill">
@@ -166,7 +166,11 @@ export default {
     border-radius: 5px;
     font-size: 18px;
     background-color: #000000;
-    color: #fff;
+    
+    a{
+        text-decoration: none;
+        color: #fff;
+    }
 }
 
 .chk {

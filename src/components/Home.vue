@@ -1,5 +1,5 @@
 <template>
-  <div> 
+  <div class="main"> 
     <!-- Header -->
     <section class="container-fluid" id="header">
         <Navbar/>
@@ -464,10 +464,27 @@ h1.join-us  {
     padding: 0;
   }
 
+@media only screen and (min-width: 768px) and (max-width:1024px){
+.maintenance-title, .autocare-title, .insurance-title {
+    font-size: 18px;
+}
+.hero-illustration{
+  display: none;
+}
+.reg-vehicle{
+  left: 48%;
+  top: 6rem;
+}
+.hero-title{
+  font-size: 52px;
+}
+}
 
 /* 430px display width */
 @media (max-width: 430px) {
-    body {
+    .main {
+         margin: 0;
+         padding: 0;
         text-align: center;
     }
     /* nav */
@@ -496,12 +513,12 @@ h1.join-us  {
         padding: 10px 10px 10px 40px;
     }
     .hero-car-icon {
-        top: 386px;
+        top: 401px;
         left: 98px;
         font-size: 14px;
     }
     .hero-call-icon {
-        top: 440px;
+        top: 456px;
         left: 98px;
         font-size: 13px;
     }
@@ -513,104 +530,7 @@ h1.join-us  {
     h1.join-us {
         font-size: 15px;
     }
-    /* Services */
-    .services{
-      flex-direction: column;
-    }
-    .cards-set{
-      display: inline-block;
-    }
 
-    #services li {
-        text-align: left;
-        font-size: 16px;
-        padding-left: 1.5rem;
-    }
-    .periodic-check-icon {
-        left: 6rem;
-        top: 10.5%;
-    }
-      .service-divider {
-        margin: 5% auto 10%;
-        background-color: #53FF6E;
-        width: 70px;
-    }
-    /* Assurance */
-    .assurance-title {
-        padding-top: 10%;
-        font-size: 30px;
-    }
-
-    .assure-img{
-      display: none;
-    }
-    .download-title {
-        font-size: 30px;
-        padding: 5%;
-    }
-    img.googlePlay {
-        max-width: 130px;
-    }
-    img.appStore {
-        max-width: 110px;
-    }
-    .app-download {
-      margin: 0;
-  }
-    .screenshot{
-      display: none;
-    }
-    /* How we work */
-     .hw-we-wrk-title{
-      font-size: 30px;
-    }
-
-    .abstract-image {
-        position: unset;
-        margin: auto 0;
-        padding: 5%;
-    }
-    .abstract-image img {
-        max-width: 330px;
-    }
-   
-    #how-we-work .ordered-list{
-      text-align: center;
-      font-size: 14px;
-    }
-     .ordered-list li{
-        font-size: 12px;
-        margin: 0;
-      }
-    /* Reviews */
-    .review-text {
-        text-align: left;
-        width: 220px;
-        top: 10px;
-        left: 120px;
-    }
-    .sec-text {
-        left: 1.8rem;
-    }
- 
-    .reviewer-name {
-        position: relative;
-        top: 20%;
-        left: -0.8rem;
-    }
-    .review-image{
-      left: 20px;
-      top: 10px;
-
-    }
-    .sec-img{
-      left: -17%;
-    }
-    .reviewer-name2 {
-        position: relative;
-        top: 20%;
-        left: -6.2rem;
-    }
     /* Benefits */
     #benefits {
         padding: 3% 10% 4%;
@@ -618,38 +538,8 @@ h1.join-us  {
     .benefit-title{
       font-size: 30px;
     }
-    .icon{
-      left: 31%;
-    }
-    .c-icon {
-        position: absolute;
-        left: 55px;
-        top: 5.6px;
-        font-size: 18px;
-    }
-    .a-icon {
-        position: absolute;
-        left: 58px;
-        top: 5.6px;
-        font-size: 18px;
-    }
-    .t-icon {
-        position: absolute;
-        left: 30%;
-        font-size: 18px;
-    }
-    .q-icon {
-        position: absolute;
-        left: 85px;
-        top: 7px;
-        font-size: 18px;
-    }
-    .convinience, .affordable, .transparent, .quality {
-        margin: 2% 5% 0;
-        max-width: 100%;
-        text-align: center;
-    }
 
+  
     /* Number section */
     .num-sect{
       flex-direction: column;
@@ -669,39 +559,14 @@ h1.join-us  {
         text-align: center;
         padding: 0;
     }
-    #subscription input {
-        width: 50%;
-        padding: 5px 10px;
-        outline: none;
-    }
-    .subscribe-btn {
-        width: 40%;
-        padding: 5px 10px;
-        font-size: 1.2rem;
-    }
+
     /* Technicians */
     .technician-title {
         text-align: center;
         font-size: 30px;
     }
     
-    .tech-img{
-      width: 200px;
-      height: 150px;
-    }
-    .staff-name {
-        font-size: 15px;
-        position: relative;
-        top: 0.4rem;
-    }
-    .experience {
-        font-size: 13px;
-    }
-    .staff-content i {
-        font-size: 10px;
-        position: relative;
-        top: -0.2rem;
-    }
+  
     /* FAQs */
     #faqs {
         text-align: left;
@@ -729,12 +594,12 @@ h1.join-us  {
 @media (max-width: 375px){
 
 .hero-car-icon {
-  top: 310px; 
+  top: 325px; 
   left: 70px;
 }
 
 .hero-call-icon {
-    top: 365px;
+    top: 380px;
     left: 70px;
     font-size: 13px;
 }
@@ -774,12 +639,12 @@ h1.join-us  {
 
 @media (max-width: 320px){
   .hero-car-icon {
-  top: 325px; 
+  top: 343px; 
   left: 2.8rem;
 }
 
 .hero-call-icon {
-    top: 378px;
+    top: 398px;
     left: 2.8rem;
 }
 
@@ -807,40 +672,25 @@ h1.join-us  {
 
 }
 
-@media only screen and (min-width: 325px) and (max-width: 360px){
-    .hero-car-icon {
-  top: 333px; 
-  left: 4.5rem;
-}
-
-.hero-call-icon {
-    top: 387px;
-    left: 4.5rem;
-}
-}
-
-@media only screen and (min-width: 768px) and (max-width:1024px){
-.maintenance-title, .autocare-title, .insurance-title {
-    font-size: 18px;
-}
-.hero-illustration{
-  display: none;
-}
-.reg-vehicle{
-  left: 48%;
-  top: 6rem;
-}
-.hero-title{
-  font-size: 52px;
-}
-
-}
 
 @media only screen and (min-width: 426px) and (max-width: 767px){
  .hero-illustration{
   display: none;
  }
+ .reg-vehicle{
+  position: unset;
+  margin: 1% auto 15%;
+ }
+ .hero-car-icon{
+  left: 30%;
+  top: 435px;
+ }
+ .hero-call-icon{
+  left: 30%;
+  top: 497px;
+ }
 }
+
 
 
 </style>

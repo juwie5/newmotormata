@@ -324,4 +324,101 @@
       display: none;
     }
   }
+  @media only screen and (min-width: 320px) and (max-width: 425px){
+    .benefit-title, .technician-title{
+      text-align: center;
+      font-size: 30px;
+    }
+    .subscription-title{
+      font-size: 2rem;
+      text-align: center;
+      padding: 0;
+    }
+    #subscription input {
+        width: 50%;
+        padding: 5px 10px;
+        outline: none;
+    }
+    .subscribe-btn {
+        width: 40%;
+        padding: 5px 10px;
+        font-size: 1.2rem;
+    }
+    .tech-img{
+      width: 200px;
+      height: 150px;
+    }
+    .staff-name {
+        font-size: 15px;
+        position: relative;
+        top: 0.4rem;
+    }
+    .experience {
+        font-size: 13px;
+    }
+    .staff-content i {
+        font-size: 10px;
+        position: relative;
+        top: -0.2rem;
+    }
+    #download {
+        text-align: center;
+    }
+    .app-download {
+        margin-top: 5%;
+    }
+    .download-title {
+        margin-bottom: 5%;
+    }
+    img.googlePlay {
+        max-width: 130px;
+    }
+    img.appStore {
+        max-width: 110px;
+    }
+    .tech-row{
+      padding-top: 40px;
+      gap: 5px;
+    }
+    .first-tech img{
+      max-height: 130px;
+    }
+    .convinience, .affordable, .transparent, .quality{
+      margin: 2% 5% 0;
+      max-width: 100%;
+      text-align: center;
+    }
+    .icon{
+      left: 31%;
+    }
+    .c-icon {
+        position: absolute;
+        left: 55px;
+        top: 5.6px;
+        font-size: 18px;
+    }
+    .a-icon {
+        position: absolute;
+        left: 58px;
+        top: 5.6px;
+        font-size: 18px;
+    }
+    .t-icon {
+        position: absolute;
+        left: 30%;
+        font-size: 18px;
+    }
+    .q-icon {
+        position: absolute;
+        left: 85px;
+        top: 7px;
+        font-size: 18px;
+    }
+    .service-divider{
+      margin: 5% auto 10%;
+    }
+    .screenshot{
+      display: none;
+    }
+  }
 </style>
